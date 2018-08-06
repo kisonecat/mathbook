@@ -5360,6 +5360,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
                 <xsl:call-template name="knowl" />
                 <xsl:call-template name="mathbook-js" />
                 <xsl:call-template name="fonts" />
+                <xsl:call-template name="ximera" />		
                 <xsl:call-template name="css" />
             </head>
             <xsl:element name="body">
@@ -7417,6 +7418,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             <head>
                 <!-- configure MathJax by default for @platform variants -->
                 <xsl:call-template name="mathjax" />
+                <xsl:call-template name="ximera" />				
                 <!-- need CSS for sidebyside         -->
                 <!-- perhaps this can be specialized -->
                 <xsl:call-template name="css" />
@@ -7942,6 +7944,7 @@ var </xsl:text><xsl:value-of select="$applet-parameters" /><xsl:text> = {
             <xsl:call-template name="hypothesis-annotation" />
             <xsl:call-template name="geogebra" />
             <xsl:call-template name="jsxgraph" />
+            <xsl:call-template name="ximera" />					    
             <xsl:call-template name="css" />
             <xsl:call-template name="pytutor-header" />
         </head>
@@ -8039,6 +8042,7 @@ var </xsl:text><xsl:value-of select="$applet-parameters" /><xsl:text> = {
             <xsl:call-template name="hypothesis-annotation" />
             <xsl:call-template name="geogebra" />
             <xsl:call-template name="jsxgraph" />
+            <xsl:call-template name="ximera" />
             <xsl:call-template name="css" />
         </head>
         <!-- TODO: needs some padding etc -->
@@ -8869,68 +8873,11 @@ var </xsl:text><xsl:value-of select="$applet-parameters" /><xsl:text> = {
 <!-- "useLabelIDs" makes HTML @id "mjx-eqn-foo" from \label{}   -->
 <xsl:template name="mathjax">
     <!-- mathjax configuration -->
-    <xsl:element name="script">
-        <xsl:attribute name="type">
-            <xsl:text>text/x-mathjax-config</xsl:text>
+     <xsl:element name="script">
+       <xsl:attribute name="src">
+            <xsl:text>https://ximera.osu.edu/public/javascripts/standalone.min.js</xsl:text>
         </xsl:attribute>
-        <xsl:text>&#xa;</xsl:text>
-        <!-- // contrib directory for accessibility menu, moot after v2.6+ -->
-        <!-- MathJax.Ajax.config.path["Contrib"] = "<some-url>";           -->
-        <xsl:text>MathJax.Hub.Config({&#xa;</xsl:text>
-        <xsl:text>    tex2jax: {&#xa;</xsl:text>
-        <xsl:text>        inlineMath: [['\\(','\\)']],&#xa;</xsl:text>
-        <xsl:text>    },&#xa;</xsl:text>
-        <xsl:text>    TeX: {&#xa;</xsl:text>
-        <xsl:text>        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],&#xa;</xsl:text>
-        <xsl:text>        // scrolling to fragment identifiers is controlled by other Javascript&#xa;</xsl:text>
-        <xsl:text>        positionToHash: false,&#xa;</xsl:text>
-        <xsl:text>        equationNumbers: { autoNumber: "none", useLabelIds: true, },&#xa;</xsl:text>
-        <xsl:text>        TagSide: "right",&#xa;</xsl:text>
-        <xsl:text>        TagIndent: ".8em",&#xa;</xsl:text>
-        <xsl:text>    },&#xa;</xsl:text>
-        <!-- key needs quotes since it is not a valid identifier by itself-->
-        <xsl:text>    // HTML-CSS output Jax to be dropped for MathJax 3.0&#xa;</xsl:text>
-        <xsl:text>    "HTML-CSS": {&#xa;</xsl:text>
-        <xsl:text>        scale: 88,&#xa;</xsl:text>
-        <xsl:text>        mtextFontInherit: true,&#xa;</xsl:text>
-        <xsl:text>    },&#xa;</xsl:text>
-        <xsl:text>    CommonHTML: {&#xa;</xsl:text>
-        <xsl:text>        scale: 88,&#xa;</xsl:text>
-        <xsl:text>        mtextFontInherit: true,&#xa;</xsl:text>
-        <xsl:text>    },&#xa;</xsl:text>
-        <!-- optional presentation mode gets clickable, large math -->
-        <xsl:if test="$b-html-presentation">
-            <xsl:text>    menuSettings:{&#xa;</xsl:text>
-            <xsl:text>      zoom:"Click",&#xa;</xsl:text>
-            <xsl:text>      zscale:"300%"&#xa;</xsl:text>
-            <xsl:text>    },&#xa;</xsl:text>
-        </xsl:if>
-        <!-- close of MathJax.Hub.Config -->
-        <xsl:text>});&#xa;</xsl:text>
-        <!-- optional beveled fraction support -->
-        <xsl:if test="//m[contains(text(),'sfrac')] or //md[contains(text(),'sfrac')] or //me[contains(text(),'sfrac')] or //mrow[contains(text(),'sfrac')]">
-            <xsl:text>/* support for the sfrac command in MathJax (Beveled fraction) */&#xa;</xsl:text>
-            <xsl:text>/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */&#xa;</xsl:text>
-            <xsl:text>MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {&#xa;</xsl:text>
-            <xsl:text>  var MML = MathJax.ElementJax.mml,&#xa;</xsl:text>
-            <xsl:text>      TEX = MathJax.InputJax.TeX;&#xa;</xsl:text>
-            <xsl:text>  TEX.Definitions.macros.sfrac = "myBevelFraction";&#xa;</xsl:text>
-            <xsl:text>  TEX.Parse.Augment({&#xa;</xsl:text>
-            <xsl:text>    myBevelFraction: function (name) {&#xa;</xsl:text>
-            <xsl:text>      var num = this.ParseArg(name),&#xa;</xsl:text>
-            <xsl:text>          den = this.ParseArg(name);&#xa;</xsl:text>
-            <xsl:text>      this.Push(MML.mfrac(num,den).With({bevelled: true}));&#xa;</xsl:text>
-            <xsl:text>    }&#xa;</xsl:text>
-            <xsl:text>  });&#xa;</xsl:text>
-            <xsl:text>});&#xa;</xsl:text>
-        </xsl:if>
-    </xsl:element>
-    <!-- mathjax javascript -->
-    <xsl:element name="script">
-        <xsl:attribute name="src">
-            <xsl:text>https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full</xsl:text>
-        </xsl:attribute>
-    </xsl:element>
+	</xsl:element>
 </xsl:template>
 
 <!-- jQuery, SageCell -->
@@ -9160,6 +9107,13 @@ var </xsl:text><xsl:value-of select="$applet-parameters" /><xsl:text> = {
         <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png"/>
         <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png"/>
     </xsl:if>
+</xsl:template>
+
+<!-- Ximera header -->
+<xsl:template name="ximera">
+  <!-- the javascript is loaded instead of mathjax -->
+    <link href=" https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />  
+    <link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" type="text/css" />
 </xsl:template>
 
 <!-- Mathbook Javascript header -->
