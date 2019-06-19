@@ -1,3 +1,37 @@
+PreTeXt with service workers
+============================
+
+With the 2 new .xsl files here, you can do this:
+
+```
+git clone https://github.com/kisonecat/mathbook.git
+cd mathbook
+git checkout serviceworker
+cd examples/minimal
+xsltproc ../../xsl/mathbook-html-serviceworker.xsl minimal.xml
+xsltproc ../../xsl/pretext-serviceworker.xsl minimal.xml
+python2.7 -m SimpleHTTPServer 7000
+```
+
+The first xsltproc produces the usual .html but with a bit more `<script>`
+in the `<head>`.
+
+The second xsltproc produces `service-worker.js` which arranges to
+cache the `.html` files.
+
+Then if you go to http://localhost:7000/minimal.html you will see the
+usual content, but that first load will cache assets, even assets being
+loaded from other domains (and in particular, will cache mathjax once it
+gets loaded once).  If you then kill the HTTP server --- simulating an
+offline browser --- a lot of the page will still work.  You can even
+navigate to pages you hadn't previously visited!  This is good even for
+people with only slightly flakey internet.
+
+There's a number of caveats here, e.g., once things get cached, how
+does cache invalidation happen?  What happens when the book is
+updated?  Exactly what assets get cached in the first load?  Figures?
+What about knowls?
+
 PreTeXt
 =======
 
