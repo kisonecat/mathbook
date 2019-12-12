@@ -5788,6 +5788,23 @@ This is a Java Applet created using GeoGebra from www.geogebra.org - it looks li
 </xsl:template>
 
 <!-- ########################## -->
+<!-- Doenet Embedded Exercises  -->
+<!-- ########################## -->
+<xsl:template name="doenet">
+    <script src="https://unpkg.com/@doenet/beta"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@doenet/beta/dist/main.css"/>
+    <style>
+      .doenet-panel { top: auto; bottom: 0; }
+    </style>
+    <script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+        let worksheet = new window.doenet.Worksheet();
+        setInterval(function(){ worksheet.progress = 1; }, 2500);
+      });
+    </script>
+</xsl:template>
+
+<!-- ########################## -->
 <!-- WeBWorK Embedded Exercises -->
 <!-- ########################## -->
 
@@ -5855,6 +5872,8 @@ This is a Java Applet created using GeoGebra from www.geogebra.org - it looks li
             <!-- jquery used by sage, webwork, knowls -->
             <xsl:call-template name="jquery-sagecell" />
             <xsl:call-template name="mathjax" />
+	    <!-- FIXME just always load doenet -->
+	    <xsl:call-template name="doenet" />	    
             <!-- webwork's iframeResizer needs to come before sage -->
             <xsl:if test="//webwork[@*|node()]">
                 <xsl:call-template name="webwork" />
