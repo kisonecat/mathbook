@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2019-12-12T10:41:17-05:00    *-->
+<!--*    on 2019-12-12T10:53:27-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -59,10 +59,10 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
       .doenet-panel { top: auto; bottom: 0; }
     </style>
 <script>
-window.addEventListener('DOMContentLoaded', (event) => {
- let worksheet = new window.doenet.Worksheet();
- setTimeout(function(){ worksheet.progress = 1; }, 1000);
-});
+      window.addEventListener('DOMContentLoaded', (event) => {
+        let worksheet = new window.doenet.Worksheet();
+        setInterval(function(){ worksheet.progress = 1; }, 2500);
+      });
     </script><script>$(function () {
     // Make *any* div with class 'sagecell-sage' an executable Sage cell
     // Their results will be linked, only within language type
