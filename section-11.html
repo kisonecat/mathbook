@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2019-12-12T10:41:17-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SA Further Reading</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/javascript" src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    
+    /* support for the sfrac command in MathJax (Beveled fraction)
+        see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://unpkg.com/@doenet/beta"></script><link rel="stylesheet" href="https://unpkg.com/@doenet/beta/dist/main.css">
+<style>
+      .doenet-panel { top: auto; bottom: 0; }
+    </style>
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+ let worksheet = new window.doenet.Worksheet();
+ setTimeout(function(){ worksheet.progress = 1; }, 1000);
+});
+    </script><script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script><script>(function() {
+  var cx = '008832104071767086392:j6aknlqevbm';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraph.css">
+<script type="text/javascript" src="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraphcore.js"></script><link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//releases.flowplayer.org/5.4.6/skin/minimalist.css">
+<script src="https://releases.flowplayer.org/5.4.6/flowplayer.min.js"></script><script>flowplayer.conf = {
+    };</script>
+</head>
+<body class="mathbook-article has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner">
+<div class="searchwrapper"><div class="gcse-search"></div></div>
+<div class="container">
+<a id="logo-link" href="http://mathbook.pugetsound.edu" target="_blank"><img src="images/book-cover-google-art-project.jpg"></a><div class="title-container">
+<h1 class="heading"><a href="derivatives.html"><span class="title">Derivatives and Integrals</span><span class="subtitle">An Annotated Discourse</span></a></h1>
+<p class="byline">Robert Beezer</p>
+</div>
+</div>
+</div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='derivatives.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="backmatter.html#index-part-1" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="section-10.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="derivatives.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-12.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-10.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="derivatives.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-12.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="index.html"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="section-1.html"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<h2 class="link"><a href="section-fundamental-theorem.html"><span class="codenumber">2</span><span class="title">The Fundamental Theorem</span></a></h2>
+<h2 class="link"><a href="section-sage-cells.html"><span class="codenumber">3</span><span class="title">Computing Integrals with Sage (\(\int\))</span></a></h2>
+<h2 class="link"><a href="interesting-corollary.html"><span class="codenumber">4</span><span class="title">An Interesting Corollary</span></a></h2>
+<h2 class="link"><a href="section-5.html"><span class="codenumber">5</span><span class="title">Some Facts and Figures</span></a></h2>
+<h2 class="link"><a href="section-6.html"><span class="codenumber">6</span><span class="title">Some Advanced Ideas</span></a></h2>
+<h2 class="link"><a href="section-7.html"><span class="codenumber">7</span><span class="title">Mathematics</span></a></h2>
+<h2 class="link"><a href="section-8.html"><span class="codenumber">8</span><span class="title">Special, Reserved, and Escape Characters</span></a></h2>
+<h2 class="link"><a href="graphics.html"><span class="codenumber">9</span><span class="title">Graphics</span></a></h2>
+<h2 class="link"><a href="section-10.html"><span class="codenumber">10</span><span class="title">Demonstrations</span></a></h2>
+<h2 class="link active"><a href="section-11.html"><span class="codenumber">11</span><span class="title">Further Reading</span></a></h2>
+<h2 class="link"><a href="section-12.html"><span class="codenumber">12</span><span class="title">List Calisthenics</span></a></h2>
+<h2 class="link"><a href="section-13.html"><span class="codenumber">13</span><span class="title">Table Calisthenics</span></a></h2>
+<h2 class="link"><a href="section-14.html"><span class="codenumber">14</span><span class="title">Embedded Interactive Elements</span></a></h2>
+<h2 class="link"><a href="section-15.html"><span class="codenumber">15</span><span class="title">Video</span></a></h2>
+<h2 class="link"><a href="exercises.html"><span class="codenumber">16</span><span class="title">Exercises</span></a></h2>
+<h2 class="link"><a href="section-cross-referencing.html"><span class="codenumber">17</span><span class="title">Cross-Referencing</span></a></h2>
+<h2 class="link"><a href="section-internationalization.html"><span class="codenumber">18</span><span class="title">Internationalization</span></a></h2>
+<h2 class="link"><a href="section-18.html"><span class="codenumber">19</span><span class="title">Pre-Formatted Text</span></a></h2>
+<h2 class="link"><a href="section-programs.html"><span class="codenumber">20</span><span class="title">Program Listings</span></a></h2>
+<h2 class="link"><a href="section-20.html"><span class="codenumber">21</span><span class="title">Units of Measure</span></a></h2>
+<h2 class="link"><a href="section-side-by-side.html"><span class="codenumber">22</span><span class="title">Side-By-Side Panels</span></a></h2>
+<h2 class="link"><a href="poetry.html"><span class="codenumber">23</span><span class="title">Poetry</span></a></h2>
+<h2 class="link"><a href="advanced-numbering.html"><span class="codenumber">24</span><span class="title">Advanced Numbering</span></a></h2>
+<h2 class="link"><a href="section-24.html"><span class="codenumber">25</span><span class="title">Customizations</span></a></h2>
+<h2 class="link"><a href="backmatter.html"><span class="title">Reference</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="not-implemented.html">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-11"><header title="Section 11 Further Reading"><h1 class="heading hide-type" alt="Section 11 Further Reading">
+<span class="type">Section</span><span class="codenumber">11</span><span class="title">Further Reading</span>
+</h1></header><p id="p-216">In a longer work you might wish to have some references on a per-chapter basis, or similar.  You can make a “references” subdivision anywhere to hold bibliographic items, and you can reference the items like any other item.  For example, we can cite the article below <a knowl="./knowl/biblio-beezer-fcla.html" knowl-id="xref-biblio-beezer-fcla" alt="Bibliographic Entry 11.1.2 A First Course in Linear Algebra" title="Bibliographic Entry 11.1.2 A First Course in Linear Algebra">[11.1.2, Chapter R]</a>, included an indication that a specific chapter may be relevant.</p>
+<section class="references" id="references-1"><header title="References 11.1 References"><h1 class="heading hide-type" alt="References 11.1 References">
+<span class="type">Subsection</span><span class="codenumber">11.1</span><span class="title">References</span>
+</h1></header><section class="introduction" id="introduction-6"><p id="p-217">These items are here to test basic formatting of references.</p></section><article class="bib" id="biblio-strang-article"><div class="bibitem">[1]</div>  <div class="bibentry">Gilbert Strang, <i>The Fundamental Theorem of Linear Algebra</i>, The American Mathematical Monthly November 1993, <b>100</b> no. 9, 848–855.</div></article><article class="bib" id="biblio-beezer-fcla"><div class="bibitem">[2]</div>  <div class="bibentry">Robert A. Beezer, <i>A First Course in Linear Algebra</i>, 3rd Edition, Congruent Press, 2012.
+                
+                </div></article><div class="posterior"><div>
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-note-2" id="note-2"><span class="heading"><span class="type">Note</span></span></a></span><span id="hk-note-2" style="display: none;" class="tex2jax_ignore"><span class="solution"><p id="p-218">An online, open-source offering.</p></span></span>
+</div></div>
+<article class="bib" id="biblio-rosswell-fictional"><div class="bibitem">[3]</div>  <div class="bibentry">Alexander Rosswell, <i>Diffeomorphisms of Penciled Fiber Bundles</i>, Mathematicians of America (2020), <b>2</b> no. 6, 884–888.</div></article><article class="bib" id="biblio-rosswell-fictional-two"><div class="bibitem">[4]</div>  <div class="bibentry">Ibid., <i>Diffeomorphisms of Penciled Fiber Bundles, Part 2</i>, Mathematicians of America (2021), <b>3</b> no. 4, 102–103.</div></article><section class="conclusion" id="conclusion-3"><p id="p-219">This is a conclusion, which has not been used very much in this sample.  Did you see the the second reference above has a short annotation?  So you can make annotated bibliographies easily.</p></section></section><section class="exercises" id="exercises-2"><header title="Exercises 11.2 Exercises"><h1 class="heading hide-type" alt="Exercises 11.2 Exercises">
+<span class="type">Subsection</span><span class="codenumber">11.2</span><span class="title">Exercises</span>
+</h1></header><article class="exercise-like" id="exercises-null-problem"><h5 class="heading"><span class="codenumber">1</span></h5>
+<p id="p-220">No problem here, but the next two are in an “exercise group” with an introduction and a conclusion.  The two problems of the exercise group should be indented some to indicate the grouping.</p></article><div class="exercisegroup" id="exercisegroup-two-problems">
+<article class="introduction" id="introduction-7"><p id="p-221">In the next two problems compute the indicated derivative.</p></article><div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-5"><h5 class="heading"><span class="codenumber">2</span></h5>
+<p id="p-222">\(f(x)=x^3\text{,}\) \(\frac{df}{dx}\text{.}\)  This sentence is just a bunch of gibberish to check where the second line of the problem begins relative to the first line.</p></article><article class="exercise-like" id="exercises-cosine-derivative"><h5 class="heading"><span class="codenumber">3</span></h5>
+<p id="p-223">\(y = \cos(x)\text{,}\) \(y^\prime\text{.}\)</p></article>
+</div>
+<article class="conclusion" id="conclusion-4"><p id="p-224">Note that the previous two problems used very different notation for the function and the resulting derivative.</p></article>
+</div>
+<article class="exercise-like" id="exercise-7"><h5 class="heading"><span class="codenumber">4</span></h5>
+<p id="p-225">Compute \(\int 3x^2\,dx\text{.}\)</p></article><article class="exercise-like" id="exercise-8"><h5 class="heading"><span class="codenumber">5</span></h5>
+<p id="p-226">One of the few things you can place inside of mathematics is a “fill-in” blank.  We demonstrate a few scenarios here.  See details on syntax in <a href="interesting-corollary.html#subsection-paragraph-markup" alt="Subsection 4.7 Some Paragraph-Level Markup" title="Subsection 4.7 Some Paragraph-Level Markup">Subsection 4.7</a>–the use is identical within mathematics.</p>
+<ul id="ul-7" style="list-style-type: disc;">
+<li id="li-46"><p id="p-227">Inside inline math (short, 4 characters): \(\sin(\underline{\hspace{1.818181818181818em}})\)</p></li>
+<li id="li-47"><p id="p-228">Inside inline math (default, 10 characters): \(\sin(\underline{\hspace{4.545454545454546em}})\)</p></li>
+<li id="li-48"><p id="p-229">Inside exponents and subscripts (2 characters each).  In this case, be sure to wrap your exponents and subscripts in braces, as would be good <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> practice anyway: \(x^{5+\underline{\hspace{0.909090909090909em}}}\,y_{\underline{\hspace{0.909090909090909em}}}\)</p></li>
+<li id="li-49"><p id="p-230">Inside inline math (too long for this line probably, 40 characters long): \(\tan(\underline{\hspace{18.1818181818182em}})\)</p></li>
+<li id="li-50"><p id="p-231">So use inside a displayed equation\begin{equation*}16\log\space\underline{\hspace{3.636363636363636em}}\end{equation*}like this one.</p></li>
+<li id="li-51"><p id="p-232">Inside the second line of a multi-line display:\begin{align*}
+y &amp;= x^7\,x^8\\
+  &amp;= x^{\underline{\hspace{1.363636363636364em}}}
+\end{align*}</p></li>
+</ul></article></section><section class="exercises" id="exercises-3"><header title="Exercises 11.3 More Exercises"><h1 class="heading hide-type" alt="Exercises 11.3 More Exercises">
+<span class="type">Subsection</span><span class="codenumber">11.3</span><span class="title">More Exercises</span>
+</h1></header><article class="exercise-like" id="exercise-9"><h5 class="heading"><span class="codenumber">1</span></h5>
+<p id="p-233">This is not a real exercise, we just want to explain that this is another subsection of exercises, which has two consecutive exercise groups.</p></article><div class="exercisegroup" id="exercisegroup-2">
+<article class="introduction" id="introduction-8"><p id="p-234">Introduction to first exercise group.</p></article><div class="exercisegroup-exercises"><article class="exercise-like" id="exercise-10"><h5 class="heading"><span class="codenumber">2</span></h5>
+<p id="p-235">Only exercise of first group.</p></article></div>
+<article class="conclusion" id="conclusion-5"><p id="p-236">Conclusion to first exercise group.</p></article>
+</div>
+<div class="exercisegroup" id="exercisegroup-3">
+<article class="introduction" id="introduction-9"><p id="p-237">Introduction to second exercise group.</p></article><div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-11"><h5 class="heading"><span class="codenumber">3</span></h5>
+<p id="p-238">First exercise of second group.</p></article><article class="exercise-like" id="exercise-12"><h5 class="heading"><span class="codenumber">4</span></h5>
+<p id="p-239">Second exercise of second group.</p></article>
+</div>
+<article class="conclusion" id="conclusion-6"><p id="p-240">Conclusion to second exercise group.</p></article>
+</div>
+<div class="exercisegroup" id="exercisegroup-4">
+<article class="introduction" id="introduction-10"><p id="p-241">An <tt class="code-inline tex2jax_ignore">&lt;exercisegroup&gt;</tt> can have a <tt class="code-inline tex2jax_ignore">cols</tt> attribute taking a value from 2–6. Exercises will progress by row, in so many columns. On a small screen, the HTML exercises may reorganize into fewer columns.</p></article><div class="exercisegroup-exercises cols4">
+<article class="exercise-like" id="exercise-13"><h5 class="heading"><span class="codenumber">5</span></h5>
+<p id="p-242">\(1+2\)</p></article><article class="exercise-like" id="exercise-14"><h5 class="heading"><span class="codenumber">6</span></h5>
+<p id="p-243">\(3+4+5\)</p>
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-hint-3" id="hint-3"><span class="heading"><span class="type">Hint</span></span></a></span><span id="hk-hint-3" style="display: none;" class="tex2jax_ignore"><span class="solution"><p id="p-244">Addition is associative.</p></span></span> <span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-answer-2" id="answer-2"><span class="heading"><span class="type">Answer</span></span></a></span><span id="hk-answer-2" style="display: none;" class="tex2jax_ignore"><span class="solution"><p id="p-245">\(12\)</p></span></span> <span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-solution-6" id="solution-6"><span class="heading"><span class="type">Solution</span></span></a></span><span id="hk-solution-6" style="display: none;" class="tex2jax_ignore"><span class="solution"><p id="p-246">First, add \(3\) and \(4\) to get \(7\text{,}\) then add \(5\) to arrive at \(12\text{.}\)</p></span></span> </article><article class="exercise-like" id="exercise-15"><h5 class="heading"><span class="codenumber">7</span></h5>
+<p id="p-247">\(5+6\)</p></article><article class="exercise-like" id="exercise-16"><h5 class="heading"><span class="codenumber">8</span></h5>
+<p id="p-248">Add seven to eight.</p></article><article class="exercise-like" id="exercise-17"><h5 class="heading"><span class="codenumber">9</span></h5>
+<p id="p-249">\(9+10\)</p></article>
+</div>
+<article class="conclusion" id="conclusion-7"><p id="p-250">This feature was designed with short “drill” exercises in mind.</p></article>
+</div></section></section></div></main>
+</div>
+</body>
+</html>

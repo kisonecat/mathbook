@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2019-12-12T10:41:16-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SA Computing Integrals with Sage (\(\int\))</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/javascript" src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    
+    /* support for the sfrac command in MathJax (Beveled fraction)
+        see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://unpkg.com/@doenet/beta"></script><link rel="stylesheet" href="https://unpkg.com/@doenet/beta/dist/main.css">
+<style>
+      .doenet-panel { top: auto; bottom: 0; }
+    </style>
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+ let worksheet = new window.doenet.Worksheet();
+ setTimeout(function(){ worksheet.progress = 1; }, 1000);
+});
+    </script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate Sage Code'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sage-display' a visible, uneditable Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.sage-display',
+                           editor: 'codemirror-readonly',
+                           hide: ['evalButton', 'editorToggle', 'language']});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-practice' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-practice',
+                           linked: true,
+                           languages: sagecell.allLanguages,
+                           evalButtonText: 'Evaluate Code'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate R Code'});
+});
+</script><script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script><script>(function() {
+  var cx = '008832104071767086392:j6aknlqevbm';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraph.css">
+<script type="text/javascript" src="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraphcore.js"></script><link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//releases.flowplayer.org/5.4.6/skin/minimalist.css">
+<script src="https://releases.flowplayer.org/5.4.6/flowplayer.min.js"></script><script>flowplayer.conf = {
+    };</script>
+</head>
+<body class="mathbook-article has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner">
+<div class="searchwrapper"><div class="gcse-search"></div></div>
+<div class="container">
+<a id="logo-link" href="http://mathbook.pugetsound.edu" target="_blank"><img src="images/book-cover-google-art-project.jpg"></a><div class="title-container">
+<h1 class="heading"><a href="derivatives.html"><span class="title">Derivatives and Integrals</span><span class="subtitle">An Annotated Discourse</span></a></h1>
+<p class="byline">Robert Beezer</p>
+</div>
+</div>
+</div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='derivatives.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="backmatter.html#index-part-1" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="section-fundamental-theorem.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="derivatives.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="interesting-corollary.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-fundamental-theorem.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="derivatives.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="interesting-corollary.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="index.html"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="section-1.html"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<h2 class="link"><a href="section-fundamental-theorem.html"><span class="codenumber">2</span><span class="title">The Fundamental Theorem</span></a></h2>
+<h2 class="link active"><a href="section-sage-cells.html"><span class="codenumber">3</span><span class="title">Computing Integrals with Sage (\(\int\))</span></a></h2>
+<h2 class="link"><a href="interesting-corollary.html"><span class="codenumber">4</span><span class="title">An Interesting Corollary</span></a></h2>
+<h2 class="link"><a href="section-5.html"><span class="codenumber">5</span><span class="title">Some Facts and Figures</span></a></h2>
+<h2 class="link"><a href="section-6.html"><span class="codenumber">6</span><span class="title">Some Advanced Ideas</span></a></h2>
+<h2 class="link"><a href="section-7.html"><span class="codenumber">7</span><span class="title">Mathematics</span></a></h2>
+<h2 class="link"><a href="section-8.html"><span class="codenumber">8</span><span class="title">Special, Reserved, and Escape Characters</span></a></h2>
+<h2 class="link"><a href="graphics.html"><span class="codenumber">9</span><span class="title">Graphics</span></a></h2>
+<h2 class="link"><a href="section-10.html"><span class="codenumber">10</span><span class="title">Demonstrations</span></a></h2>
+<h2 class="link"><a href="section-11.html"><span class="codenumber">11</span><span class="title">Further Reading</span></a></h2>
+<h2 class="link"><a href="section-12.html"><span class="codenumber">12</span><span class="title">List Calisthenics</span></a></h2>
+<h2 class="link"><a href="section-13.html"><span class="codenumber">13</span><span class="title">Table Calisthenics</span></a></h2>
+<h2 class="link"><a href="section-14.html"><span class="codenumber">14</span><span class="title">Embedded Interactive Elements</span></a></h2>
+<h2 class="link"><a href="section-15.html"><span class="codenumber">15</span><span class="title">Video</span></a></h2>
+<h2 class="link"><a href="exercises.html"><span class="codenumber">16</span><span class="title">Exercises</span></a></h2>
+<h2 class="link"><a href="section-cross-referencing.html"><span class="codenumber">17</span><span class="title">Cross-Referencing</span></a></h2>
+<h2 class="link"><a href="section-internationalization.html"><span class="codenumber">18</span><span class="title">Internationalization</span></a></h2>
+<h2 class="link"><a href="section-18.html"><span class="codenumber">19</span><span class="title">Pre-Formatted Text</span></a></h2>
+<h2 class="link"><a href="section-programs.html"><span class="codenumber">20</span><span class="title">Program Listings</span></a></h2>
+<h2 class="link"><a href="section-20.html"><span class="codenumber">21</span><span class="title">Units of Measure</span></a></h2>
+<h2 class="link"><a href="section-side-by-side.html"><span class="codenumber">22</span><span class="title">Side-By-Side Panels</span></a></h2>
+<h2 class="link"><a href="poetry.html"><span class="codenumber">23</span><span class="title">Poetry</span></a></h2>
+<h2 class="link"><a href="advanced-numbering.html"><span class="codenumber">24</span><span class="title">Advanced Numbering</span></a></h2>
+<h2 class="link"><a href="section-24.html"><span class="codenumber">25</span><span class="title">Customizations</span></a></h2>
+<h2 class="link"><a href="backmatter.html"><span class="title">Reference</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="not-implemented.html">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-sage-cells"><header title="Section 3 Computing Integrals with Sage (\(\int\))"><h1 class="heading hide-type" alt="Section 3 Computing Integrals with Sage (\(\int\))">
+<span class="type">Section</span><span class="codenumber">3</span><span class="title">Computing Integrals with Sage (\(\int\))</span><a href="section-sage-cells.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-12">Sage can compute definite integrals.  The output contains the approximate numerical value of the definite integral, followed by an upper bound  of the error in the approximation.</p>
+<div class="sagecell-sage" id="sage-numerical-integral"><script type="text/x-sage">numerical_integral(sin(x)^2, (0, 2))
+</script></div>
+<p id="p-13">Given the Fundamental Theorem, we would find the antiderivative useful.</p>
+<div class="sagecell-sage" id="sage-2"><script type="text/x-sage">integral(sin(x)^2, x)
+</script></div>
+<p id="p-14">The same command can be used to employ the antiderivative in the application of the Fundamental Theorem.  Notice that the answer is <!--Style me with CSS--><em>exact</em> and any further manipulation is likely to be simply producing a numerical approximation.</p>
+<div class="sagecell-sage" id="sage-3"><script type="text/x-sage">integral(sin(x)^2, (x, 0, 2))
+</script></div>
+<p id="p-15">There are integrals you really do not want to evaluate, or you do not want your reader to evaluate.  A Sage cell can be configured for display purposes only — you can look but you cannot touch.</p>
+<div class="sage-display"><script type="text/x-sage">integral(e^(x^2), x)
+</script></div>
+<p id="p-16">You can give a Sage element a <tt class="code-inline tex2jax_ignore">doctest</tt> attribute, whose value mirrors the optional hash tags used in Sage doctests.  Possible values are <tt class="code-inline tex2jax_ignore">random</tt>, <tt class="code-inline tex2jax_ignore">long time</tt>, <tt class="code-inline tex2jax_ignore">not implemented</tt>, <tt class="code-inline tex2jax_ignore">not tested</tt>, <tt class="code-inline tex2jax_ignore">known bug</tt>, <tt class="code-inline tex2jax_ignore">absolute</tt>, <tt class="code-inline tex2jax_ignore">relative</tt>, and <tt class="code-inline tex2jax_ignore">optional</tt>.  The values <tt class="code-inline tex2jax_ignore">absolute</tt> and <tt class="code-inline tex2jax_ignore">relative</tt> refer to floating-point tolerances for equality and require a second attribute <tt class="code-inline tex2jax_ignore">tolerance</tt> to specify a floating point value.  The value <tt class="code-inline tex2jax_ignore">optional</tt> refers to the test requiring that an optional Sage package be present.  The name of that package should be provided in the <tt class="code-inline tex2jax_ignore">package</tt> attribute.</p>
+<p id="p-17">The next cell is marked in the source as <tt class="code-inline tex2jax_ignore">doctest="random"</tt>, and so is specified as unpredictable and not tested.  But there is some “sample” output which will appear in the <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> version (and always be the same).</p>
+<div class="sagecell-sage" id="sage-5"><script type="text/x-sage">random()
+</script></div>
+<p id="p-18">While the next cell is random, the returned value will never be more than \(0.01\) away from \(12\text{,}\) since the <tt class="code-inline tex2jax_ignore">random()</tt> function stays between \(0\) and \(1\text{.}\)  So we provide \(12.005\) as the expected answer, but test with an absolute tolerance of \(\epsilon=0.006\text{.}\)</p>
+<div class="sagecell-sage" id="sage-6"><script type="text/x-sage">12 + 0.01*random()
+</script></div>
+<p id="p-19">Sage, and by extension, the Sage Cell Server, can interpret several languages.  The next example has code in the <tt class="code-inline tex2jax_ignore">R</tt> language, a popular open source language for statistics.  As an author, you add the attribute <tt class="code-inline tex2jax_ignore">language="r"</tt> to your <tt class="code-inline tex2jax_ignore">sage</tt> element.  (The default language is Sage, so you do not need to indicate that repeatedly.)  Note that a language like <tt class="code-inline tex2jax_ignore">R</tt> likes to use a “less than” character, the second most-dangerous special character in XML.  You need to escape it by writing <tt class="code-inline tex2jax_ignore">&amp;lt;</tt> as we have done in the source for this example.  (See the discussion and summary in <a href="section-8.html#subsection-reserved-characters" alt="Subsection 8.1 Reserved Characters" title="Subsection 8.1 Reserved Characters">Subsection 8.1</a>.)</p>
+<p id="p-20">As a reader you learn that the “Evaluate” button for a pre-loaded Sage cell will indicate the language in use.</p>
+<div class="sagecell-r" id="sage-7"><script type="text/x-sage">ruth <- c(22, 25, 34, 35, 41, 41, 46, 46, 46, 47, 49, 54, 54, 59, 60)
+bonds <- c(16, 25, 24, 19, 33, 25, 34, 46, 37, 33, 42, 40, 37, 34, 49, 73, 46, 45, 45, 5, 26, 28)
+dimaggio <- c(12, 14, 20, 21, 25, 29, 30, 30, 31, 32, 32, 39, 46)
+summary(ruth)
+summary(bonds)
+summary(dimaggio)
+boxplot(ruth, bonds, dimaggio)
+</script></div>
+<p id="p-21">The Sage Cell Server supports the following languages:  <tt class="code-inline tex2jax_ignore">sage</tt>, <tt class="code-inline tex2jax_ignore">gap</tt>, <tt class="code-inline tex2jax_ignore">gp</tt>, <tt class="code-inline tex2jax_ignore">html</tt>, <tt class="code-inline tex2jax_ignore">maxima</tt>, <tt class="code-inline tex2jax_ignore">octave</tt>, <tt class="code-inline tex2jax_ignore">python</tt>, <tt class="code-inline tex2jax_ignore">r</tt>, and <tt class="code-inline tex2jax_ignore">singular</tt>.</p>
+<p id="p-22">Here is another <tt class="code-inline tex2jax_ignore">R</tt> cell.  Unfortunately, it seems Sage's <tt class="code-inline tex2jax_ignore">doctest</tt> facility cannot be used easily with code from other languages.  In the source for this example, we have employed a <tt class="code-inline tex2jax_ignore">CDATA</tt> element to protect all the characters from the XML processor.</p>
+<div class="sagecell-r" id="sage-8"><script type="text/x-sage">age <- c(25, 30, 56)
+gender <- c("male", "female", "male")
+weight <- c(160, 110, 220)
+mydata <- data.frame(age,gender,weight)
+summary(mydata)
+cor(mydata$age,mydata$weight)
+mean(mydata$age)
+sd(mydata$age)
+plot(mydata$age,mydata$weight)
+</script></div>
+<p id="p-23">Here is a blank Sage cell that you may use for practice and experimentation with the commands above.  Note that this cell allows a choice of languages, and is not linked with any of the previous cells, so a reader would need to start fresh, or cut/paste definitioons from other cells.</p>
+<div class="sagecell-practice" id="sage-9"><script type="text/x-sage"># Practice area (not linked for Sage Cell use)
+</script></div>
+<p id="p-24">On the other hand a <tt class="code-inline tex2jax_ignore">&lt;sage&gt;</tt> element with no content will also create an empty Sage cell for the reader's use, but now it will be specific to a particular language and linked to others of the same language.  Run the <tt class="code-inline tex2jax_ignore">R</tt> cell above that defines the variable <tt class="code-inline tex2jax_ignore">ruth</tt> and then try typing <tt class="code-inline tex2jax_ignore">summary(ruth)</tt> in the cell below.  (The linking seems a bit buggy, as it repeats the boxplot in the output, as of 2016-06-13).</p>
+<div class="sagecell-r" id="sage-10"><script type="text/x-sage"></script></div>
+<p id="p-25">You can make Sage blocks which are of <tt class="code-inline tex2jax_ignore">type="invisible"</tt>, which will never be shown to a reader, but which get doctested.  Why do this?  If some code produces an error, and you hope it is fixed someday, use an invisible block to raise the error.  Once fixed, the doctest will fail, and you can adjust your commentary to suit.  There is such a block right now, <!--Style me with CSS--><em>but</em> you will need to go to the source to see it.</p>
+<p id="p-26">Our maximum width for text, designed for readability, suggests you should format your Sage code with a maximum of about 54 characters. On a mobile device, the number of displayed characters might be as low as 28 in portrait orintation, and again around 50 in landscape.  You can use a variety of techniques to shorten long lines, such as using intermediate variables.  Since Sage is just a huge Python library, you can use any of Python's facilities for handling long lines.  These include a continuation character (which I try to avoid using) or natural places where you can break long lines, such as between entries of a list.  Also, if writing loops or functions, you may wish to have your indentation be only two characters wide (rather than, say, four).</p>
+<p id="p-27">Sage output can sometimes be quite long, though this has improved with some changes in Sage's output routines.  Output code should be included primarily for doctesting purposes, and in this use, you may break at almost whitespace character and the doctesting framework will adjust accordingly.  You may wish to show sample output in a static format, like a PDF, so you can consider formatting your output to fit the width constraints of that medium.  Or you may even adjust exactly what is output, to keep it from being too verbose.  Sage doctesting also allows for a wild-card style syntax which allows you to skip over huge chunks of meaningless or unpredictable output, such as tracebacks on error messages.</p></section></div></main>
+</div>
+</body>
+</html>

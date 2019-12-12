@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-06-19T12:23:58-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SA Video</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '008832104071767086392:j6aknlqevbm';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.11;
+</script><script src="http://pythontutor.com/build/pytutor-embed.bundle.js?cc25af72af"></script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body id="pretext-SA" class="mathbook-article has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://pretextbook.org" target="_blank"><img src="images/book-cover-google-art-project.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="derivatives.html"><span class="title">Derivatives and Integrals:</span> <span class="subtitle">An Annotated Discourse</span></a></h1>
+<p class="byline">Robert Beezer</p>
+</div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-audio.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="derivatives.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-cross-referencing.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-audio.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="derivatives.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-cross-referencing.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link"><a href="index.html" data-scroll="index"><span class="title">Front Matter</span></a></li>
+<li class="link"><a href="section-1.html" data-scroll="section-1"><span class="codenumber">1</span> <span class="title">Introduction</span></a></li>
+<li class="link"><a href="section-fundamental-theorem.html" data-scroll="section-fundamental-theorem"><span class="codenumber">2</span> <span class="title">The Fundamental Theorem</span></a></li>
+<li class="link"><a href="section-sage-cells.html" data-scroll="Abc"><span class="codenumber">3</span> <span class="title">Computing Integrals with Sage (\(\int\))</span></a></li>
+<li class="link">
+<a href="interesting-corollary.html" data-scroll="interesting-corollary"><span class="codenumber">4</span> <span class="title">An Interesting Corollary</span></a><ul>
+<li><a href="interesting-corollary.html#subsection-second-FTC" data-scroll="subsection-second-FTC">Second Version of <abbr class="acronym">FTC</abbr></a></li>
+<li><a href="interesting-corollary.html#subsection-2" data-scroll="subsection-2">A Pedagogical Note about Subsection 4.1</a></li>
+<li><a href="interesting-corollary.html#subsection-3" data-scroll="subsection-3">Theorem-Like Environments</a></li>
+<li><a href="interesting-corollary.html#subsection-4" data-scroll="subsection-4">Linking Sage Cells</a></li>
+<li><a href="interesting-corollary.html#subsection-5" data-scroll="subsection-5">Hierarchy</a></li>
+<li><a href="interesting-corollary.html#subsection-intro-conclude" data-scroll="subsection-intro-conclude">Introductions and Conclusions</a></li>
+<li><a href="interesting-corollary.html#subsection-paragraph-markup" data-scroll="subsection-paragraph-markup">Some Paragraph-Level Markup</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-5.html" data-scroll="Bcd"><span class="codenumber">5</span> <span class="title">Some Facts and Figures</span></a></li>
+<li class="link"><a href="section-6.html" data-scroll="section-6"><span class="codenumber">6</span> <span class="title">Some Advanced Ideas</span></a></li>
+<li class="link">
+<a href="section-7.html" data-scroll="section-7"><span class="codenumber">7</span> <span class="title">Mathematics</span></a><ul>
+<li><a href="section-7.html#subsection-8" data-scroll="subsection-8">Basic Mathematics</a></li>
+<li><a href="section-7.html#subsection-9" data-scroll="subsection-9">Displayed Mathematics</a></li>
+<li><a href="section-7.html#subsection-10" data-scroll="subsection-10"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> Packages and MathJax Extensions</a></li>
+<li><a href="section-7.html#subsection-11" data-scroll="subsection-11">Advanced Mathematics</a></li>
+<li><a href="section-7.html#subsection-12" data-scroll="subsection-12">Local Tags on Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="text-in-paragraphs.html" data-scroll="text-in-paragraphs"><span class="codenumber">8</span> <span class="title">Text in Paragraphs</span></a><ul>
+<li><a href="text-in-paragraphs.html#subsection-xml-escape" data-scroll="subsection-xml-escape">Special <abbr class="initialism">XML</abbr> characters</a></li>
+<li><a href="text-in-paragraphs.html#subsection-14" data-scroll="subsection-14">Quotations</a></li>
+<li><a href="text-in-paragraphs.html#subsection-15" data-scroll="subsection-15">Groupings</a></li>
+<li><a href="text-in-paragraphs.html#subsection-16" data-scroll="subsection-16">Characters, Symbols, and Constructions</a></li>
+<li><a href="text-in-paragraphs.html#subsection-17" data-scroll="subsection-17">Currency</a></li>
+<li><a href="text-in-paragraphs.html#subsection-icons-in-text" data-scroll="subsection-icons-in-text">Icons in Text</a></li>
+<li><a href="text-in-paragraphs.html#section-urls" data-scroll="section-urls">URLs, such as <code class="code-inline tex2jax_ignore">http://example.com</code></a></li>
+<li><a href="text-in-paragraphs.html#subsection-20" data-scroll="subsection-20">Biological Names</a></li>
+<li><a href="text-in-paragraphs.html#subsection-21" data-scroll="subsection-21">Verbatim in titles, <code class="code-inline tex2jax_ignore">\a&amp;b#c%d~e{f}g$h_i^j</code>, OK</a></li>
+<li><a href="text-in-paragraphs.html#subsection-special-situations" data-scroll="subsection-special-situations">Special Situations</a></li>
+<li><a href="text-in-paragraphs.html#subsection-jupyter-dollars" data-scroll="subsection-jupyter-dollars">Jupyter Notebook, Markdown, MathJax, Delimiters</a></li>
+<li><a href="text-in-paragraphs.html#subsection-24" data-scroll="subsection-24"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> Characters, Ligatures, and More</a></li>
+<li><a href="text-in-paragraphs.html#subsection-25" data-scroll="subsection-25"><abbr class="initialism">HTML</abbr> and accidental mathematics</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="graphics.html" data-scroll="graphics"><span class="codenumber">9</span> <span class="title">Graphics</span></a><ul>
+<li><a href="graphics.html#subsection-26" data-scroll="subsection-26">Images from External Sources</a></li>
+<li><a href="graphics.html#subsection-27" data-scroll="subsection-27"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> images</a></li>
+<li><a href="graphics.html#subsection-28" data-scroll="subsection-28">Asymptote</a></li>
+<li><a href="graphics.html#subsection-29" data-scroll="subsection-29">Asymptote + threejs 3D</a></li>
+<li><a href="graphics.html#subsection-30" data-scroll="subsection-30">Sage Plots</a></li>
+<li><a href="graphics.html#subsection-31" data-scroll="subsection-31">Copies of Images</a></li>
+<li><a href="graphics.html#subsection-32" data-scroll="subsection-32">Caption Testing</a></li>
+<li><a href="graphics.html#captionless-images" data-scroll="captionless-images">Captionless Images</a></li>
+<li><a href="graphics.html#subsection-34" data-scroll="subsection-34">Technical Details</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-10.html" data-scroll="section-10"><span class="codenumber">10</span> <span class="title">Demonstrations</span></a></li>
+<li class="link">
+<a href="section-11.html" data-scroll="section-11"><span class="codenumber">11</span> <span class="title">Further Reading</span></a><ul>
+<li><a href="section-11.html#subsection-35" data-scroll="subsection-35">Specialized Subdivisions</a></li>
+<li><a href="section-11.html#exercises-3" data-scroll="exercises-3">Exercises</a></li>
+<li><a href="section-11.html#exercises-section-multiple" data-scroll="exercises-section-multiple">More Exercises</a></li>
+<li><a href="section-11.html#references-section" data-scroll="references-section">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="lists.html" data-scroll="lists"><span class="codenumber">12</span> <span class="title">List Calisthenics</span></a><ul>
+<li><a href="lists.html#subsection-36" data-scroll="subsection-36">Lists, Generally</a></li>
+<li><a href="lists.html#subsection-37" data-scroll="subsection-37">List Spacing, I</a></li>
+<li><a href="lists.html#subsection-38" data-scroll="subsection-38">List Spacing, II</a></li>
+<li><a href="lists.html#subsection-39" data-scroll="subsection-39">Description Lists</a></li>
+<li><a href="lists.html#subsection-40" data-scroll="subsection-40">Named Lists</a></li>
+<li><a href="lists.html#subsection-41" data-scroll="subsection-41">Testing List Decompositions</a></li>
+<li><a href="lists.html#exercises-5" data-scroll="exercises-5">Exercises (with lists)</a></li>
+<li><a href="lists.html#references-2" data-scroll="references-2">References (with lists in Annotations)</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-13.html" data-scroll="section-13"><span class="codenumber">13</span> <span class="title">Table Calisthenics</span></a></li>
+<li class="link">
+<a href="section-interactive-authored.html" data-scroll="section-interactive-authored"><span class="codenumber">14</span> <span class="title">Interactive Elements, Authored</span></a><ul>
+<li><a href="section-interactive-authored.html#interactive-html5-canvas" data-scroll="interactive-html5-canvas">HTML5 Canvas</a></li>
+<li><a href="section-interactive-authored.html#subsection-43" data-scroll="subsection-43">D3.js</a></li>
+<li><a href="section-interactive-authored.html#subsection-44" data-scroll="subsection-44">SVG</a></li>
+<li><a href="section-interactive-authored.html#subsection-45" data-scroll="subsection-45">JSXGraph</a></li>
+<li><a href="section-interactive-authored.html#subsection-46" data-scroll="subsection-46">Sage Interacts</a></li>
+<li><a href="section-interactive-authored.html#subsection-47" data-scroll="subsection-47">Geogebra</a></li>
+<li><a href="section-interactive-authored.html#subsection-48" data-scroll="subsection-48">threejs</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="section-interactive-server.html" data-scroll="section-interactive-server"><span class="codenumber">15</span> <span class="title">Interactive Elements, Server</span></a><ul>
+<li><a href="section-interactive-server.html#subsection-geogebra-server" data-scroll="subsection-geogebra-server">GeoGebra</a></li>
+<li><a href="section-interactive-server.html#subsection-50" data-scroll="subsection-50">Desmos Graphs</a></li>
+<li><a href="section-interactive-server.html#subsection-51" data-scroll="subsection-51">CalcPlot3D</a></li>
+<li><a href="section-interactive-server.html#subsection-52" data-scroll="subsection-52">Wolfram CDF</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-audio.html" data-scroll="section-audio"><span class="codenumber">16</span> <span class="title">Audio</span></a></li>
+<li class="link active">
+<a href="section-video.html" data-scroll="section-video"><span class="codenumber">17</span> <span class="title">Video</span></a><ul>
+<li><a href="section-video.html#subsection-53" data-scroll="subsection-53">Video Files</a></li>
+<li><a href="section-video.html#subsection-54" data-scroll="subsection-54">YouTube</a></li>
+<li><a href="section-video.html#subsection-55" data-scroll="subsection-55">Vimeo</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-cross-referencing.html" data-scroll="section-cross-referencing"><span class="codenumber">18</span> <span class="title">Cross-Referencing</span></a></li>
+<li class="link"><a href="section-internationalization.html" data-scroll="section-internationalization"><span class="codenumber">19</span> <span class="title">Internationalization</span></a></li>
+<li class="link"><a href="section-20.html" data-scroll="section-20"><span class="codenumber">20</span> <span class="title">Pre-Formatted Text</span></a></li>
+<li class="link"><a href="section-programs.html" data-scroll="section-programs"><span class="codenumber">21</span> <span class="title">Program Listings</span></a></li>
+<li class="link"><a href="section-22.html" data-scroll="section-22"><span class="codenumber">22</span> <span class="title">Units of Measure</span></a></li>
+<li class="link">
+<a href="section-side-by-side.html" data-scroll="section-side-by-side"><span class="codenumber">23</span> <span class="title">Side-By-Side Panels</span></a><ul>
+<li><a href="section-side-by-side.html#subsection-56" data-scroll="subsection-56">Figures with Numbers Side-By-Side</a></li>
+<li><a href="section-side-by-side.html#subsection-57" data-scroll="subsection-57">Images</a></li>
+<li><a href="section-side-by-side.html#subsection-58" data-scroll="subsection-58">Common Side-By-Side Constructions</a></li>
+<li><a href="section-side-by-side.html#subsection-59" data-scroll="subsection-59">Vertical Alignment</a></li>
+<li><a href="section-side-by-side.html#subsection-60" data-scroll="subsection-60">Text Next to Text and Images</a></li>
+<li><a href="section-side-by-side.html#subsection-61" data-scroll="subsection-61">Image Formats, Side-by-Sides</a></li>
+<li><a href="section-side-by-side.html#subsection-62" data-scroll="subsection-62">Tables Side-By-Side</a></li>
+<li><a href="section-side-by-side.html#subsection-63" data-scroll="subsection-63">Tables Next to Figures</a></li>
+<li><a href="section-side-by-side.html#subsection-64" data-scroll="subsection-64">Tables Next to Text</a></li>
+<li><a href="section-side-by-side.html#subsection-65" data-scroll="subsection-65">Tabular Next to Each Other</a></li>
+<li><a href="section-side-by-side.html#subsection-66" data-scroll="subsection-66">Lists in Side-by-Sides</a></li>
+<li><a href="section-side-by-side.html#stacking-side-by-side" data-scroll="stacking-side-by-side">Stacking: Back to Vertical Flow</a></li>
+<li><a href="section-side-by-side.html#subsection-sbs-other-panels" data-scroll="subsection-sbs-other-panels">Other Panels</a></li>
+<li><a href="section-side-by-side.html#subsection-69" data-scroll="subsection-69">Poems as Side-By-Side Panels</a></li>
+<li><a href="section-side-by-side.html#subsection-sbsgroup" data-scroll="subsection-sbsgroup">Side-By-Side Groups</a></li>
+<li><a href="section-side-by-side.html#subsection-71" data-scroll="subsection-71">Testing a Side-By-Side First</a></li>
+<li><a href="section-side-by-side.html#subsection-72" data-scroll="subsection-72">Testing Styling of Related Elements</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-24.html" data-scroll="section-24"><span class="codenumber">24</span> <span class="title">Side-by-Side Gallery</span></a></li>
+<li class="link"><a href="poetry.html" data-scroll="poetry"><span class="codenumber">25</span> <span class="title">Poetry</span></a></li>
+<li class="link">
+<a href="advanced-numbering.html" data-scroll="advanced-numbering"><span class="codenumber">26</span> <span class="title">Advanced Numbering</span></a><ul>
+<li><a href="advanced-numbering.html#subsection-73" data-scroll="subsection-73">One</a></li>
+<li><a href="advanced-numbering.html#subsection-74" data-scroll="subsection-74">Two</a></li>
+<li><a href="advanced-numbering.html#subsection-75" data-scroll="subsection-75">Three</a></li>
+<li><a href="advanced-numbering.html#subsection-76" data-scroll="subsection-76">Four</a></li>
+<li><a href="advanced-numbering.html#subsection-77" data-scroll="subsection-77">Five</a></li>
+<li><a href="advanced-numbering.html#subsection-local-theorems" data-scroll="subsection-local-theorems">Theorems in This Section</a></li>
+<li><a href="advanced-numbering.html#subsection-with-an-exercise" data-scroll="subsection-with-an-exercise">A Title with ] a Right Bracket</a></li>
+<li><a href="advanced-numbering.html#subsection-80" data-scroll="subsection-80">Just an Exercise</a></li>
+<li><a href="advanced-numbering.html#solutions-2" data-scroll="solutions-2">Solutions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="section-27.html" data-scroll="section-27"><span class="codenumber">27</span> <span class="title">Customizations</span></a><ul><li><a href="section-27.html#rename-facility" data-scroll="rename-facility">Renaming Document Parts, Plus This Is A Really Long Title So That We Can Test How Well It Reacts To The Right Margin And Wraps Around To Form A Couple Of Lines, Plus How It Sits Relative To The Number Of The Subsection</a></li></ul>
+</li>
+<li class="link"><a href="section-myopenmath.html" data-scroll="section-myopenmath"><span class="codenumber">28</span> <span class="title">MyOpenMath Interactive Problems</span></a></li>
+<li class="link"><a href="ancillaries.html" data-scroll="ancillaries"><span class="codenumber">29</span> <span class="title">Ancillaries</span></a></li>
+<li class="link">
+<a href="worksheets.html" data-scroll="worksheets"><span class="codenumber">30</span> <span class="title">Worksheets</span></a><ul>
+<li><a href="worksheets.html#subsection-82" data-scroll="subsection-82">About Worksheets</a></li>
+<li><a href="worksheets.html#worksheet-1" data-scroll="worksheet-1">A Geometric Prelude</a></li>
+<li><a href="worksheets.html#worksheet-2" data-scroll="worksheet-2">Networks Worksheet</a></li>
+<li><a href="worksheets.html#worksheet-3" data-scroll="worksheet-3">Worksheet</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="exercises-single.html" data-scroll="exercises-single"><span class="codenumber">31</span> <span class="title">Exercises, One Subsection</span></a><ul>
+<li><a href="exercises-single.html#exercises-6" data-scroll="exercises-6">Exercise Collection</a></li>
+<li><a href="exercises-single.html#references-3" data-scroll="references-3">More Reading</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="exercises-multiple.html" data-scroll="exercises-multiple"><span class="codenumber">32</span> <span class="title">Exercises, Multiple Subsections</span></a><ul>
+<li><a href="exercises-multiple.html#subsection-83" data-scroll="subsection-83">Faux Subsection</a></li>
+<li><a href="exercises-multiple.html#exercises-drill" data-scroll="exercises-drill">Drill Exercises</a></li>
+<li><a href="exercises-multiple.html#exercises-8" data-scroll="exercises-8">Challenging Exercises</a></li>
+<li><a href="exercises-multiple.html#exercises-9" data-scroll="exercises-9">Impossible Exercises</a></li>
+<li><a href="exercises-multiple.html#references-4" data-scroll="references-4">More Reading</a></li>
+</ul>
+</li>
+<li class="link"><a href="exercises.html" data-scroll="exercises"><span class="codenumber">33</span> <span class="title">Exercises, Top-Level</span></a></li>
+<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Reference</span></a></li>
+<li class="link"><a href="appendix-1.html" data-scroll="appendix-1"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="solutions-backmatter.html" data-scroll="solutions-backmatter"><span class="codenumber">B</span> <span class="title">Solutions to Selected Exercises</span></a></li>
+<li class="link"><a href="solutions-4.html" data-scroll="solutions-4"><span class="codenumber">C</span> <span class="title">Solutions to a Single Exercises Division</span></a></li>
+<li class="link"><a href="appendix-results.html" data-scroll="appendix-results"><span class="codenumber">D</span> <span class="title">List of Results</span></a></li>
+<li class="link">
+<a href="appendix-3.html" data-scroll="appendix-3"><span class="codenumber">E</span> <span class="title">A Structured Appendix</span></a><ul><li><a href="appendix-3.html#subsection-84" data-scroll="subsection-84">A Subsection in an Appendix</a></li></ul>
+</li>
+<li class="link"><a href="appendix-4.html" data-scroll="appendix-4"><span class="codenumber">F</span> <span class="title">Index</span></a></li>
+<li class="link"><a href="references-backmatter.html" data-scroll="references-backmatter"><span class="title">References</span></a></li>
+<li class="link">
+<a href="references.html" data-scroll="references"><span class="codenumber">G</span> <span class="title">Multiple References</span></a><ul>
+<li><a href="references.html#subsection-85" data-scroll="subsection-85">Multiple Specialized References</a></li>
+<li><a href="references.html#references-6" data-scroll="references-6">General References</a></li>
+<li><a href="references.html#references-7" data-scroll="references-7">Specialized References</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="not-implemented.html" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="section-video"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">17</span> <span class="title">Video</span>
+</h2>
+<a href="section-video.html" class="permalink">¶</a><section class="introduction" id="introduction-23"><p id="p-668">First, a gratuitous reference to Exercise <a data-knowl="./knowl/exercises-cosine-derivative.html" title="Exercise 11.2.3">11.2.3</a> about the derivative of a cosine.</p>
+<p id="p-669">You can specify a video by a filename if you host it as part of your document, or a <abbr class="initialism">URL</abbr> giving a location on the Internet.  There are a few extra features for YouTube and Vimeo videos, which are near the bottom of this page, so look there first if that meets your needs.</p></section><section class="subsection" id="subsection-53"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">17.1</span> <span class="title">Video Files</span>
+</h3>
+<p id="p-670">Embedded videos can make sense for a web version of your document. This is a video promoting the University of Puget Sound to potential new students, in WebM format.  Support is limited to HTML5-capable browsers.  The file format can be MP4, Ogg, or WebM, though this may vary depending upon the browser.  Use a <code class="code-inline tex2jax_ignore">&lt;video&gt;</code> element, within either a <code class="code-inline tex2jax_ignore">&lt;figure&gt;</code> (numbered, captioned) or a <code class="code-inline tex2jax_ignore">&lt;sidebyside&gt;</code> for more precise control.   The <code class="code-inline tex2jax_ignore">@source</code> attribute in this first example <em class="emphasis">does not</em> include an extension, and so three possibilities above will be searched for preferentially (you need only provide the video in one format, but providing additional versions will increase the chances every browser will find a compatible format).</p>
+<figure class="figure-like" id="figure-47"><video id="video-1" width="480" height="270" style="object-fit: fill;" controls="" poster="images/ups-promo-frame-one.jpg"><source src="images/ups-visitor-guide-360.ogg" type="video/ogg"></source><source src="images/ups-visitor-guide-360.webm" type="video/webm"></source><source src="images/ups-visitor-guide-360.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span> <span class="codenumber">17.1.</span> University of Puget Sound Promotional Video</figcaption></figure><p id="p-671">You can replace the “preview” image of a video with one of your own making.  <abbr class="initialism">HTML</abbr> refers to this as the <dfn class="terminology">poster</dfn>, presumably because it advertises the video.  The image you make should be of the same quality as the video, and with the same aspect-ratio, and is presumably one of the frames of the video.  So a screenshot is the likely avenue.  (Maybe we will have advice on how to do this easily, or see <a class="external" href="https://github.com/rbeezer/mathbook/issues/853" target="_blank"><code class="code-inline tex2jax_ignore">https://github.com/rbeezer/mathbook/issues/853</code></a>.)   On the <code class="code-inline tex2jax_ignore">&lt;video&gt;</code> tag, include a <code class="code-inline tex2jax_ignore">@preview</code> attribute which is the name of an image file, including a relative path.  (JPEG or PNG formats are best.  JPEG may be smaller for video screenshots, while PNG is lossless and so may work better for diagrams.)</p>
+<figure class="figure-like" id="figure-48"><video id="video-2" width="480" height="270" style="object-fit: fill;" controls="" poster="images/ups-promo-preview.jpg"><source src="images/ups-visitor-guide-360.ogg" type="video/ogg"></source><source src="images/ups-visitor-guide-360.webm" type="video/webm"></source><source src="images/ups-visitor-guide-360.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span> <span class="codenumber">17.2.</span> University of Puget Sound Promotional Video</figcaption></figure><p id="p-672">If you find the posters distracting or objectionable, you can cover them up by requesting a generic poster with the attribute-value pair: <code class="code-inline tex2jax_ignore">preview = "generic"</code>.</p>
+<figure class="figure-like" id="figure-49"><video id="video-3" width="480" height="270" style="object-fit: fill;" controls="" poster="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%2014%2096%2068%22%20style%3D%22cursor%3Apointer%3B%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20fill%3D%22%23e62117%22%20d%3D%22M94.98%2C28.84c0%2C0-0.94-6.6-3.81-9.5c-3.64-3.81-7.72-3.83-9.59-4.05c-13.4-0.97-33.52-0.85-33.52-0.85s-20.12-0.12-33.52%2C0.85c-1.87%2C0.22-5.95%2C0.24-9.59%2C4.05c-2.87%2C2.9-3.81%2C9.5-3.81%2C9.5S0.18%2C36.58%2C0%2C44.33v7.26c0.18%2C7.75%2C1.14%2C15.49%2C1.14%2C15.49s0.93%2C6.6%2C3.81%2C9.5c3.64%2C3.81%2C8.43%2C3.69%2C10.56%2C4.09c7.53%2C0.72%2C31.7%2C0.89%2C32.54%2C0.9c0.01%2C0%2C20.14%2C0.03%2C33.54-0.94c1.87-0.22%2C5.95-0.24%2C9.59-4.05c2.87-2.9%2C3.81-9.5%2C3.81-9.5s0.96-7.75%2C1.02-15.49v-7.26C95.94%2C36.58%2C94.98%2C28.84%2C94.98%2C28.84z%20M38.28%2C61.41v-27l25.74%2C13.5L38.28%2C61.41z%22%2F%3E%3C%2Fsvg%3E"><source src="images/ups-visitor-guide-360.ogg" type="video/ogg"></source><source src="images/ups-visitor-guide-360.webm" type="video/webm"></source><source src="images/ups-visitor-guide-360.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span> <span class="codenumber">17.3.</span> University of Puget Sound Promotional Video</figcaption></figure><p id="p-673">You can use a very similar construction to point to a video hosted somewhere on the Internet, just use a complete <abbr class="initialism">URL</abbr> for the <code class="code-inline tex2jax_ignore">&lt;source&gt;</code> attribute.  Note that if the URL has a query string (parameters following a question-mark), then any ampersands (&amp;) will need to be escaped, so as to not confuse the <abbr class="initialism">XML</abbr> processor (i.e. use <code class="code-inline tex2jax_ignore">&amp;amp</code>).  Also, the question-mark character needs to <em class="emphasis">not</em> be <abbr class="initialism">URL</abbr>-encoded (<code class="code-inline tex2jax_ignore">%3F</code>), so presumably edit the <abbr class="initialism">URL</abbr> to be the character.  Here are two examples, the second one uses the <code class="code-inline tex2jax_ignore">@start</code> and <code class="code-inline tex2jax_ignore">@stop</code> attributes to limit the video to just the time between the 16-second and 30-second locations.</p>
+<figure class="figure-like" id="figure-50"><video id="video-sintel" width="600" height="337" style="object-fit: fill;" controls="" poster="images/sintel-trailer.jpg"><source src="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span> <span class="codenumber">17.4.</span> Sintel (Trailer @480p), <a class="external" href="https://durian.blender.org/" target="_blank"><code class="code-inline tex2jax_ignore">https://durian.blender.org/</code></a></figcaption></figure><figure class="figure-like" id="figure-51"><video id="video-5" width="420" height="236" style="object-fit: fill;" controls="" poster="images/big-buck-bunny-frame-one.jpg"><source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.webm#t=16,30" type="video/webm"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span> <span class="codenumber">17.5.</span> Big Buck Bunny from “Video for Everybody” Test Page at <a class="external" href="http://camendesign.com/code/video_for_everybody/test.htm" target="_blank"><code class="code-inline tex2jax_ignore">camendesign.com/code/video_for_everybody/test.htm</code></a></figcaption></figure></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">17.2</span> <span class="title">YouTube</span>
+</h3>
+<p id="p-674">YouTube videos may be embedded with only knowledge of a video's “ID” or a “playlist ID”.  A single video's YouTube ID is a string of eleven seemingly random characters that show up in the URL when you watch a video.  For the Led Zeppelin performance below, the ID is <code class="code-inline tex2jax_ignore">hAzdgU_kpGo</code>, which you might normally watch directly from the URL <a class="external" href="https://www.youtube.com/watch?v=hAzdgU_kpGo" target="_blank"><code class="code-inline tex2jax_ignore">https://www.youtube.com/watch?v=hAzdgU_kpGo</code></a>.  Screen real estate is determined by specifying an optional <code class="code-inline tex2jax_ignore">@width</code> attribute as a percentage, and aspect ratio is preserved on the assumption of HD video (16:9).  (Enhancements will include other aspect ratios.)</p>
+<p id="p-675">If you have ever owned a drone, you sympathize with this guy.  Way funnier than a cat video.</p>
+<figure class="figure-like" id="figure-52"><iframe id="drone-flight-full" width="600" height="337" allowfullscreen="" src="https://www.youtube.com/embed/VsHMjWORFvI?&amp;modestbranding=1&amp;rel=0"></iframe><figcaption><span class="type">Figure</span> <span class="codenumber">17.6.</span> First Drone Flight (1:28)</figcaption></figure><p id="p-676">If you are only interested in a piece of the action, you can limit the video with <code class="code-inline tex2jax_ignore">start</code> and <code class="code-inline tex2jax_ignore">end</code> attributes in seconds.  You might make those times clear in the caption for readers getting the link out of a PDF.  Some videos may not respect these parameters.</p>
+<figure class="figure-like" id="figure-53"><iframe id="drone-flight-clip" width="600" height="337" allowfullscreen="" src="https://www.youtube.com/embed/VsHMjWORFvI?&amp;modestbranding=1&amp;rel=0&amp;start=54&amp;end=72"></iframe><figcaption><span class="type">Figure</span> <span class="codenumber">17.7.</span> First Drone Flight (Splashdown, 0:54 to 1:12)</figcaption></figure><p id="p-677">Videos may be placed “standalone” in a <code class="code-inline tex2jax_ignore">&lt;sidebyside&gt;</code>, but are designed mostly on the assumption that they are wrapped in a <code class="code-inline tex2jax_ignore">figure</code> with a <code class="code-inline tex2jax_ignore">title</code> (which is distinct from a <code class="code-inline tex2jax_ignore">caption</code>).  This video comes with a deafult poster featuring Robert Plant.  We've replaced it with Jimmy Page.</p>
+<figure class="figure-like" id="figure-54"><div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'"><img width="420" height="236" src="images/jimmy-page.jpg" alt="Video cover image"></div>
+<div class="hidden-content"><iframe id="led-zeppelin-kashmir" width="420" height="236" allowfullscreen="" src="https://www.youtube.com/embed/hAzdgU_kpGo?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">17.8.</span> Kashmir (Live), Led Zeppelin. O2 Arena, London. December 10, 2007. (8:55)</figcaption></figure><p id="p-678">And if you don't want to be reminded of Plant, Page, Bonham, or Jones, you can cover them up.</p>
+<figure class="figure-like" id="figure-55"><div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 14 96 68" width="300" height="169" style="cursor:pointer;" preserveAspectRatio="none"><path fill="#e62117" d="M94.98,28.84c0,0-0.94-6.6-3.81-9.5c-3.64-3.81-7.72-3.83-9.59-4.05c-13.4-0.97-33.52-0.85-33.52-0.85s-20.12-0.12-33.52,0.85c-1.87,0.22-5.95,0.24-9.59,4.05c-2.87,2.9-3.81,9.5-3.81,9.5S0.18,36.58,0,44.33v7.26c0.18,7.75,1.14,15.49,1.14,15.49s0.93,6.6,3.81,9.5c3.64,3.81,8.43,3.69,10.56,4.09c7.53,0.72,31.7,0.89,32.54,0.9c0.01,0,20.14,0.03,33.54-0.94c1.87-0.22,5.95-0.24,9.59-4.05c2.87-2.9,3.81-9.5,3.81-9.5s0.96-7.75,1.02-15.49v-7.26C95.94,36.58,94.98,28.84,94.98,28.84z M38.28,61.41v-27l25.74,13.5L38.28,61.41z"></path></svg></div>
+<div class="hidden-content"><iframe id="led-zeppelin-kashmir-generic" width="300" height="169" allowfullscreen="" src="https://www.youtube.com/embed/hAzdgU_kpGo?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">17.9.</span> Kashmir (Live), Led Zeppelin. O2 Arena, London. December 10, 2007. (8:55)</figcaption></figure><p id="p-679">We can pack two videos side-by-side, with a lot of horizontal control, using two panels in the <code class="code-inline tex2jax_ignore">sidebyside</code> element.  We have simply chose not to provide a caption (overall, or separately) as an illustration.  The sizes are purposely a bit odd.  See <a href="section-side-by-side.html" class="internal" title="Section 23: Side-By-Side Panels">Section 23</a> for much more on side-by-side panels.  These videos come from the “Topic” and “VEVO” areas of YouTube (respectively) and both have start/end times.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;">
+<div class="sbspanel" style="width:25%;justify-content:center;"><iframe id="minelli-newyork-newyork" width="120" height="67" allowfullscreen="" src="https://www.youtube.com/embed/5-pyc_z7WbY?&amp;modestbranding=1&amp;rel=0&amp;start=16&amp;end=35"></iframe></div>
+<div class="sbspanel" style="width:50%;justify-content:center;"><iframe id="bareilles-love-song" width="240" height="135" allowfullscreen="" src="https://www.youtube.com/embed/qi7Yh16dA0w?&amp;modestbranding=1&amp;rel=0&amp;start=60&amp;end=120"></iframe></div>
+</div></div>
+<p id="p-680">These next two videos are evenly spaced, one from YouTube, one from a source file hosted by the author.  Now with separate captions, but identical margins (through very different choices of layout parameters than in the preceding pair of videos).</p>
+<div class="sidebyside">
+<div class="sbsrow" style="margin-left:10%;margin-right:10%;">
+<div class="sbspanel" style="width:43.75%;justify-content:flex-start;"><iframe id="drone-flight-sbs" width="210" height="118" allowfullscreen="" src="https://www.youtube.com/embed/VsHMjWORFvI?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<div class="sbspanel" style="width:43.75%;justify-content:flex-start;"><video id="ups-promo-sbs" width="210" height="118" style="object-fit: fill;" controls="" poster="images/ups-promo-frame-one.jpg"><source src="images/ups-visitor-guide-360.ogg" type="video/ogg"></source><source src="images/ups-visitor-guide-360.webm" type="video/webm"></source><source src="images/ups-visitor-guide-360.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video></div>
+</div>
+<div class="sbsrow" style="margin-left:10%;margin-right:10%;">
+<figcaption class="sbscaption" style="width:43.75%;"><span class="type">Figure</span> <span class="codenumber">17.10.</span> Drone Flight</figcaption><figcaption class="sbscaption" style="width:43.75%;"><span class="type">Figure</span> <span class="codenumber">17.11.</span> UPS Promo</figcaption>
+</div>
+</div>
+<p id="p-681">A YouTube “playlist” can be built in one of two ways. You may specify the <code class="code-inline tex2jax_ignore">youtube</code> attribute to be a space-separated list of several video IDs. Alternatively, you may set the <code class="code-inline tex2jax_ignore">youtubeplaylist</code> attribute to a YouTube playlist ID.</p>
+<div class="sidebyside">
+<div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:47%;justify-content:flex-start;"><iframe id="zeppelin-playlist" width="282" height="159" allowfullscreen="" src="https://www.youtube.com/embed?playlist=6tlSx0jkuLM,FeJkDewhTEw&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<div class="sbspanel" style="width:47%;justify-content:flex-start;"><iframe id="video-15" width="282" height="159" allowfullscreen="" src="https://www.youtube.com/embed?listType=playlist&amp;list=PLGRecdYLYDNdX5NEkS3KH-ZtCqc2f8lJ_&amp;modestbranding=1&amp;rel=0"></iframe></div>
+</div>
+<div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<figcaption class="sbscaption" style="width:47%;"><span class="type">Figure</span> <span class="codenumber">17.12.</span> Individual IDs specified in an “itemized” playlist</figcaption><figcaption class="sbscaption" style="width:47%;"><span class="type">Figure</span> <span class="codenumber">17.13.</span> YouTube playlist ID specified in a “named” playlist</figcaption>
+</div>
+</div>
+<p id="p-682">Videos may be embedded, or popped-out to play in a new window or tab (at greater width), or a link will give the reader the option to choose either style of playback.  The automatic pop-out option requires a static thumbnail image.  (For YouTube, these images can be obtained automatically with the <code class="code-inline tex2jax_ignore">mbx</code> script.)</p>
+<figure class="figure-like" id="figure-60"><div class="sidebyside">
+<div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:30%;justify-content:flex-start;"><iframe id="pre-roll-countdown-1" width="180" height="101" allowfullscreen="" src="https://www.youtube.com/embed/gFHQ6Y0nxWs?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<div class="sbspanel" style="width:30%;justify-content:flex-start;">
+<a href="pre-roll-countdown-2.html" target="_blank"><img src="images/pre-roll-countdown-2.jpg" width="180" height="101" alt="Video cover image"></a><div style="text-align: center;">Click Above to Play</div>
+</div>
+<div class="sbspanel" style="width:30%;justify-content:flex-start;">
+<iframe id="pre-roll-countdown-3" width="180" height="101" allowfullscreen="" src="https://www.youtube.com/embed/gFHQ6Y0nxWs?&amp;modestbranding=1&amp;rel=0"></iframe><div style="text-align: center;"><a href="pre-roll-countdown-3.html" target="_blank">Click to Pop-Out</a></div>
+</div>
+</div>
+<div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<figcaption class="sbscaption" style="width:30%;"><span class="codenumber">(a)</span>Embedded Only</figcaption><figcaption class="sbscaption" style="width:30%;"><span class="codenumber">(b)</span>Pop-Out Only, w/ Start/End</figcaption><figcaption class="sbscaption" style="width:30%;"><span class="codenumber">(c)</span>User Selection</figcaption>
+</div>
+</div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">17.14.</span> YouTube Play Location Options (<code class="code-inline tex2jax_ignore">play-at</code> attribute)</figcaption></figure><p id="p-683">Each of the three options above may have a generic play button placed over the one provided by the video.</p>
+<figure class="figure-like" id="figure-64"><div class="sidebyside">
+<div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:30%;justify-content:flex-start;">
+<div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 14 96 68" width="180" height="101" style="cursor:pointer;" preserveAspectRatio="none"><path fill="#e62117" d="M94.98,28.84c0,0-0.94-6.6-3.81-9.5c-3.64-3.81-7.72-3.83-9.59-4.05c-13.4-0.97-33.52-0.85-33.52-0.85s-20.12-0.12-33.52,0.85c-1.87,0.22-5.95,0.24-9.59,4.05c-2.87,2.9-3.81,9.5-3.81,9.5S0.18,36.58,0,44.33v7.26c0.18,7.75,1.14,15.49,1.14,15.49s0.93,6.6,3.81,9.5c3.64,3.81,8.43,3.69,10.56,4.09c7.53,0.72,31.7,0.89,32.54,0.9c0.01,0,20.14,0.03,33.54-0.94c1.87-0.22,5.95-0.24,9.59-4.05c2.87-2.9,3.81-9.5,3.81-9.5s0.96-7.75,1.02-15.49v-7.26C95.94,36.58,94.98,28.84,94.98,28.84z M38.28,61.41v-27l25.74,13.5L38.28,61.41z"></path></svg></div>
+<div class="hidden-content"><iframe id="pre-roll-countdown-4" width="180" height="101" allowfullscreen="" src="https://www.youtube.com/embed/gFHQ6Y0nxWs?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+</div>
+<div class="sbspanel" style="width:30%;justify-content:flex-start;">
+<a href="pre-roll-countdown-5.html" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 14 96 68" width="180" height="101" style="cursor:pointer;" preserveAspectRatio="none"><path fill="#e62117" d="M94.98,28.84c0,0-0.94-6.6-3.81-9.5c-3.64-3.81-7.72-3.83-9.59-4.05c-13.4-0.97-33.52-0.85-33.52-0.85s-20.12-0.12-33.52,0.85c-1.87,0.22-5.95,0.24-9.59,4.05c-2.87,2.9-3.81,9.5-3.81,9.5S0.18,36.58,0,44.33v7.26c0.18,7.75,1.14,15.49,1.14,15.49s0.93,6.6,3.81,9.5c3.64,3.81,8.43,3.69,10.56,4.09c7.53,0.72,31.7,0.89,32.54,0.9c0.01,0,20.14,0.03,33.54-0.94c1.87-0.22,5.95-0.24,9.59-4.05c2.87-2.9,3.81-9.5,3.81-9.5s0.96-7.75,1.02-15.49v-7.26C95.94,36.58,94.98,28.84,94.98,28.84z M38.28,61.41v-27l25.74,13.5L38.28,61.41z"></path></svg></a><div style="text-align: center;">Click Above to Play</div>
+</div>
+<div class="sbspanel" style="width:30%;justify-content:flex-start;">
+<div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 14 96 68" width="180" height="101" style="cursor:pointer;" preserveAspectRatio="none"><path fill="#e62117" d="M94.98,28.84c0,0-0.94-6.6-3.81-9.5c-3.64-3.81-7.72-3.83-9.59-4.05c-13.4-0.97-33.52-0.85-33.52-0.85s-20.12-0.12-33.52,0.85c-1.87,0.22-5.95,0.24-9.59,4.05c-2.87,2.9-3.81,9.5-3.81,9.5S0.18,36.58,0,44.33v7.26c0.18,7.75,1.14,15.49,1.14,15.49s0.93,6.6,3.81,9.5c3.64,3.81,8.43,3.69,10.56,4.09c7.53,0.72,31.7,0.89,32.54,0.9c0.01,0,20.14,0.03,33.54-0.94c1.87-0.22,5.95-0.24,9.59-4.05c2.87-2.9,3.81-9.5,3.81-9.5s0.96-7.75,1.02-15.49v-7.26C95.94,36.58,94.98,28.84,94.98,28.84z M38.28,61.41v-27l25.74,13.5L38.28,61.41z"></path></svg></div>
+<div class="hidden-content"><iframe id="pre-roll-countdown-6" width="180" height="101" allowfullscreen="" src="https://www.youtube.com/embed/gFHQ6Y0nxWs?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<div style="text-align: center;"><a href="pre-roll-countdown-6.html" target="_blank">Click to Pop-Out</a></div>
+</div>
+</div>
+<div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<figcaption class="sbscaption" style="width:30%;"><span class="codenumber">(a)</span>Embedded Only</figcaption><figcaption class="sbscaption" style="width:30%;"><span class="codenumber">(b)</span>Pop-Out Only, w/ Start/End</figcaption><figcaption class="sbscaption" style="width:30%;"><span class="codenumber">(c)</span>User Selection</figcaption>
+</div>
+</div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">17.15.</span> YouTube with Generic Preview</figcaption></figure><p id="p-684">Now, the six combinations above with an author-hosted video.</p>
+<figure class="figure-like" id="figure-68"><div class="sidebyside">
+<div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:30%;justify-content:flex-start;"><video id="ups-promo-1" width="180" height="101" style="object-fit: fill;" controls="" poster="images/ups-promo-frame-one.jpg"><source src="images/ups-visitor-guide-360.ogg" type="video/ogg"></source><source src="images/ups-visitor-guide-360.webm" type="video/webm"></source><source src="images/ups-visitor-guide-360.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video></div>
+<div class="sbspanel" style="width:30%;justify-content:flex-start;">
+<a href="ups-promo-2.html" target="_blank"><img src="images/ups-promo-2.jpg" width="180" height="101" alt="Video cover image"></a><div style="text-align: center;">Click Above to Play</div>
+</div>
+<div class="sbspanel" style="width:30%;justify-content:flex-start;">
+<video id="ups-promo-3" width="180" height="101" style="object-fit: fill;" controls="" poster="images/ups-promo-frame-one.jpg"><source src="images/ups-visitor-guide-360.ogg" type="video/ogg"></source><source src="images/ups-visitor-guide-360.webm" type="video/webm"></source><source src="images/ups-visitor-guide-360.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><div style="text-align: center;"><a href="ups-promo-3.html" target="_blank">Click to Pop-Out</a></div>
+</div>
+</div>
+<div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<figcaption class="sbscaption" style="width:30%;"><span class="codenumber">(a)</span>Embedded Only</figcaption><figcaption class="sbscaption" style="width:30%;"><span class="codenumber">(b)</span>Pop-Out Only, w/ Start/End</figcaption><figcaption class="sbscaption" style="width:30%;"><span class="codenumber">(c)</span>User Selection</figcaption>
+</div>
+</div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">17.16.</span> Author-Hosted Play Location Options (<code class="code-inline tex2jax_ignore">play-at</code> attribute)</figcaption></figure><figure class="figure-like" id="figure-72"><div class="sidebyside">
+<div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:30%;justify-content:flex-start;"><video id="ups-promo-4" width="180" height="135" style="object-fit: fill;" controls="" poster="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%2014%2096%2068%22%20style%3D%22cursor%3Apointer%3B%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20fill%3D%22%23e62117%22%20d%3D%22M94.98%2C28.84c0%2C0-0.94-6.6-3.81-9.5c-3.64-3.81-7.72-3.83-9.59-4.05c-13.4-0.97-33.52-0.85-33.52-0.85s-20.12-0.12-33.52%2C0.85c-1.87%2C0.22-5.95%2C0.24-9.59%2C4.05c-2.87%2C2.9-3.81%2C9.5-3.81%2C9.5S0.18%2C36.58%2C0%2C44.33v7.26c0.18%2C7.75%2C1.14%2C15.49%2C1.14%2C15.49s0.93%2C6.6%2C3.81%2C9.5c3.64%2C3.81%2C8.43%2C3.69%2C10.56%2C4.09c7.53%2C0.72%2C31.7%2C0.89%2C32.54%2C0.9c0.01%2C0%2C20.14%2C0.03%2C33.54-0.94c1.87-0.22%2C5.95-0.24%2C9.59-4.05c2.87-2.9%2C3.81-9.5%2C3.81-9.5s0.96-7.75%2C1.02-15.49v-7.26C95.94%2C36.58%2C94.98%2C28.84%2C94.98%2C28.84z%20M38.28%2C61.41v-27l25.74%2C13.5L38.28%2C61.41z%22%2F%3E%3C%2Fsvg%3E"><source src="images/ups-visitor-guide-360.ogg" type="video/ogg"></source><source src="images/ups-visitor-guide-360.webm" type="video/webm"></source><source src="images/ups-visitor-guide-360.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video></div>
+<div class="sbspanel" style="width:30%;justify-content:flex-start;">
+<a href="ups-promo-5.html" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 14 96 68" width="180" height="450" style="cursor:pointer;" preserveAspectRatio="none"><path fill="#e62117" d="M94.98,28.84c0,0-0.94-6.6-3.81-9.5c-3.64-3.81-7.72-3.83-9.59-4.05c-13.4-0.97-33.52-0.85-33.52-0.85s-20.12-0.12-33.52,0.85c-1.87,0.22-5.95,0.24-9.59,4.05c-2.87,2.9-3.81,9.5-3.81,9.5S0.18,36.58,0,44.33v7.26c0.18,7.75,1.14,15.49,1.14,15.49s0.93,6.6,3.81,9.5c3.64,3.81,8.43,3.69,10.56,4.09c7.53,0.72,31.7,0.89,32.54,0.9c0.01,0,20.14,0.03,33.54-0.94c1.87-0.22,5.95-0.24,9.59-4.05c2.87-2.9,3.81-9.5,3.81-9.5s0.96-7.75,1.02-15.49v-7.26C95.94,36.58,94.98,28.84,94.98,28.84z M38.28,61.41v-27l25.74,13.5L38.28,61.41z"></path></svg></a><div style="text-align: center;">Click Above to Play</div>
+</div>
+<div class="sbspanel" style="width:30%;justify-content:flex-start;">
+<video id="ups-promo-6" width="180" height="171" style="object-fit: fill;" controls="" poster="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%2014%2096%2068%22%20style%3D%22cursor%3Apointer%3B%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20fill%3D%22%23e62117%22%20d%3D%22M94.98%2C28.84c0%2C0-0.94-6.6-3.81-9.5c-3.64-3.81-7.72-3.83-9.59-4.05c-13.4-0.97-33.52-0.85-33.52-0.85s-20.12-0.12-33.52%2C0.85c-1.87%2C0.22-5.95%2C0.24-9.59%2C4.05c-2.87%2C2.9-3.81%2C9.5-3.81%2C9.5S0.18%2C36.58%2C0%2C44.33v7.26c0.18%2C7.75%2C1.14%2C15.49%2C1.14%2C15.49s0.93%2C6.6%2C3.81%2C9.5c3.64%2C3.81%2C8.43%2C3.69%2C10.56%2C4.09c7.53%2C0.72%2C31.7%2C0.89%2C32.54%2C0.9c0.01%2C0%2C20.14%2C0.03%2C33.54-0.94c1.87-0.22%2C5.95-0.24%2C9.59-4.05c2.87-2.9%2C3.81-9.5%2C3.81-9.5s0.96-7.75%2C1.02-15.49v-7.26C95.94%2C36.58%2C94.98%2C28.84%2C94.98%2C28.84z%20M38.28%2C61.41v-27l25.74%2C13.5L38.28%2C61.41z%22%2F%3E%3C%2Fsvg%3E"><source src="images/ups-visitor-guide-360.ogg" type="video/ogg"></source><source src="images/ups-visitor-guide-360.webm" type="video/webm"></source><source src="images/ups-visitor-guide-360.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><div style="text-align: center;"><a href="ups-promo-6.html" target="_blank">Click to Pop-Out</a></div>
+</div>
+</div>
+<div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<figcaption class="sbscaption" style="width:30%;"><span class="codenumber">(a)</span>Embedded Only</figcaption><figcaption class="sbscaption" style="width:30%;"><span class="codenumber">(b)</span>Pop-Out Only, w/ Start/End</figcaption><figcaption class="sbscaption" style="width:30%;"><span class="codenumber">(c)</span>User Selection</figcaption>
+</div>
+</div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">17.17.</span> Author-Hosted, Generic Preview, Experimental Aspect Ratios</figcaption></figure></section><section class="subsection" id="subsection-55"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">17.3</span> <span class="title">Vimeo</span>
+</h3>
+<p id="p-685">We support videos from <a class="external" href="https://vimeo.com/" target="_blank">Vimeo</a><a data-knowl="" class="id-ref" data-refid="hk-fn-14" id="fn-14"><sup> 1 </sup></a><span id="hk-fn-14" class="hidden-content tex2jax_ignore"><span class="footnote"><code class="code-inline tex2jax_ignore">vimeo.com</code></span></span> in much the same way as YouTube videos.  Now the identifier is a long integer.  For example, the video up next would normally be found at <code class="code-inline tex2jax_ignore">https://vimeo.com/27246366</code>.  But instead, you can embed the video with as little as <code class="code-inline tex2jax_ignore">&lt;video vimeo="27246366"/&gt;</code>.  As of 2019-05-18, we intend to support as many of the options described above as possible.  Widths and heights (via the aspect ratio) will perform as expected.  We have not investigated start and end times.</p>
+<figure class="figure-like" id="figure-76"><div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'"><img width="480" height="270" src="images/move.png" alt="Video cover image"></div>
+<div class="hidden-content"><iframe id="video-28" width="480" height="270" allowfullscreen="" src="https://player.vimeo.com/video/27246366?color=ffffff&amp;autoplay=1" frameborder="0" allow="autoplay; fullscreen"></iframe></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">17.18.</span> <span class="articletitle">“MOVE”</span>, by <a class="external" href="https://vimeo.com/rickmereki" target="_blank">Rick Mereki</a>, <code class="code-inline tex2jax_ignore">vimeo.com/rickmereki</code></figcaption></figure></section></section></div></main>
+</div>
+<script>createAllVisualizersFromHtmlAttrs();</script><div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.11/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2019-12-12T10:41:17-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SA Advanced Numbering</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/javascript" src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    
+    /* support for the sfrac command in MathJax (Beveled fraction)
+        see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://unpkg.com/@doenet/beta"></script><link rel="stylesheet" href="https://unpkg.com/@doenet/beta/dist/main.css">
+<style>
+      .doenet-panel { top: auto; bottom: 0; }
+    </style>
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+ let worksheet = new window.doenet.Worksheet();
+ setTimeout(function(){ worksheet.progress = 1; }, 1000);
+});
+    </script><script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script><script>(function() {
+  var cx = '008832104071767086392:j6aknlqevbm';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraph.css">
+<script type="text/javascript" src="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraphcore.js"></script><link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//releases.flowplayer.org/5.4.6/skin/minimalist.css">
+<script src="https://releases.flowplayer.org/5.4.6/flowplayer.min.js"></script><script>flowplayer.conf = {
+    };</script>
+</head>
+<body class="mathbook-article has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner">
+<div class="searchwrapper"><div class="gcse-search"></div></div>
+<div class="container">
+<a id="logo-link" href="http://mathbook.pugetsound.edu" target="_blank"><img src="images/book-cover-google-art-project.jpg"></a><div class="title-container">
+<h1 class="heading"><a href="derivatives.html"><span class="title">Derivatives and Integrals</span><span class="subtitle">An Annotated Discourse</span></a></h1>
+<p class="byline">Robert Beezer</p>
+</div>
+</div>
+</div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='derivatives.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="backmatter.html#index-part-1" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="poetry.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="derivatives.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-24.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="poetry.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="derivatives.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-24.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="index.html"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="section-1.html"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<h2 class="link"><a href="section-fundamental-theorem.html"><span class="codenumber">2</span><span class="title">The Fundamental Theorem</span></a></h2>
+<h2 class="link"><a href="section-sage-cells.html"><span class="codenumber">3</span><span class="title">Computing Integrals with Sage (\(\int\))</span></a></h2>
+<h2 class="link"><a href="interesting-corollary.html"><span class="codenumber">4</span><span class="title">An Interesting Corollary</span></a></h2>
+<h2 class="link"><a href="section-5.html"><span class="codenumber">5</span><span class="title">Some Facts and Figures</span></a></h2>
+<h2 class="link"><a href="section-6.html"><span class="codenumber">6</span><span class="title">Some Advanced Ideas</span></a></h2>
+<h2 class="link"><a href="section-7.html"><span class="codenumber">7</span><span class="title">Mathematics</span></a></h2>
+<h2 class="link"><a href="section-8.html"><span class="codenumber">8</span><span class="title">Special, Reserved, and Escape Characters</span></a></h2>
+<h2 class="link"><a href="graphics.html"><span class="codenumber">9</span><span class="title">Graphics</span></a></h2>
+<h2 class="link"><a href="section-10.html"><span class="codenumber">10</span><span class="title">Demonstrations</span></a></h2>
+<h2 class="link"><a href="section-11.html"><span class="codenumber">11</span><span class="title">Further Reading</span></a></h2>
+<h2 class="link"><a href="section-12.html"><span class="codenumber">12</span><span class="title">List Calisthenics</span></a></h2>
+<h2 class="link"><a href="section-13.html"><span class="codenumber">13</span><span class="title">Table Calisthenics</span></a></h2>
+<h2 class="link"><a href="section-14.html"><span class="codenumber">14</span><span class="title">Embedded Interactive Elements</span></a></h2>
+<h2 class="link"><a href="section-15.html"><span class="codenumber">15</span><span class="title">Video</span></a></h2>
+<h2 class="link"><a href="exercises.html"><span class="codenumber">16</span><span class="title">Exercises</span></a></h2>
+<h2 class="link"><a href="section-cross-referencing.html"><span class="codenumber">17</span><span class="title">Cross-Referencing</span></a></h2>
+<h2 class="link"><a href="section-internationalization.html"><span class="codenumber">18</span><span class="title">Internationalization</span></a></h2>
+<h2 class="link"><a href="section-18.html"><span class="codenumber">19</span><span class="title">Pre-Formatted Text</span></a></h2>
+<h2 class="link"><a href="section-programs.html"><span class="codenumber">20</span><span class="title">Program Listings</span></a></h2>
+<h2 class="link"><a href="section-20.html"><span class="codenumber">21</span><span class="title">Units of Measure</span></a></h2>
+<h2 class="link"><a href="section-side-by-side.html"><span class="codenumber">22</span><span class="title">Side-By-Side Panels</span></a></h2>
+<h2 class="link"><a href="poetry.html"><span class="codenumber">23</span><span class="title">Poetry</span></a></h2>
+<h2 class="link active"><a href="advanced-numbering.html"><span class="codenumber">24</span><span class="title">Advanced Numbering</span></a></h2>
+<h2 class="link"><a href="section-24.html"><span class="codenumber">25</span><span class="title">Customizations</span></a></h2>
+<h2 class="link"><a href="backmatter.html"><span class="title">Reference</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="not-implemented.html">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="advanced-numbering"><header title="Section 24 Advanced Numbering"><h1 class="heading hide-type" alt="Section 24 Advanced Numbering">
+<span class="type">Section</span><span class="codenumber">24</span><span class="title">Advanced Numbering</span><a href="advanced-numbering.html" class="permalink">¶ permalink</a>
+</h1></header><section class="introduction" id="introduction-15"><p id="p-622">This section demonstrates the numbering patterns used throughout MathBook XML.  There are five subsections.  Two intermediate subsections each have two subsubsections.  This creates a total of seven divisions that are leaves of the document tree.  In each leaf we have placed two numbered theorems, for a total of fourteen.  There is no real content, this is just a demonstration.</p>
+<p id="p-623">Use values of <tt class="code-inline tex2jax_ignore">0</tt> through <tt class="code-inline tex2jax_ignore">3</tt> for the <tt class="code-inline tex2jax_ignore">numbering.theorems.level</tt> parameter to see how these numbers change accordingly.  It is easiest to compare if you use <tt class="code-inline tex2jax_ignore">chunk.level &lt; 2</tt> so the theorems all land on the same page if you are previewing in HTML.</p></section><section class="subsection" id="subsection-43"><header title="Subsection 24.1 One"><h1 class="heading hide-type" alt="Subsection 24.1 One">
+<span class="type">Subsection</span><span class="codenumber">24.1</span><span class="title">One</span>
+</h1></header><p id="p-624">A document leaf.</p>
+<article class="theorem-like" id="theorem-number-01"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">24.1</span><span class="title">First Theorem</span>
+</h5>
+<p id="p-625">No statement.</p></article><article class="theorem-like" id="theorem-number-02"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">24.2</span><span class="title">Second Theorem</span>
+</h5>
+<p id="p-626">No statement.</p></article></section><section class="subsection" id="subsection-44"><header title="Subsection 24.2 Two"><h1 class="heading hide-type" alt="Subsection 24.2 Two">
+<span class="type">Subsection</span><span class="codenumber">24.2</span><span class="title">Two</span>
+</h1></header><section class="introduction" id="introduction-16"><p id="p-627">Further subdivided.</p></section><section class="subsubsection" id="subsubsection-6"><header title="Subsubsection 24.2.1 Uno"><h1 class="heading hide-type" alt="Subsubsection 24.2.1 Uno">
+<span class="type">Subsubsection</span><span class="codenumber">24.2.1</span><span class="title">Uno</span>
+</h1></header><p id="p-628">A document leaf.</p>
+<article class="theorem-like" id="theorem-number-03"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">24.3</span><span class="title">First Theorem</span>
+</h5>
+<p id="p-629">No statement.</p></article><article class="theorem-like" id="theorem-number-04"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">24.4</span><span class="title">Second Theorem</span>
+</h5>
+<p id="p-630">No statement.</p></article></section><section class="subsubsection" id="subsubsection-7"><header title="Subsubsection 24.2.2 Dos"><h1 class="heading hide-type" alt="Subsubsection 24.2.2 Dos">
+<span class="type">Subsubsection</span><span class="codenumber">24.2.2</span><span class="title">Dos</span>
+</h1></header><p id="p-631">A document leaf.</p>
+<article class="theorem-like" id="theorem-number-05"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">24.5</span><span class="title">First Theorem</span>
+</h5>
+<p id="p-632">No statement.</p></article><article class="theorem-like" id="theorem-number-06"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">24.6</span><span class="title">Second Theorem</span>
+</h5>
+<p id="p-633">No statement.</p></article></section></section><section class="subsection" id="subsection-45"><header title="Subsection 24.3 Three"><h1 class="heading hide-type" alt="Subsection 24.3 Three">
+<span class="type">Subsection</span><span class="codenumber">24.3</span><span class="title">Three</span>
+</h1></header><p id="p-634">A document leaf.</p>
+<article class="theorem-like" id="theorem-number-07"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">24.7</span><span class="title">First Theorem</span>
+</h5>
+<p id="p-635">No statement.</p></article><article class="theorem-like" id="theorem-number-08"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">24.8</span><span class="title">Second Theorem</span>
+</h5>
+<p id="p-636">No statement.</p></article></section><section class="subsection" id="subsection-46"><header title="Subsection 24.4 Four"><h1 class="heading hide-type" alt="Subsection 24.4 Four">
+<span class="type">Subsection</span><span class="codenumber">24.4</span><span class="title">Four</span>
+</h1></header><section class="introduction" id="introduction-17"><p id="p-637">Further subdivided.  We include two theorems as numbered items in the introduction to test their numbers, which should always be logical.</p>
+<article class="theorem-like" id="theorem-good-one"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">24.9</span><span class="title">Good Numbered Theorem One</span>
+</h5>
+<p id="p-638">No statement.</p></article><article class="theorem-like" id="theorem-good-two"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">24.10</span><span class="title">Good Numbered Theorem Two</span>
+</h5>
+<p id="p-639">No statement.</p></article></section><section class="subsubsection" id="subsubsection-8"><header title="Subsubsection 24.4.1 Uno"><h1 class="heading hide-type" alt="Subsubsection 24.4.1 Uno">
+<span class="type">Subsubsection</span><span class="codenumber">24.4.1</span><span class="title">Uno</span>
+</h1></header><p id="p-640">A document leaf.</p>
+<article class="theorem-like" id="theorem-number-09"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">24.11</span><span class="title">First Theorem</span>
+</h5>
+<p id="p-641">No statement.</p></article><article class="theorem-like" id="theorem-number-10"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">24.12</span><span class="title">Second Theorem</span>
+</h5>
+<p id="p-642">No statement.</p></article></section><section class="subsubsection" id="subsubsection-9"><header title="Subsubsection 24.4.2 Dos"><h1 class="heading hide-type" alt="Subsubsection 24.4.2 Dos">
+<span class="type">Subsubsection</span><span class="codenumber">24.4.2</span><span class="title">Dos</span>
+</h1></header><p id="p-643">A document leaf.</p>
+<article class="theorem-like" id="theorem-number-11"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">24.13</span><span class="title">First Theorem</span>
+</h5>
+<p id="p-644">No statement.</p></article><article class="theorem-like" id="theorem-number-12"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">24.14</span><span class="title">Second Theorem</span>
+</h5>
+<p id="p-645">No statement.</p></article></section><section class="conclusion" id="conclusion-10"><p id="p-646">Conclusion now.  We include two theorems as numbered items in the conclusion to test their numbers, which are sometimes totally illogical and are inconsistent across output formats.  To see the effect, use <tt class="code-inline tex2jax_ignore">--stringparam numbering.theorems.level 3</tt> in the <tt class="code-inline tex2jax_ignore">xsltproc</tt> invocation. See this GitHub <a class="external-url" href="https://github.com/rbeezer/mathbook/issues/139" target="_blank">issue</a> for details.</p>
+<article class="theorem-like" id="theorem-bad-one"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">24.15</span><span class="title">Bad Numbered Theorem One</span>
+</h5>
+<p id="p-647">No statement.</p></article><article class="theorem-like" id="theorem-bad-two"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">24.16</span><span class="title">Bad Numbered Theorem Two</span>
+</h5>
+<p id="p-648">No statement.</p></article></section></section><section class="subsection" id="subsection-47"><header title="Subsection 24.5 Five"><h1 class="heading hide-type" alt="Subsection 24.5 Five">
+<span class="type">Subsection</span><span class="codenumber">24.5</span><span class="title">Five</span>
+</h1></header><p id="p-649">A document leaf.</p>
+<article class="theorem-like" id="theorem-number-13"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">24.17</span><span class="title">First Theorem</span>
+</h5>
+<p id="p-650">No statement.</p></article><article class="theorem-like" id="theorem-number-14"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">24.18</span><span class="title">Second Theorem</span>
+</h5>
+<p id="p-651">No statement.</p></article></section><section class="subsection" id="subsection-local-theorems"><header title="Subsection 24.6 Theorems in This Section"><h1 class="heading hide-type" alt="Subsection 24.6 Theorems in This Section">
+<span class="type">Subsection</span><span class="codenumber">24.6</span><span class="title">Theorems in This Section</span><a href="advanced-numbering.html#subsection-local-theorems" class="permalink">¶ permalink</a>
+</h1></header><p id="p-652">We have a lot of theorems in this section, so we illustrate including an automatic list of these here.  We use the <tt class="code-inline tex2jax_ignore">elements</tt> attribute to limit the list to <tt class="code-inline tex2jax_ignore">theorem</tt> elements, and we use the <tt class="code-inline tex2jax_ignore">scope</tt> attribute to limit the list to this <tt class="code-inline tex2jax_ignore">section</tt>.  You can use an introductory <tt class="code-inline tex2jax_ignore">p</tt> like this one, or not.  The list gets no title or visual separation, so use the usual subdivision elements to make that happen.  The <tt class="code-inline tex2jax_ignore">elements</tt> attribute can be a space-delimited list of many different elements.  This list should not include the Fundamental Theorem of Calculus, Theorem <a knowl="./knowl/theorem-FTC.html" knowl-id="xref-theorem-FTC" alt="Theorem 2.1 The Fundamental Theorem of Calculus" title="Theorem 2.1 The Fundamental Theorem of Calculus">2.1</a>.  See a slightly different example in <a href="backmatter.html#appendix-results" alt="Appendix C List of Results" title="Appendix C List of Results">Appendix C</a>.</p>
+<div>
+<a knowl="./knowl/theorem-number-01.html" knowl-id="xref-theorem-number-01" alt="Theorem 24.1 First Theorem" title="Theorem 24.1 First Theorem">Theorem 24.1</a> First Theorem</div>
+<div>
+<a knowl="./knowl/theorem-number-02.html" knowl-id="xref-theorem-number-02" alt="Theorem 24.2 Second Theorem" title="Theorem 24.2 Second Theorem">Theorem 24.2</a> Second Theorem</div>
+<div>
+<a knowl="./knowl/theorem-number-03.html" knowl-id="xref-theorem-number-03" alt="Theorem 24.3 First Theorem" title="Theorem 24.3 First Theorem">Theorem 24.3</a> First Theorem</div>
+<div>
+<a knowl="./knowl/theorem-number-04.html" knowl-id="xref-theorem-number-04" alt="Theorem 24.4 Second Theorem" title="Theorem 24.4 Second Theorem">Theorem 24.4</a> Second Theorem</div>
+<div>
+<a knowl="./knowl/theorem-number-05.html" knowl-id="xref-theorem-number-05" alt="Theorem 24.5 First Theorem" title="Theorem 24.5 First Theorem">Theorem 24.5</a> First Theorem</div>
+<div>
+<a knowl="./knowl/theorem-number-06.html" knowl-id="xref-theorem-number-06" alt="Theorem 24.6 Second Theorem" title="Theorem 24.6 Second Theorem">Theorem 24.6</a> Second Theorem</div>
+<div>
+<a knowl="./knowl/theorem-number-07.html" knowl-id="xref-theorem-number-07" alt="Theorem 24.7 First Theorem" title="Theorem 24.7 First Theorem">Theorem 24.7</a> First Theorem</div>
+<div>
+<a knowl="./knowl/theorem-number-08.html" knowl-id="xref-theorem-number-08" alt="Theorem 24.8 Second Theorem" title="Theorem 24.8 Second Theorem">Theorem 24.8</a> Second Theorem</div>
+<div>
+<a knowl="./knowl/theorem-good-one.html" knowl-id="xref-theorem-good-one" alt="Theorem 24.9 Good Numbered Theorem One" title="Theorem 24.9 Good Numbered Theorem One">Theorem 24.9</a> Good Numbered Theorem One</div>
+<div>
+<a knowl="./knowl/theorem-good-two.html" knowl-id="xref-theorem-good-two" alt="Theorem 24.10 Good Numbered Theorem Two" title="Theorem 24.10 Good Numbered Theorem Two">Theorem 24.10</a> Good Numbered Theorem Two</div>
+<div>
+<a knowl="./knowl/theorem-number-09.html" knowl-id="xref-theorem-number-09" alt="Theorem 24.11 First Theorem" title="Theorem 24.11 First Theorem">Theorem 24.11</a> First Theorem</div>
+<div>
+<a knowl="./knowl/theorem-number-10.html" knowl-id="xref-theorem-number-10" alt="Theorem 24.12 Second Theorem" title="Theorem 24.12 Second Theorem">Theorem 24.12</a> Second Theorem</div>
+<div>
+<a knowl="./knowl/theorem-number-11.html" knowl-id="xref-theorem-number-11" alt="Theorem 24.13 First Theorem" title="Theorem 24.13 First Theorem">Theorem 24.13</a> First Theorem</div>
+<div>
+<a knowl="./knowl/theorem-number-12.html" knowl-id="xref-theorem-number-12" alt="Theorem 24.14 Second Theorem" title="Theorem 24.14 Second Theorem">Theorem 24.14</a> Second Theorem</div>
+<div>
+<a knowl="./knowl/theorem-bad-one.html" knowl-id="xref-theorem-bad-one" alt="Theorem 24.15 Bad Numbered Theorem One" title="Theorem 24.15 Bad Numbered Theorem One">Theorem 24.15</a> Bad Numbered Theorem One</div>
+<div>
+<a knowl="./knowl/theorem-bad-two.html" knowl-id="xref-theorem-bad-two" alt="Theorem 24.16 Bad Numbered Theorem Two" title="Theorem 24.16 Bad Numbered Theorem Two">Theorem 24.16</a> Bad Numbered Theorem Two</div>
+<div>
+<a knowl="./knowl/theorem-number-13.html" knowl-id="xref-theorem-number-13" alt="Theorem 24.17 First Theorem" title="Theorem 24.17 First Theorem">Theorem 24.17</a> First Theorem</div>
+<div>
+<a knowl="./knowl/theorem-number-14.html" knowl-id="xref-theorem-number-14" alt="Theorem 24.18 Second Theorem" title="Theorem 24.18 Second Theorem">Theorem 24.18</a> Second Theorem</div></section><section class="subsection" id="subsection-49"><header title="Subsection 24.7 A Title with ] a Right Bracket"><h1 class="heading hide-type" alt="Subsection 24.7 A Title with ] a Right Bracket">
+<span class="type">Subsection</span><span class="codenumber">24.7</span><span class="title">A Title with ] a Right Bracket</span>
+</h1></header><p id="p-653"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> has trouble with brackets that end up inside optional arguments, so this is only a check on the defense against that.</p></section></section></div></main>
+</div>
+</body>
+</html>

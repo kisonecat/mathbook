@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-06-19T12:23:56-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SA List Calisthenics</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '008832104071767086392:j6aknlqevbm';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.11;
+</script><script src="http://pythontutor.com/build/pytutor-embed.bundle.js?cc25af72af"></script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body id="pretext-SA" class="mathbook-article has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://pretextbook.org" target="_blank"><img src="images/book-cover-google-art-project.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="derivatives.html"><span class="title">Derivatives and Integrals:</span> <span class="subtitle">An Annotated Discourse</span></a></h1>
+<p class="byline">Robert Beezer</p>
+</div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-11.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="derivatives.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-13.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-11.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="derivatives.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-13.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link"><a href="index.html" data-scroll="index"><span class="title">Front Matter</span></a></li>
+<li class="link"><a href="section-1.html" data-scroll="section-1"><span class="codenumber">1</span> <span class="title">Introduction</span></a></li>
+<li class="link"><a href="section-fundamental-theorem.html" data-scroll="section-fundamental-theorem"><span class="codenumber">2</span> <span class="title">The Fundamental Theorem</span></a></li>
+<li class="link"><a href="section-sage-cells.html" data-scroll="Abc"><span class="codenumber">3</span> <span class="title">Computing Integrals with Sage (\(\int\))</span></a></li>
+<li class="link">
+<a href="interesting-corollary.html" data-scroll="interesting-corollary"><span class="codenumber">4</span> <span class="title">An Interesting Corollary</span></a><ul>
+<li><a href="interesting-corollary.html#subsection-second-FTC" data-scroll="subsection-second-FTC">Second Version of <abbr class="acronym">FTC</abbr></a></li>
+<li><a href="interesting-corollary.html#subsection-2" data-scroll="subsection-2">A Pedagogical Note about Subsection 4.1</a></li>
+<li><a href="interesting-corollary.html#subsection-3" data-scroll="subsection-3">Theorem-Like Environments</a></li>
+<li><a href="interesting-corollary.html#subsection-4" data-scroll="subsection-4">Linking Sage Cells</a></li>
+<li><a href="interesting-corollary.html#subsection-5" data-scroll="subsection-5">Hierarchy</a></li>
+<li><a href="interesting-corollary.html#subsection-intro-conclude" data-scroll="subsection-intro-conclude">Introductions and Conclusions</a></li>
+<li><a href="interesting-corollary.html#subsection-paragraph-markup" data-scroll="subsection-paragraph-markup">Some Paragraph-Level Markup</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-5.html" data-scroll="Bcd"><span class="codenumber">5</span> <span class="title">Some Facts and Figures</span></a></li>
+<li class="link"><a href="section-6.html" data-scroll="section-6"><span class="codenumber">6</span> <span class="title">Some Advanced Ideas</span></a></li>
+<li class="link">
+<a href="section-7.html" data-scroll="section-7"><span class="codenumber">7</span> <span class="title">Mathematics</span></a><ul>
+<li><a href="section-7.html#subsection-8" data-scroll="subsection-8">Basic Mathematics</a></li>
+<li><a href="section-7.html#subsection-9" data-scroll="subsection-9">Displayed Mathematics</a></li>
+<li><a href="section-7.html#subsection-10" data-scroll="subsection-10"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> Packages and MathJax Extensions</a></li>
+<li><a href="section-7.html#subsection-11" data-scroll="subsection-11">Advanced Mathematics</a></li>
+<li><a href="section-7.html#subsection-12" data-scroll="subsection-12">Local Tags on Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="text-in-paragraphs.html" data-scroll="text-in-paragraphs"><span class="codenumber">8</span> <span class="title">Text in Paragraphs</span></a><ul>
+<li><a href="text-in-paragraphs.html#subsection-xml-escape" data-scroll="subsection-xml-escape">Special <abbr class="initialism">XML</abbr> characters</a></li>
+<li><a href="text-in-paragraphs.html#subsection-14" data-scroll="subsection-14">Quotations</a></li>
+<li><a href="text-in-paragraphs.html#subsection-15" data-scroll="subsection-15">Groupings</a></li>
+<li><a href="text-in-paragraphs.html#subsection-16" data-scroll="subsection-16">Characters, Symbols, and Constructions</a></li>
+<li><a href="text-in-paragraphs.html#subsection-17" data-scroll="subsection-17">Currency</a></li>
+<li><a href="text-in-paragraphs.html#subsection-icons-in-text" data-scroll="subsection-icons-in-text">Icons in Text</a></li>
+<li><a href="text-in-paragraphs.html#section-urls" data-scroll="section-urls">URLs, such as <code class="code-inline tex2jax_ignore">http://example.com</code></a></li>
+<li><a href="text-in-paragraphs.html#subsection-20" data-scroll="subsection-20">Biological Names</a></li>
+<li><a href="text-in-paragraphs.html#subsection-21" data-scroll="subsection-21">Verbatim in titles, <code class="code-inline tex2jax_ignore">\a&amp;b#c%d~e{f}g$h_i^j</code>, OK</a></li>
+<li><a href="text-in-paragraphs.html#subsection-special-situations" data-scroll="subsection-special-situations">Special Situations</a></li>
+<li><a href="text-in-paragraphs.html#subsection-jupyter-dollars" data-scroll="subsection-jupyter-dollars">Jupyter Notebook, Markdown, MathJax, Delimiters</a></li>
+<li><a href="text-in-paragraphs.html#subsection-24" data-scroll="subsection-24"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> Characters, Ligatures, and More</a></li>
+<li><a href="text-in-paragraphs.html#subsection-25" data-scroll="subsection-25"><abbr class="initialism">HTML</abbr> and accidental mathematics</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="graphics.html" data-scroll="graphics"><span class="codenumber">9</span> <span class="title">Graphics</span></a><ul>
+<li><a href="graphics.html#subsection-26" data-scroll="subsection-26">Images from External Sources</a></li>
+<li><a href="graphics.html#subsection-27" data-scroll="subsection-27"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> images</a></li>
+<li><a href="graphics.html#subsection-28" data-scroll="subsection-28">Asymptote</a></li>
+<li><a href="graphics.html#subsection-29" data-scroll="subsection-29">Asymptote + threejs 3D</a></li>
+<li><a href="graphics.html#subsection-30" data-scroll="subsection-30">Sage Plots</a></li>
+<li><a href="graphics.html#subsection-31" data-scroll="subsection-31">Copies of Images</a></li>
+<li><a href="graphics.html#subsection-32" data-scroll="subsection-32">Caption Testing</a></li>
+<li><a href="graphics.html#captionless-images" data-scroll="captionless-images">Captionless Images</a></li>
+<li><a href="graphics.html#subsection-34" data-scroll="subsection-34">Technical Details</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-10.html" data-scroll="section-10"><span class="codenumber">10</span> <span class="title">Demonstrations</span></a></li>
+<li class="link">
+<a href="section-11.html" data-scroll="section-11"><span class="codenumber">11</span> <span class="title">Further Reading</span></a><ul>
+<li><a href="section-11.html#subsection-35" data-scroll="subsection-35">Specialized Subdivisions</a></li>
+<li><a href="section-11.html#exercises-3" data-scroll="exercises-3">Exercises</a></li>
+<li><a href="section-11.html#exercises-section-multiple" data-scroll="exercises-section-multiple">More Exercises</a></li>
+<li><a href="section-11.html#references-section" data-scroll="references-section">References</a></li>
+</ul>
+</li>
+<li class="link active">
+<a href="lists.html" data-scroll="lists"><span class="codenumber">12</span> <span class="title">List Calisthenics</span></a><ul>
+<li><a href="lists.html#subsection-36" data-scroll="subsection-36">Lists, Generally</a></li>
+<li><a href="lists.html#subsection-37" data-scroll="subsection-37">List Spacing, I</a></li>
+<li><a href="lists.html#subsection-38" data-scroll="subsection-38">List Spacing, II</a></li>
+<li><a href="lists.html#subsection-39" data-scroll="subsection-39">Description Lists</a></li>
+<li><a href="lists.html#subsection-40" data-scroll="subsection-40">Named Lists</a></li>
+<li><a href="lists.html#subsection-41" data-scroll="subsection-41">Testing List Decompositions</a></li>
+<li><a href="lists.html#exercises-5" data-scroll="exercises-5">Exercises (with lists)</a></li>
+<li><a href="lists.html#references-2" data-scroll="references-2">References (with lists in Annotations)</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-13.html" data-scroll="section-13"><span class="codenumber">13</span> <span class="title">Table Calisthenics</span></a></li>
+<li class="link">
+<a href="section-interactive-authored.html" data-scroll="section-interactive-authored"><span class="codenumber">14</span> <span class="title">Interactive Elements, Authored</span></a><ul>
+<li><a href="section-interactive-authored.html#interactive-html5-canvas" data-scroll="interactive-html5-canvas">HTML5 Canvas</a></li>
+<li><a href="section-interactive-authored.html#subsection-43" data-scroll="subsection-43">D3.js</a></li>
+<li><a href="section-interactive-authored.html#subsection-44" data-scroll="subsection-44">SVG</a></li>
+<li><a href="section-interactive-authored.html#subsection-45" data-scroll="subsection-45">JSXGraph</a></li>
+<li><a href="section-interactive-authored.html#subsection-46" data-scroll="subsection-46">Sage Interacts</a></li>
+<li><a href="section-interactive-authored.html#subsection-47" data-scroll="subsection-47">Geogebra</a></li>
+<li><a href="section-interactive-authored.html#subsection-48" data-scroll="subsection-48">threejs</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="section-interactive-server.html" data-scroll="section-interactive-server"><span class="codenumber">15</span> <span class="title">Interactive Elements, Server</span></a><ul>
+<li><a href="section-interactive-server.html#subsection-geogebra-server" data-scroll="subsection-geogebra-server">GeoGebra</a></li>
+<li><a href="section-interactive-server.html#subsection-50" data-scroll="subsection-50">Desmos Graphs</a></li>
+<li><a href="section-interactive-server.html#subsection-51" data-scroll="subsection-51">CalcPlot3D</a></li>
+<li><a href="section-interactive-server.html#subsection-52" data-scroll="subsection-52">Wolfram CDF</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-audio.html" data-scroll="section-audio"><span class="codenumber">16</span> <span class="title">Audio</span></a></li>
+<li class="link">
+<a href="section-video.html" data-scroll="section-video"><span class="codenumber">17</span> <span class="title">Video</span></a><ul>
+<li><a href="section-video.html#subsection-53" data-scroll="subsection-53">Video Files</a></li>
+<li><a href="section-video.html#subsection-54" data-scroll="subsection-54">YouTube</a></li>
+<li><a href="section-video.html#subsection-55" data-scroll="subsection-55">Vimeo</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-cross-referencing.html" data-scroll="section-cross-referencing"><span class="codenumber">18</span> <span class="title">Cross-Referencing</span></a></li>
+<li class="link"><a href="section-internationalization.html" data-scroll="section-internationalization"><span class="codenumber">19</span> <span class="title">Internationalization</span></a></li>
+<li class="link"><a href="section-20.html" data-scroll="section-20"><span class="codenumber">20</span> <span class="title">Pre-Formatted Text</span></a></li>
+<li class="link"><a href="section-programs.html" data-scroll="section-programs"><span class="codenumber">21</span> <span class="title">Program Listings</span></a></li>
+<li class="link"><a href="section-22.html" data-scroll="section-22"><span class="codenumber">22</span> <span class="title">Units of Measure</span></a></li>
+<li class="link">
+<a href="section-side-by-side.html" data-scroll="section-side-by-side"><span class="codenumber">23</span> <span class="title">Side-By-Side Panels</span></a><ul>
+<li><a href="section-side-by-side.html#subsection-56" data-scroll="subsection-56">Figures with Numbers Side-By-Side</a></li>
+<li><a href="section-side-by-side.html#subsection-57" data-scroll="subsection-57">Images</a></li>
+<li><a href="section-side-by-side.html#subsection-58" data-scroll="subsection-58">Common Side-By-Side Constructions</a></li>
+<li><a href="section-side-by-side.html#subsection-59" data-scroll="subsection-59">Vertical Alignment</a></li>
+<li><a href="section-side-by-side.html#subsection-60" data-scroll="subsection-60">Text Next to Text and Images</a></li>
+<li><a href="section-side-by-side.html#subsection-61" data-scroll="subsection-61">Image Formats, Side-by-Sides</a></li>
+<li><a href="section-side-by-side.html#subsection-62" data-scroll="subsection-62">Tables Side-By-Side</a></li>
+<li><a href="section-side-by-side.html#subsection-63" data-scroll="subsection-63">Tables Next to Figures</a></li>
+<li><a href="section-side-by-side.html#subsection-64" data-scroll="subsection-64">Tables Next to Text</a></li>
+<li><a href="section-side-by-side.html#subsection-65" data-scroll="subsection-65">Tabular Next to Each Other</a></li>
+<li><a href="section-side-by-side.html#subsection-66" data-scroll="subsection-66">Lists in Side-by-Sides</a></li>
+<li><a href="section-side-by-side.html#stacking-side-by-side" data-scroll="stacking-side-by-side">Stacking: Back to Vertical Flow</a></li>
+<li><a href="section-side-by-side.html#subsection-sbs-other-panels" data-scroll="subsection-sbs-other-panels">Other Panels</a></li>
+<li><a href="section-side-by-side.html#subsection-69" data-scroll="subsection-69">Poems as Side-By-Side Panels</a></li>
+<li><a href="section-side-by-side.html#subsection-sbsgroup" data-scroll="subsection-sbsgroup">Side-By-Side Groups</a></li>
+<li><a href="section-side-by-side.html#subsection-71" data-scroll="subsection-71">Testing a Side-By-Side First</a></li>
+<li><a href="section-side-by-side.html#subsection-72" data-scroll="subsection-72">Testing Styling of Related Elements</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-24.html" data-scroll="section-24"><span class="codenumber">24</span> <span class="title">Side-by-Side Gallery</span></a></li>
+<li class="link"><a href="poetry.html" data-scroll="poetry"><span class="codenumber">25</span> <span class="title">Poetry</span></a></li>
+<li class="link">
+<a href="advanced-numbering.html" data-scroll="advanced-numbering"><span class="codenumber">26</span> <span class="title">Advanced Numbering</span></a><ul>
+<li><a href="advanced-numbering.html#subsection-73" data-scroll="subsection-73">One</a></li>
+<li><a href="advanced-numbering.html#subsection-74" data-scroll="subsection-74">Two</a></li>
+<li><a href="advanced-numbering.html#subsection-75" data-scroll="subsection-75">Three</a></li>
+<li><a href="advanced-numbering.html#subsection-76" data-scroll="subsection-76">Four</a></li>
+<li><a href="advanced-numbering.html#subsection-77" data-scroll="subsection-77">Five</a></li>
+<li><a href="advanced-numbering.html#subsection-local-theorems" data-scroll="subsection-local-theorems">Theorems in This Section</a></li>
+<li><a href="advanced-numbering.html#subsection-with-an-exercise" data-scroll="subsection-with-an-exercise">A Title with ] a Right Bracket</a></li>
+<li><a href="advanced-numbering.html#subsection-80" data-scroll="subsection-80">Just an Exercise</a></li>
+<li><a href="advanced-numbering.html#solutions-2" data-scroll="solutions-2">Solutions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="section-27.html" data-scroll="section-27"><span class="codenumber">27</span> <span class="title">Customizations</span></a><ul><li><a href="section-27.html#rename-facility" data-scroll="rename-facility">Renaming Document Parts, Plus This Is A Really Long Title So That We Can Test How Well It Reacts To The Right Margin And Wraps Around To Form A Couple Of Lines, Plus How It Sits Relative To The Number Of The Subsection</a></li></ul>
+</li>
+<li class="link"><a href="section-myopenmath.html" data-scroll="section-myopenmath"><span class="codenumber">28</span> <span class="title">MyOpenMath Interactive Problems</span></a></li>
+<li class="link"><a href="ancillaries.html" data-scroll="ancillaries"><span class="codenumber">29</span> <span class="title">Ancillaries</span></a></li>
+<li class="link">
+<a href="worksheets.html" data-scroll="worksheets"><span class="codenumber">30</span> <span class="title">Worksheets</span></a><ul>
+<li><a href="worksheets.html#subsection-82" data-scroll="subsection-82">About Worksheets</a></li>
+<li><a href="worksheets.html#worksheet-1" data-scroll="worksheet-1">A Geometric Prelude</a></li>
+<li><a href="worksheets.html#worksheet-2" data-scroll="worksheet-2">Networks Worksheet</a></li>
+<li><a href="worksheets.html#worksheet-3" data-scroll="worksheet-3">Worksheet</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="exercises-single.html" data-scroll="exercises-single"><span class="codenumber">31</span> <span class="title">Exercises, One Subsection</span></a><ul>
+<li><a href="exercises-single.html#exercises-6" data-scroll="exercises-6">Exercise Collection</a></li>
+<li><a href="exercises-single.html#references-3" data-scroll="references-3">More Reading</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="exercises-multiple.html" data-scroll="exercises-multiple"><span class="codenumber">32</span> <span class="title">Exercises, Multiple Subsections</span></a><ul>
+<li><a href="exercises-multiple.html#subsection-83" data-scroll="subsection-83">Faux Subsection</a></li>
+<li><a href="exercises-multiple.html#exercises-drill" data-scroll="exercises-drill">Drill Exercises</a></li>
+<li><a href="exercises-multiple.html#exercises-8" data-scroll="exercises-8">Challenging Exercises</a></li>
+<li><a href="exercises-multiple.html#exercises-9" data-scroll="exercises-9">Impossible Exercises</a></li>
+<li><a href="exercises-multiple.html#references-4" data-scroll="references-4">More Reading</a></li>
+</ul>
+</li>
+<li class="link"><a href="exercises.html" data-scroll="exercises"><span class="codenumber">33</span> <span class="title">Exercises, Top-Level</span></a></li>
+<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Reference</span></a></li>
+<li class="link"><a href="appendix-1.html" data-scroll="appendix-1"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="solutions-backmatter.html" data-scroll="solutions-backmatter"><span class="codenumber">B</span> <span class="title">Solutions to Selected Exercises</span></a></li>
+<li class="link"><a href="solutions-4.html" data-scroll="solutions-4"><span class="codenumber">C</span> <span class="title">Solutions to a Single Exercises Division</span></a></li>
+<li class="link"><a href="appendix-results.html" data-scroll="appendix-results"><span class="codenumber">D</span> <span class="title">List of Results</span></a></li>
+<li class="link">
+<a href="appendix-3.html" data-scroll="appendix-3"><span class="codenumber">E</span> <span class="title">A Structured Appendix</span></a><ul><li><a href="appendix-3.html#subsection-84" data-scroll="subsection-84">A Subsection in an Appendix</a></li></ul>
+</li>
+<li class="link"><a href="appendix-4.html" data-scroll="appendix-4"><span class="codenumber">F</span> <span class="title">Index</span></a></li>
+<li class="link"><a href="references-backmatter.html" data-scroll="references-backmatter"><span class="title">References</span></a></li>
+<li class="link">
+<a href="references.html" data-scroll="references"><span class="codenumber">G</span> <span class="title">Multiple References</span></a><ul>
+<li><a href="references.html#subsection-85" data-scroll="subsection-85">Multiple Specialized References</a></li>
+<li><a href="references.html#references-6" data-scroll="references-6">General References</a></li>
+<li><a href="references.html#references-7" data-scroll="references-7">Specialized References</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="not-implemented.html" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="lists"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">12</span> <span class="title">List Calisthenics</span>
+</h2>
+<a href="lists.html" class="permalink">¶</a><section class="subsection" id="subsection-36"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">12.1</span> <span class="title">Lists, Generally</span>
+</h3>
+<p id="p-418">Use <code class="code-inline tex2jax_ignore">ol</code> to make an ordered list, and <code class="code-inline tex2jax_ignore">ul</code> to make an unordered (bulleted) list. In both cases, use <code class="code-inline tex2jax_ignore">li</code> for each entry.  If an entry contains more than one paragraph, then each must be wrapped in <code class="code-inline tex2jax_ignore">p</code>.   </p>
+<p id="p-419">This section contains nested lists, to demonstrate how they get assigned labels (numbering, symbols). But we begin with two simple lists, demonstrating an ordered list and an unordered list. See the end of section for an example of a description list. Note in the source the optional use of a paragraph (<code class="code-inline tex2jax_ignore">p</code>) for the list items of the list of colors.</p>
+<ol id="p-420" class="decimal">
+<li id="li-58">First.</li>
+<li id="li-59">Second.</li>
+<li id="li-60">Third.</li>
+</ol>
+<ul class="disc">
+<li id="li-61"><p id="p-421">Red</p></li>
+<li id="li-62"><p id="p-422">Green</p></li>
+<li id="li-63"><p id="p-423">Yellow</p></li>
+<li id="li-64"><p id="p-424">Purple</p></li>
+</ul>
+<p id="p-425">Next, we have a list with no customization and multiple levels to test the defaults.  <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> allows a maximum of four levels of ordered/numbered lists, and a total of six levels if some unordered lists are mixed in.  The second-level defaults (lower-case Latin) are formatted slightly different in <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> versus HTML.  The HTML style is not easy to adjust, but you can specify the <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> version to match if it is important.Note that to have nested lists you <em class="emphasis">must</em> structure your list items as paragraphs, since a list may only appear within a <code class="code-inline tex2jax_ignore">&lt;p&gt;</code> element.</p>
+<ol class="decimal">
+<li id="li-65"><p id="p-426">Level 1, first.</p></li>
+<li id="list-two">
+<p id="p-427">Level 1, second.</p>
+<ol class="lower-alpha">
+<li id="li-67"><p id="p-428">Level 2, first.</p></li>
+<li id="li-68">
+<p id="p-429">Level 2, second.</p>
+<ol class="lower-roman">
+<li id="li-69"><p id="p-430">Level 3, first.</p></li>
+<li id="list-two-two-two">
+<p id="p-431">Level 3, second.</p>
+<ol class="upper-alpha">
+<li id="li-71"><p id="p-432">Level 4, first.</p></li>
+<li id="li-72"><p id="p-433">Level 4, second.</p></li>
+<li id="list-two-two-two-three"><p id="p-434">Level 4, third.</p></li>
+</ol>
+</li>
+<li id="li-74"><p id="p-435">Level 3, third.</p></li>
+</ol>
+</li>
+<li id="li-75"><p id="p-436">Level 2, third.</p></li>
+</ol>
+</li>
+<li id="li-76"><p id="p-437">Level 1, third.</p></li>
+</ol>
+<p id="p-438">Items in ordered lists (only) may be be give an <code class="code-inline tex2jax_ignore">xml:id</code> and then may be the target of an <code class="code-inline tex2jax_ignore">xref</code>.  We test three here, referencing down into the hierarchy above.  Level 1, second: <a data-knowl="./knowl/list-two.html" title="Item 2">2</a>.  Level 3, second: <a data-knowl="./knowl/list-two-two-two.html" title="Item 2.b.ii">2.b.ii</a>.  Level 4, third: <a data-knowl="./knowl/list-two-two-two-three.html" title="Item 2.b.ii.C">2.b.ii.C</a>.  Note that if a list item of an ordered list is contained within a list item of an unordered list, then its number will not be defined.</p>
+<p id="p-439">And now a four-level deep unordered list with the default labels supplied by MBX (disc, circle, square, disc).  Again, the defalt order for Markdown/Jupyter (disc, square, circle, circle) is different than for <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> and HTML (disc, circle, square, disc)</p>
+<ul class="disc">
+<li id="li-77"><p id="p-440">Level 1, first.</p></li>
+<li id="li-78">
+<p id="p-441">Level 1, second.</p>
+<ul class="circle">
+<li id="li-79"><p id="p-442">Level 2, first.</p></li>
+<li id="li-80">
+<p id="p-443">Level 2, second.</p>
+<ul class="square">
+<li id="li-81"><p id="p-444">Level 3, first.</p></li>
+<li id="li-82">
+<p id="p-445">Level 3, second.</p>
+<ul class="disc">
+<li id="li-83"><p id="p-446">Level 4, first.</p></li>
+<li id="li-84"><p id="p-447">Level 4, second.</p></li>
+<li id="li-85"><p id="p-448">Level 4, third.</p></li>
+</ul>
+</li>
+<li id="li-86"><p id="p-449">Level 3, third.</p></li>
+</ul>
+</li>
+<li id="li-87"><p id="p-450">Level 2, third.</p></li>
+</ul>
+</li>
+<li id="li-88"><p id="p-451">Level 1, third.</p></li>
+</ul>
+<p id="p-452">And a total of six levels with a mix of ordered and unordered lists, the most that out-of-the-box-<span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> is able to handle.</p>
+<ol class="decimal">
+<li id="li-89"><p id="p-453">Level 1, first.</p></li>
+<li id="li-90">
+<p id="p-454">Level 1, second.</p>
+<ol class="lower-alpha">
+<li id="li-91"><p id="p-455">Level 2, first.</p></li>
+<li id="li-92">
+<p id="p-456">Level 2, second.</p>
+<ul class="disc">
+<li id="li-93"><p id="p-457">Level 3, first.</p></li>
+<li id="li-94">
+<p id="p-458">Level 3, second.</p>
+<ol class="lower-roman">
+<li id="li-95"><p id="p-459">Level 4, first.</p></li>
+<li id="li-96">
+<p id="p-460">Level 4, second.</p>
+<ol class="upper-alpha">
+<li id="li-97"><p id="p-461">Level 5, first.</p></li>
+<li id="li-98">
+<p id="p-462">Level 5, second.</p>
+<ul class="circle">
+<li id="li-99"><p id="p-463">Level 6, first.</p></li>
+<li id="li-100"><p id="p-464">Level 6, second.</p></li>
+<li id="li-101"><p id="p-465">Level 6, third.</p></li>
+</ul>
+</li>
+<li id="li-102"><p id="p-466">Level 5, third.</p></li>
+</ol>
+</li>
+<li id="li-103"><p id="p-467">Level 4, third.</p></li>
+</ol>
+</li>
+<li id="li-104"><p id="p-468">Level 3, third.</p></li>
+</ul>
+</li>
+<li id="li-105"><p id="p-469">Level 2, third.</p></li>
+</ol>
+</li>
+<li id="li-106"><p id="p-470">Level 1, third.</p></li>
+</ol>
+<p id="p-471">Now, nested lists with the defaults replaced by custom choices.  First, an ordered list, three deep, upper Roman numerals, then upper-case Latin, then more traditional Arabic numerals on the three elements of the third level.  Note the adornments of the labels will be rendered in LaTeX, but not in HTML.</p>
+<ol class="upper-roman">
+<li id="li-107"><p id="p-472">Level 1, first.</p></li>
+<li id="li-108">
+<p id="p-473">Level 1, second.</p>
+<ol class="upper-alpha">
+<li id="li-109"><p id="p-474">Level 2, first.</p></li>
+<li id="li-110">
+<p id="p-475">Level 2, second.</p>
+<ol class="decimal">
+<li id="li-111"><p id="p-476">Level 3, first.</p></li>
+<li id="li-112"><p id="p-477">Level 3, second.</p></li>
+<li id="li-113"><p id="p-478">Level 3, third.</p></li>
+</ol>
+</li>
+<li id="li-114"><p id="p-479">Level 2, third.</p></li>
+</ol>
+</li>
+<li id="li-115"><p id="p-480">Level 1, third.</p></li>
+</ol>
+<p id="p-481">A nested unordered list, with labels given as squares on the outer list and nothing (blank) on the inner lists.</p>
+<ul class="square">
+<li id="li-116"><p id="p-482">Level 1, first.</p></li>
+<li id="li-117">
+<p id="p-483">Level 1, second.</p>
+<ul class="no-marker">
+<li id="li-118"><p id="p-484">Level 2, first.</p></li>
+<li id="li-119"><p id="p-485">Level 2, second.</p></li>
+</ul>
+</li>
+<li id="li-120"><p id="p-486">Level 1, third.</p></li>
+</ul>
+<p id="p-487">A nested ordered list, to test intramural cross-references.</p>
+<ol class="decimal">
+<li id="li-121"><p id="p-488">Level 1, first.</p></li>
+<li id="list-item-second">
+<p id="p-489">Level 1, second.</p>
+<ul class="no-marker">
+<li id="li-123"><p id="p-490">Level 2, first.</p></li>
+<li id="li-124"><p id="p-491">Level 2, second.</p></li>
+</ul>
+</li>
+<li id="li-125"><p id="p-492">Level 1, third.  With a cross-reference to second list item, <a data-knowl="./knowl/list-item-second.html" title="Item 2">2</a>.</p></li>
+<li id="li-126"><p id="p-493">Level 1, fourth.  Whose number should not change when the knowl just prior is opened.</p></li>
+</ol>
+<p id="p-494">The next definition is very poorly worded.  It is meant to test leading off with a list (bad form), for which <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> normally begins right after the heading.</p>
+<article class="definition-like" id="definition-2"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">12.1</span>. <span class="title">Group.</span>
+</h6>
+<ol id="p-495" class="lower-alpha">
+<li id="li-127">There is a binary operation, denoted “\(\cdot\)”.</li>
+<li id="li-128">The operation is associative.</li>
+<li id="li-129">There is an identity element, \(e\text{.}\)</li>
+<li id="li-130">
+<p id="p-496">For every element \(b\text{,}\) there is an element \(c\) (the inverse), such that</p>
+<div class="displaymath">
+\begin{equation*}
+b\cdot c=c\cdot b = e\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
+<p id="p-497">If these conditions are met for a set \(G\text{,}\) then we say \(G\) is a <dfn class="terminology">group</dfn>.</p></article><p id="p-498">Exercises and References are specialized subdivisions you can put anywhere.  They are implemented as top-level lists, so should share behavior.  For example, an exercise may have many parts and when expressed as a list, should have the expected labels.</p>
+<p id="p-499">Similarly, References may have lists in their annotations.  Unlikely?  But possible.</p>
+<p id="p-500">The next two subdivisions are an Exercises subdivision and a References subdivision, which have lists within an exercise and a bibliographic item (respectively).</p></section><section class="subsection" id="subsection-37"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">12.2</span> <span class="title">List Spacing, I</span>
+</h3>
+<p id="p-501">This is a short list that ends a subsection, so can be used to address the necessary spacing.  We also test two XML elements separated by a space (which should not go missing).</p>
+<ol class="lower-alpha cols2">
+<li id="li-131">One item.</li>
+<li id="li-132">
+<em class="emphasis">Two</em> <em class="alert">ducks</em>.</li>
+<li id="li-133">Three items.  Plus a few more words to check that long entries in a two column list look good.</li>
+<li id="li-134">Four items.</li>
+<li id="li-135">Another long entry that simultaneously tests that long entries look good in a list, and also tests an odd number of entries in a two column list.</li>
+</ol></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">12.3</span> <span class="title">List Spacing, II</span>
+</h3>
+<p id="p-502">This is another short list that ends a subsection, so can be used to address the necessary spacing.</p>
+<ul class="disc cols2">
+<li id="li-136">Uno item.</li>
+<li id="li-137">Dos items.</li>
+<li id="li-138">Tres item.</li>
+<li id="li-139">Quattro items.</li>
+</ul>
+<p id="p-503">And a paragraph after that list so that spacing can be checked.</p></section><section class="subsection" id="subsection-39"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">12.4</span> <span class="title">Description Lists</span>
+</h3>
+<p id="p-504">Use <code class="code-inline tex2jax_ignore">dl</code> to make a description list. Inside of those tags, use <code class="code-inline tex2jax_ignore">li</code> for each entry. Then, use <code class="code-inline tex2jax_ignore">title</code> to specify the term being described and <code class="code-inline tex2jax_ignore">p</code> to specify the description.</p>
+<p id="p-505">A “description” list  has a short term or phrase that is prominent, followed by a short description.  It is modeled on the lists of similar structure in both <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> and HTML.  It makes for a nice medium-weight way to define terms, somewhere in-between the <code class="code-inline tex2jax_ignore">term</code> tag which just makes a term prominent in a sentence, and a <code class="code-inline tex2jax_ignore">definition</code>, which is set off, has a heading, a number, and a title.  Do not try to manage the separation between the title and the description by employing punctuation (but you can include a question-mark or exclamation-point if necessary).  For example, do not include a colon to the end of the title.  This example is from Bob Plantz.</p>
+<dl class="description-list">
+<dt id="cpu-definition">Central Processing Unit (CPU)</dt>
+<dd><p id="p-506">Controls most of the activities of the computer, performs the arithmetic and logical operations, and contains a small amount of very fast memory.</p></dd>
+<dt id="li-141">Memory</dt>
+<dd><p id="p-507">Provides storage for the instructions for the CPU and the data they manipulate.</p></dd>
+<dt id="li-142">Input/Output (I/O)</dt>
+<dd><p id="p-508">Communicates with the outside world and with mass storage devices (e.g., disks).</p></dd>
+<dt id="bus-definition">Bus!</dt>
+<dd><p id="p-509">A communication pathway with a protocol specifying exactly how the pathway is used. (The punctuation is just for testing.)</p></dd>
+</dl>
+<p id="p-510">Some presentations can be assisted by a hint from the author about the lengths of the titles.  You can choose to provide a <code class="code-inline tex2jax_ignore">width</code> attribute on a <code class="code-inline tex2jax_ignore">dl</code> element with possible values <code class="code-inline tex2jax_ignore">narrow</code>, <code class="code-inline tex2jax_ignore">medium</code>, and <code class="code-inline tex2jax_ignore">wide</code>.  Conversion to <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> ignores this attribute, and conversion to <abbr class="initialism">HTML</abbr> only reacts to <code class="code-inline tex2jax_ignore">narrow</code> (<code class="code-inline tex2jax_ignore">medium</code> is the default, and <code class="code-inline tex2jax_ignore">wide</code> behaves identically).</p>
+<dl class="description-list-narrow">
+<dt id="li-144">Red</dt>
+<dd><p id="p-511">The color of the sun at sunset.</p></dd>
+<dt id="li-145">Blue</dt>
+<dd><p id="p-512">The color of a clear sky.</p></dd>
+<dt id="li-146">Aqua</dt>
+<dd><p id="p-513">The color of shallow tropical waters.</p></dd>
+<dt id="description-list-math-title">Math \(x^2\)</dt>
+<dd><p id="p-514">Sorry, not a color but testing titles with math in them.</p></dd>
+</dl></section><section class="subsection" id="subsection-40"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">12.5</span> <span class="title">Named Lists</span>
+</h3>
+<p id="p-515">A list can be wrapped with a <code class="code-inline tex2jax_ignore">&lt;list&gt;</code> element, so that it earns a number, can be given a title and have an introduction and conclusion.  Cross-references to individual list items get a bit involved as they are prefixed with the number of the list and then the number of the item, so conceivably you could get a number like <code class="code-inline tex2jax_ignore">4.5.3:2.a.ii</code>.  The colon is used to indicate the transition from the number of the list within divisions and the numbers coming from the list hierarchy, since it has two small dots.</p>
+<figure class="figure-like" id="list-colors-rainbow"><div class="named-list-content">
+<div class="introduction" id="introduction-19"><p id="p-516">Because the colors are always in the same order, an ordered list is natural here.  The colors change continuously, but are often divided up into large ranges that human perception can easily distinguish.</p></div>
+<ol class="decimal">
+<li id="li-148"><p id="p-517">Red</p></li>
+<li id="rainbow-orange"><p id="p-518">Orange</p></li>
+<li id="li-150"><p id="p-519">Yellow</p></li>
+<li id="li-151"><p id="p-520">Green</p></li>
+<li id="li-152"><p id="p-521">Blue</p></li>
+<li id="li-153"><p id="p-522">Indigo</p></li>
+<li id="li-154"><p id="p-523">Violet</p></li>
+</ol>
+<div class="conclusion" id="conclusion-16"><p id="p-524">So some people use the acronym <abbr class="acronym">ROY-G-BIV</abbr> to remember this sequence.</p></div>
+</div>
+<figcaption><span class="type">List</span> <span class="codenumber">12.2.</span> Colors of the Rainbow</figcaption></figure><p id="p-525">This next list is used for testing cross-references to it.  See <a href="section-cross-referencing.html" class="internal" title="Section 18: Cross-Referencing">Section 18</a>.</p>
+<figure class="figure-like" id="list-to-reference"><div class="named-list-content">
+<div class="introduction" id="introduction-20"><p id="p-526">This is the introduction to this named list, which references an item within, via the hybrid <code class="code-inline tex2jax_ignore">@text</code> attribute:  <a data-knowl="./knowl/target-item.html" title="Item 12.3:B.c">Item B.c</a>.</p></div>
+<ol class="upper-alpha">
+<li id="li-155"><ol id="p-527" class="lower-roman">
+<li id="li-156">A and i</li>
+<li id="li-157">A and ii</li>
+<li id="li-158">A and iii</li>
+</ol></li>
+<li id="li-159"><ol id="p-528" class="lower-alpha">
+<li id="li-160">B and a</li>
+<li id="li-161">B and b</li>
+<li id="target-item">B and c (target of some cross-references)</li>
+</ol></li>
+<li id="li-163"><ul id="p-529" class="disc">
+<li id="li-164">The next three cross-references point to a list item, just above.  It is interesting because the list is named, hence numbered.  The global reference uses the full number, while the local reference uses the number from within the list.  The hybrid reference recognizes that the target is within the same named list, so the number can be shorter.  An identical hybrid cross-reference appears within the <code class="code-inline tex2jax_ignore">&lt;introduction&gt;</code> to this list, an immediately following, but outside the <code class="code-inline tex2jax_ignore">&lt;list&gt;</code>.</li>
+<li id="li-165">Cross-reference within named list (<code class="code-inline tex2jax_ignore">global</code>): <a data-knowl="./knowl/target-item.html" title="Item 12.3:B.c">Item 12.3:B.c</a>
+</li>
+<li id="li-166">Cross-reference within named list (<code class="code-inline tex2jax_ignore">hybrid</code>): <a data-knowl="./knowl/target-item.html" title="Item 12.3:B.c">Item B.c</a>
+</li>
+<li id="li-167">Cross-reference within named list (<code class="code-inline tex2jax_ignore">local</code>): <a data-knowl="./knowl/target-item.html" title="Item 12.3:B.c">Item B.c</a>
+</li>
+<li id="li-168"><ol id="p-530" class="decimal">
+<li id="li-169">C and bullet and 1</li>
+<li id="target-no-number">C and bullet and 2</li>
+<li id="li-171">C and bullet and 3</li>
+</ol></li>
+<li id="li-172">C and bullet</li>
+<li id="li-173">C and bullet</li>
+</ul></li>
+</ol>
+</div>
+<figcaption><span class="type">List</span> <span class="codenumber">12.3.</span> A named list of targets</figcaption></figure><p id="p-531">This is a paragraph just outside the preceding named list, which references an item within, via the hybrid <code class="code-inline tex2jax_ignore">@text</code> attribute:  <a data-knowl="./knowl/target-item.html" title="Item 12.3:B.c">Item 12.3:B.c</a>.</p>
+<p id="p-532">This is a paragraph with three lists contained within it.  For HTML output we have to “inside-out” the lists.</p>
+<ol class="decimal"><li id="li-174">A one item ordered list.</li></ol>
+<p>In other words, the text before, after, and between, needs to each be encapsulated as an HTML <code class="code-inline tex2jax_ignore">p</code> element of its own.</p>
+<ul class="disc"><li id="li-175">A one item unordered list.</li></ul>
+<p>Including definition lists.</p>
+<dl class="description-list">
+<dt id="li-176">Define Me</dt>
+<dd><p id="p-533">A one item definition list.</p></dd>
+</dl>
+<p>That's all!</p>
+<p id="p-534">A one item list, whose item is a paragraph with two contained ordered lists, separated by text.</p>
+<ul class="square"><li id="li-177">
+<p id="p-535">Introductory text.</p>
+<ol class="upper-alpha"><li id="li-178">First item, first list.</li></ol>
+<p>Intermediate text.</p>
+<ol class="lower-alpha"><li id="li-179">First item, second list.</li></ol>
+<p>Concluding text.</p>
+</li></ul></section><section class="subsection" id="subsection-41"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">12.6</span> <span class="title">Testing List Decompositions</span>
+</h3>
+<p id="p-536">A list in a paragraph is a construction in HTML that browsers try to correct, which leads to unpredictable results, so we have to decompose an author's paragraph with lists into a sequence of HTML paragraphs, interrupted by lists.  This subsection is only relevant to HTML output, and only for testing.</p>
+<ol id="p-537" class="decimal">
+<li id="li-180">This paragraph opens with an ordered list.</li>
+<li id="li-181">Testing the id, and other info that should be at the top of the paragraph.</li>
+</ol>
+<p>Now the paragraph continues, and we have an index item here, so we can test cross-references back here.</p></section><section class="exercises" id="exercises-5"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">12.7</span> <span class="title">Exercises (with lists)</span>
+</h3>
+<article class="exercise-like" id="exercise-41"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<p id="p-538">This exercise should have several parts, and labels should follow the defaults for second-level lists (since the exercise is numbered according to the top-level default).</p>
+<ol class="lower-alpha">
+<li id="li-182"><p id="p-539">Exercise 1, first part.</p></li>
+<li id="li-183">
+<p id="p-540">Exercise 1, second part.</p>
+<ol class="lower-roman"><li id="exercise-one-two-one"><p id="p-541">Exercise 1, second part, first refinement.</p></li></ol>
+</li>
+<li id="exercise-one-three"><p id="p-542">Exercise 1, third part.</p></li>
+</ol></article><article class="exercise-like" id="exercise-42"><h6 class="heading"><span class="codenumber">2.</span></h6>
+<figure class="figure-like" id="table-4"><table>
+<tr>
+<td class="c m b2 r3 l1 t1 lines" colspan="2">1111, 2222</td>
+<td class="c m b2 r1 l0 t1 lines">3333</td>
+</tr>
+<tr>
+<td class="c m b3 r2 l1 t0 lines">aaaa</td>
+<td class="c m b3 r2 l0 t0 lines" colspan="2">bbbb,cccc</td>
+</tr>
+<tr>
+<td class="c m b1 r2 l1 t0 lines">AAAA</td>
+<td class="c m b2 r3 l0 t0 lines">BBBB</td>
+<td class="c m b3 r3 l0 t0 lines">CCCC</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span> <span class="codenumber">12.4.</span> Table Alignment Example</figcaption></figure><p id="p-543">This exercise (a list item really) has a <code class="code-inline tex2jax_ignore">table</code> first.  Default <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> aligns it vertically above the exercise number.  Placement here tests correcting that alignment.</p></article><section class="conclusion" id="conclusion-17"><p id="p-544">A small test of cross-references to subsidiary parts of exercises.  Exercise 1, third part: <a data-knowl="./knowl/exercise-one-three.html" title="Item 12.7.1.c">12.7.1.c</a>.  Exercise 1, second part, first refinement: <a data-knowl="./knowl/exercise-one-two-one.html" title="Item 12.7.1.b.i">12.7.1.b.i</a>.</p></section></section><section class="references" id="references-2"><h3 class="heading hide-type">
+<span class="type">References</span> <span class="codenumber">12.8</span> <span class="title">References (with lists in Annotations)</span>
+</h3>
+<article class="bib" id="biblio-undetermined"><div class="bibitem">[1]</div>  <div class="bibentry">Some book would be listed here. </div>
+<div class="knowl-container">
+<a data-knowl="" class="id-ref" data-refid="hk-note-3" id="note-3"><span class="type">Note</span></a><div id="hk-note-3" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-545">Here is the annotation and an ordered list as part of that annotation.</p>
+<ol class="lower-alpha">
+<li id="li-186">Book 1, first part.</li>
+<li id="li-187">Book 1, second part.</li>
+<li id="li-188">Book 1, third part.</li>
+</ol>
+</div></div>
+</div></article></section></section></div></main>
+</div>
+<script>createAllVisualizersFromHtmlAttrs();</script><div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.11/login.js"></script>
+</body>
+</html>

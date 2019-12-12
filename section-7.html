@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2019-12-12T10:41:16-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SA Mathematics</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/javascript" src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    
+    /* support for the sfrac command in MathJax (Beveled fraction)
+        see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://unpkg.com/@doenet/beta"></script><link rel="stylesheet" href="https://unpkg.com/@doenet/beta/dist/main.css">
+<style>
+      .doenet-panel { top: auto; bottom: 0; }
+    </style>
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+ let worksheet = new window.doenet.Worksheet();
+ setTimeout(function(){ worksheet.progress = 1; }, 1000);
+});
+    </script><script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script><script>(function() {
+  var cx = '008832104071767086392:j6aknlqevbm';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraph.css">
+<script type="text/javascript" src="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraphcore.js"></script><link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//releases.flowplayer.org/5.4.6/skin/minimalist.css">
+<script src="https://releases.flowplayer.org/5.4.6/flowplayer.min.js"></script><script>flowplayer.conf = {
+    };</script>
+</head>
+<body class="mathbook-article has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner">
+<div class="searchwrapper"><div class="gcse-search"></div></div>
+<div class="container">
+<a id="logo-link" href="http://mathbook.pugetsound.edu" target="_blank"><img src="images/book-cover-google-art-project.jpg"></a><div class="title-container">
+<h1 class="heading"><a href="derivatives.html"><span class="title">Derivatives and Integrals</span><span class="subtitle">An Annotated Discourse</span></a></h1>
+<p class="byline">Robert Beezer</p>
+</div>
+</div>
+</div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='derivatives.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="backmatter.html#index-part-1" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="section-6.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="derivatives.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-8.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-6.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="derivatives.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-8.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="index.html"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="section-1.html"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<h2 class="link"><a href="section-fundamental-theorem.html"><span class="codenumber">2</span><span class="title">The Fundamental Theorem</span></a></h2>
+<h2 class="link"><a href="section-sage-cells.html"><span class="codenumber">3</span><span class="title">Computing Integrals with Sage (\(\int\))</span></a></h2>
+<h2 class="link"><a href="interesting-corollary.html"><span class="codenumber">4</span><span class="title">An Interesting Corollary</span></a></h2>
+<h2 class="link"><a href="section-5.html"><span class="codenumber">5</span><span class="title">Some Facts and Figures</span></a></h2>
+<h2 class="link"><a href="section-6.html"><span class="codenumber">6</span><span class="title">Some Advanced Ideas</span></a></h2>
+<h2 class="link active"><a href="section-7.html"><span class="codenumber">7</span><span class="title">Mathematics</span></a></h2>
+<h2 class="link"><a href="section-8.html"><span class="codenumber">8</span><span class="title">Special, Reserved, and Escape Characters</span></a></h2>
+<h2 class="link"><a href="graphics.html"><span class="codenumber">9</span><span class="title">Graphics</span></a></h2>
+<h2 class="link"><a href="section-10.html"><span class="codenumber">10</span><span class="title">Demonstrations</span></a></h2>
+<h2 class="link"><a href="section-11.html"><span class="codenumber">11</span><span class="title">Further Reading</span></a></h2>
+<h2 class="link"><a href="section-12.html"><span class="codenumber">12</span><span class="title">List Calisthenics</span></a></h2>
+<h2 class="link"><a href="section-13.html"><span class="codenumber">13</span><span class="title">Table Calisthenics</span></a></h2>
+<h2 class="link"><a href="section-14.html"><span class="codenumber">14</span><span class="title">Embedded Interactive Elements</span></a></h2>
+<h2 class="link"><a href="section-15.html"><span class="codenumber">15</span><span class="title">Video</span></a></h2>
+<h2 class="link"><a href="exercises.html"><span class="codenumber">16</span><span class="title">Exercises</span></a></h2>
+<h2 class="link"><a href="section-cross-referencing.html"><span class="codenumber">17</span><span class="title">Cross-Referencing</span></a></h2>
+<h2 class="link"><a href="section-internationalization.html"><span class="codenumber">18</span><span class="title">Internationalization</span></a></h2>
+<h2 class="link"><a href="section-18.html"><span class="codenumber">19</span><span class="title">Pre-Formatted Text</span></a></h2>
+<h2 class="link"><a href="section-programs.html"><span class="codenumber">20</span><span class="title">Program Listings</span></a></h2>
+<h2 class="link"><a href="section-20.html"><span class="codenumber">21</span><span class="title">Units of Measure</span></a></h2>
+<h2 class="link"><a href="section-side-by-side.html"><span class="codenumber">22</span><span class="title">Side-By-Side Panels</span></a></h2>
+<h2 class="link"><a href="poetry.html"><span class="codenumber">23</span><span class="title">Poetry</span></a></h2>
+<h2 class="link"><a href="advanced-numbering.html"><span class="codenumber">24</span><span class="title">Advanced Numbering</span></a></h2>
+<h2 class="link"><a href="section-24.html"><span class="codenumber">25</span><span class="title">Customizations</span></a></h2>
+<h2 class="link"><a href="backmatter.html"><span class="title">Reference</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="not-implemented.html">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-7"><header title="Section 7 Mathematics"><h1 class="heading hide-type" alt="Section 7 Mathematics">
+<span class="type">Section</span><span class="codenumber">7</span><span class="title">Mathematics</span>
+</h1></header><section class="introduction" id="introduction-4"><p id="p-126">To be able to create both <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> and HTML output (plus variations), we rely on MathJax, which in turn supports an extensive subset of the mathematical symbols normally available.  The AMSMath symbol set is a good approximation.  For a complete list, see the <a class="external-url" href="http://docs.mathjax.org/en/latest/tex.html#supported-latex-commands" target="_blank">MathJax Supported LaTeX commands</a>.  We load the <tt class="code-inline tex2jax_ignore">AMSsymbols</tt> library and the library for extensible arrows, <tt class="code-inline tex2jax_ignore">extpfeil</tt>.</p></section><section class="subsection" id="subsection-8"><header title="Subsection 7.1 Basic Mathematics"><h1 class="heading hide-type" alt="Subsection 7.1 Basic Mathematics">
+<span class="type">Subsection</span><span class="codenumber">7.1</span><span class="title">Basic Mathematics</span>
+</h1></header><p id="p-127">The following is from the MathJax <a class="external-url" href="http://www.mathjax.org/demos/tex-samples/" target="_blank">demonstration page</a>, an identity due to Ramanujan:\begin{equation*}\frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} = 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}} {1+\frac{e^{-8\pi}} {1+\ldots} } } }\end{equation*}</p>
+<p id="p-128">And again, from the MathJax demonstration page, Maxwell's equations:\begin{align*}
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; = \frac{4\pi}{c}\vec{\mathbf{j}}\\
+\nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho\\
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp; = \vec{\mathbf{0}}\\
+\nabla \cdot \vec{\mathbf{B}} &amp; = 0
+\end{align*}</p>
+<p id="p-129">A small test that the extensible arrows library is included properly:\begin{equation*}A\xmapsto[\text{bijection}]{\Phi+\Psi+\Theta}B\end{equation*}</p>
+<p id="p-130">Look back at the top of the source file of this document to see how to include your <span class="latex-logo">T<span class="E">e</span>X</span> macros just once.  For best results keep your macros simple and semantic.</p>
+<p id="p-131">Chris Hughes has made available “slanted”, or “beveled”, or “nice” fractions.  To wit, we mean fractions such as: \(\sfrac{3}{8}\text{.}\)  Use the built-in <tt class="code-inline tex2jax_ignore">\sfrac{}{}</tt> macro in your mathematics to achieve this presentation.</p>
+<p id="p-132">We consider a system of equations.  We number the first and last equation (there are just two) and include an <tt class="code-inline tex2jax_ignore">xml:id</tt> on each.  We reference the whole system later as the range of equations from the first to the last.\begin{align}
+\frac{dx}{dt} \amp = x^2 - 4x - y + 4\label{equation-system-begin}\tag{7.1}\\
+\frac{dy}{dt} \amp = x^3 - y.\label{equation-system-end}\tag{7.2}
+\end{align}</p></section><section class="subsection" id="subsection-9"><header title="Subsection 7.2 Displayed Mathematics"><h1 class="heading hide-type" alt="Subsection 7.2 Displayed Mathematics">
+<span class="type">Subsection</span><span class="codenumber">7.2</span><span class="title">Displayed Mathematics</span>
+</h1></header><p id="p-133">Multi-line displays of mathematics are achieved with the <tt class="code-inline tex2jax_ignore">md</tt> tag (“math display”), and the variant that produces numbers on each line, <tt class="code-inline tex2jax_ignore">mdn</tt> (“math display numbered”), used within a paragraph (<tt class="code-inline tex2jax_ignore">p</tt>).  As a good example of how XML syntax is superior, you author \(n\) lines of equations by enclosing each line inside of a <tt class="code-inline tex2jax_ignore">mrow</tt> tag, rather than using \(n-1\) separators (such as <tt class="code-inline tex2jax_ignore">\\</tt>).</p>
+<p id="p-134">If you use no ampersands to express alignment (read ahead), then each equation is centered independently on the width of the text.  This is implemented according to the AMSmath <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> package's <tt class="code-inline tex2jax_ignore">gather</tt> environment.  Example:\begin{gather*}
+\frac{dx}{dt} = x^2 - 4x - y + 4\\
+\frac{dy}{dt} = x^3 - y.
+\end{gather*}</p>
+<p id="p-135">An ampersand is used, in two ways, to describe positioning several equations per line, organized in columns.  We suggest in <a href="section-8.html#subsection-reserved-characters" alt="Subsection 8.1 Reserved Characters" title="Subsection 8.1 Reserved Characters">Subsection 8.1</a> that the pre-defined <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> macro <tt class="code-inline tex2jax_ignore">\amp</tt> is the safest way to specify these.  The second, fourth, sixth, … ampersands separate columns, and the spacing between columns will be provided automatically.  The first, third, fifth, … ampersands are alignment points for the equations in each column.  Typically this is placed just prior to a binary operator, such as an equal sign (<tt class="code-inline tex2jax_ignore">\amp = </tt>), or for a column of explanations or commentary, just prior to the <tt class="code-inline tex2jax_ignore">\text{}</tt> macro.  Note that this scenario suggests always having an odd number of amersands in each <tt class="code-inline tex2jax_ignore">mrow</tt>.  In the example below, alignment is on the equals sign in the first two columns, and provides left-justification to the explanations in the third column.  N.B.: the use below of the <tt class="code-inline tex2jax_ignore">\text{}</tt> macro does not include mathematics within its argument.  Doing so may yield unpredictable results depending on your choice of delimiters for the mathematics (and using an <tt class="code-inline tex2jax_ignore">m</tt> tag will be ineffective).\begin{align*}
+\frac{dx}{dt} \amp = x^2 - 4x - y + 4 \amp \frac{dy}{dt} \amp = x^3 - y          \amp\amp x, y\text{ version}\\
+\frac{dw}{dt} \amp = z^3 - w          \amp \frac{dz}{dt} \amp = z^2 - 4z - w + 4 \amp\amp z, w\text{ version}
+\end{align*}</p>
+<p id="p-136">MathBook XML will automatically detect the presence or absence of ampersands, but by defining macros for entire aligned equations, you can effectively hide the ampersands.  So the <tt class="code-inline tex2jax_ignore">@alignment</tt> attribute can override automatic detection.  We use a simple <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> macro to demonstrate setting <tt class="code-inline tex2jax_ignore">alignment='align'</tt> to override the use of a <tt class="code-inline tex2jax_ignore">gather</tt> environment and use a <tt class="code-inline tex2jax_ignore">align</tt> environment instead.  Example:\begin{align*}
+\myequation{\frac{dx}{dt}}{x^2 - 4x - y + 4}\\
+\myequation{\frac{dy}{dt}}{x^3 - y}.
+\end{align*}</p>
+<p id="p-137">The AMSmath <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> package's <tt class="code-inline tex2jax_ignore">alignat</tt> environment is a third variant of alignment.  It never happens automatically, you need to ask for it with <tt class="code-inline tex2jax_ignore">alignment="alignat"</tt>.  It is very similar to <tt class="code-inline tex2jax_ignore">align</tt> but adds no space between the equation columns.  So you can leave it that way, or you can add your own “extra” space to suit.  Here is a previous example with no inter-column space:\begin{alignat*}{3}
+\frac{dx}{dt} \amp = x^2 - 4x - y + 4 \amp \frac{dy}{dt} \amp = x^3 - y          \amp\amp x, y\text{ version}\\
+\frac{dw}{dt} \amp = z^3 - w          \amp \frac{dz}{dt} \amp = z^2 - 4z - w + 4 \amp\amp z, w\text{ version}
+\end{alignat*}  There are a few caveats, due to the fact that the environment needs to be told how many columns you have:</p>
+<ul id="ul-4" style="list-style-type: disc;">
+<li id="li-31">Your first <tt class="code-inline tex2jax_ignore">mrow</tt> is scanned to count the number of ampersand macros and/or characters (<tt class="code-inline tex2jax_ignore">\amp</tt> or <tt class="code-inline tex2jax_ignore">&amp;amp;</tt>), so add the right number to your first row to equal the maximum present across all rows.</li>
+<li id="li-32">The scan of ampersands may not be perfect, so if it seems incorrect, please send a report and we may add an attribute for an override.</li>
+<li id="li-33">If your number of ampersands is even (see advice above about using an odd number) behavior should still be correct, as in next example.</li>
+</ul>
+<p id="p-138">If you want super-precise control over alignment of the terms of a system of equations (linear or not) you can use the <tt class="code-inline tex2jax_ignore">alignat</tt> option to advantage by not including any extra space.  This example is modified slightly from a post by Alex Jordan:\begin{alignat*}{4}
+2x \amp {}+{} \amp  y \amp {}+{} \amp 3z \amp {}={} \amp 10\\
+x  \amp       \amp    \amp {}+{} \amp  z \amp {}={} \amp 6\\
+x  \amp {}+{} \amp 3y \amp {}+{} \amp 2z \amp {}={} \amp 13.
+\end{alignat*}Beautiful.</p></section><section class="subsection" id="subsection-10"><header title="Subsection 7.3 LaTeX Packages and MathJax Extensions"><h1 class="heading hide-type" alt="Subsection 7.3 LaTeX Packages and MathJax Extensions">
+<span class="type">Subsection</span><span class="codenumber">7.3</span><span class="title"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> Packages and MathJax Extensions</span>
+</h1></header><p id="p-139">If you would like to use macros from a <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> package <!--Style me with CSS--><em>and</em> there is a MathJax extension <!--Style me with CSS--><em>of the same name</em> which implements the same macros, then you may use these with your mathematics as we demonstrate here.</p>
+<p id="p-140">This example is from Jason Underdown.  The package is named <tt class="code-inline tex2jax_ignore">cancel</tt> and is included in the TeXLive distribution, so is fairly standard.  The particular macro being demonstrated is <tt class="code-inline tex2jax_ignore">\cancelto{}{}</tt>.  \begin{equation*}\lim_{b \rightarrow \infty}\left[\cancelto{0}{-\frac{1}{s}e^{-sb}} + \frac{1}{s}\right]\text{.}\end{equation*}Look at the source of this article to see the package name being supplied in a <tt class="code-inline tex2jax_ignore">latex-preamble/package</tt> element within the <tt class="code-inline tex2jax_ignore">docinfo</tt> section.  That is the only setup required to make the macro usable in <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> and <abbr class="initialism"><!--Style me-->HTML</abbr> output.</p>
+<p id="p-141">The packages appear before the author-supplied macros, so you can use macros from the packages as building blocks for document-specific macros.  We cannot guarantee there will be no conflicts between additional packages and those in use normally, or added in the future.  So use at your own risk.</p></section><section class="subsection" id="subsection-11"><header title="Subsection 7.4 Advanced Mathematics"><h1 class="heading hide-type" alt="Subsection 7.4 Advanced Mathematics">
+<span class="type">Subsection</span><span class="codenumber">7.4</span><span class="title">Advanced Mathematics</span>
+</h1></header><p id="p-142">MathJax is extremely capable, and improving all the time.  You can get fairly fancy with some of its supported commands.  In particular, if you need to mix in a few words, the <tt class="code-inline tex2jax_ignore">\text{}</tt> macro is supported.  The following example is a good stress-test.  Note the Unicode left and right smart quotes.  This a contribution from Alex Jordan as part of his work on <span class="booktitle">APEX Calculus</span>.\begin{gather*}
+y \rightarrow \frac{\sin(0) }{0} \rightarrow {{\text{“}}\atop{}}\frac{0}{0}{{\text{”}}\atop{}}\text{.}
+\end{gather*}And another one from Alex.  Note the use of the <tt class="code-inline tex2jax_ignore">\mathord{}</tt> and <tt class="code-inline tex2jax_ignore">\mathrel{}</tt> macros to control spacing around the mathematical symbols.  Examine the source to see how the quotation marks have been authored with <abbr class="initialism"><!--Style me-->XML</abbr> syntax for Unicode characters.\begin{gather*}
+\zeta(1)=\sum_{n=1}^{\infty}\frac{1}{n}\mathrel{\text{ “}\mathord{=}{\text{” }}}\prod_{p}\left(\frac{1}{1-1/p}\right)=\prod_{p}\left(\frac{1}{1-p^{-1}}\right)
+\end{gather*}</p></section></section></div></main>
+</div>
+</body>
+</html>

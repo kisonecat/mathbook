@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-06-19T12:23:57-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="code/mcclure/slope.css">
+</head>
+<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:800px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;">
+<div class="p">
+                            Calculus consists of those problems in mathematics that can be solved with the
+                            following basic approach:
+                            </div>
+<div class="em_display">
+                            Approximate and take a limit!
+                            </div>
+<div class="p">
+                            The simplest, standard, geometric example of this process is the approximation
+                            of the slope of a tangent line with a secant line.
+                            Here's an illustration of this basic idea.
+                            </div>
+<div id="function_list" style="text-align: center">
+                                Choose \(f\):
+                                <span class="function_radio_container" style="padding-left: 10px">
+                                    <input type="radio" class="radio" name="function" value="f1" id="f1">
+                                    \(f(x)=x^2\)
+                                </span>
+                                <span class="function_radio_container">
+                                    <input type="radio" class="radio" name="function" value="f2">
+                                    \(f(x)=\frac{1}{3}e^x\)
+                                </span>
+                                <span class="function_radio_container">
+                                    <input type="radio" class="radio" name="function" value="f3">
+                                    \(f(x)=\sin(2x^2)+x/4\)
+                                </span>
+                            </div>
+<svg id="the_graph"></svg><div id="h_info_container">
+                            <table><tr>
+                                    <td><table>
+<tr><td>
+<input id="show_secant_checkbox" type="checkbox"> Show secant line</td></tr>
+<tr><td><input id="h_slider" type="range" min="-0.5" max="0.5" step="0.01"></td></tr>
+</table></td>
+                                    <td><table>
+<tr><td class="dimit" style="text-align: left;">
+<script type="math/tex">h = </script> <span id="h_value_display"></span>
+</td></tr>
+<tr><td class="dimit" style="text-align: left;">secant slope = <span id="secant_value_display"></span>
+</td></tr>
+<tr><td style="text-align: left;">tangent slope = <span id="tangent_value_display"></span>
+</td></tr>
+</table></td>
+                                </tr></table>
+                            </div>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script><script src="https://d3js.org/d3.v3.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.2.1/math.min.js"></script><script src="code/mcclure/slope.js"></script>
+</div></body>
+</html>

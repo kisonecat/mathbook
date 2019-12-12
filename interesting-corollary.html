@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2019-12-12T10:41:16-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SA An Interesting Corollary</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/javascript" src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    
+    /* support for the sfrac command in MathJax (Beveled fraction)
+        see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://unpkg.com/@doenet/beta"></script><link rel="stylesheet" href="https://unpkg.com/@doenet/beta/dist/main.css">
+<style>
+      .doenet-panel { top: auto; bottom: 0; }
+    </style>
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+ let worksheet = new window.doenet.Worksheet();
+ setTimeout(function(){ worksheet.progress = 1; }, 1000);
+});
+    </script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate Sage Code'});
+});
+</script><script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script><script>(function() {
+  var cx = '008832104071767086392:j6aknlqevbm';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraph.css">
+<script type="text/javascript" src="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraphcore.js"></script><link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//releases.flowplayer.org/5.4.6/skin/minimalist.css">
+<script src="https://releases.flowplayer.org/5.4.6/flowplayer.min.js"></script><script>flowplayer.conf = {
+    };</script>
+</head>
+<body class="mathbook-article has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner">
+<div class="searchwrapper"><div class="gcse-search"></div></div>
+<div class="container">
+<a id="logo-link" href="http://mathbook.pugetsound.edu" target="_blank"><img src="images/book-cover-google-art-project.jpg"></a><div class="title-container">
+<h1 class="heading"><a href="derivatives.html"><span class="title">Derivatives and Integrals</span><span class="subtitle">An Annotated Discourse</span></a></h1>
+<p class="byline">Robert Beezer</p>
+</div>
+</div>
+</div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='derivatives.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="backmatter.html#index-part-1" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="section-sage-cells.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="derivatives.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-5.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-sage-cells.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="derivatives.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-5.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="index.html"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="section-1.html"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<h2 class="link"><a href="section-fundamental-theorem.html"><span class="codenumber">2</span><span class="title">The Fundamental Theorem</span></a></h2>
+<h2 class="link"><a href="section-sage-cells.html"><span class="codenumber">3</span><span class="title">Computing Integrals with Sage (\(\int\))</span></a></h2>
+<h2 class="link active"><a href="interesting-corollary.html"><span class="codenumber">4</span><span class="title">An Interesting Corollary</span></a></h2>
+<h2 class="link"><a href="section-5.html"><span class="codenumber">5</span><span class="title">Some Facts and Figures</span></a></h2>
+<h2 class="link"><a href="section-6.html"><span class="codenumber">6</span><span class="title">Some Advanced Ideas</span></a></h2>
+<h2 class="link"><a href="section-7.html"><span class="codenumber">7</span><span class="title">Mathematics</span></a></h2>
+<h2 class="link"><a href="section-8.html"><span class="codenumber">8</span><span class="title">Special, Reserved, and Escape Characters</span></a></h2>
+<h2 class="link"><a href="graphics.html"><span class="codenumber">9</span><span class="title">Graphics</span></a></h2>
+<h2 class="link"><a href="section-10.html"><span class="codenumber">10</span><span class="title">Demonstrations</span></a></h2>
+<h2 class="link"><a href="section-11.html"><span class="codenumber">11</span><span class="title">Further Reading</span></a></h2>
+<h2 class="link"><a href="section-12.html"><span class="codenumber">12</span><span class="title">List Calisthenics</span></a></h2>
+<h2 class="link"><a href="section-13.html"><span class="codenumber">13</span><span class="title">Table Calisthenics</span></a></h2>
+<h2 class="link"><a href="section-14.html"><span class="codenumber">14</span><span class="title">Embedded Interactive Elements</span></a></h2>
+<h2 class="link"><a href="section-15.html"><span class="codenumber">15</span><span class="title">Video</span></a></h2>
+<h2 class="link"><a href="exercises.html"><span class="codenumber">16</span><span class="title">Exercises</span></a></h2>
+<h2 class="link"><a href="section-cross-referencing.html"><span class="codenumber">17</span><span class="title">Cross-Referencing</span></a></h2>
+<h2 class="link"><a href="section-internationalization.html"><span class="codenumber">18</span><span class="title">Internationalization</span></a></h2>
+<h2 class="link"><a href="section-18.html"><span class="codenumber">19</span><span class="title">Pre-Formatted Text</span></a></h2>
+<h2 class="link"><a href="section-programs.html"><span class="codenumber">20</span><span class="title">Program Listings</span></a></h2>
+<h2 class="link"><a href="section-20.html"><span class="codenumber">21</span><span class="title">Units of Measure</span></a></h2>
+<h2 class="link"><a href="section-side-by-side.html"><span class="codenumber">22</span><span class="title">Side-By-Side Panels</span></a></h2>
+<h2 class="link"><a href="poetry.html"><span class="codenumber">23</span><span class="title">Poetry</span></a></h2>
+<h2 class="link"><a href="advanced-numbering.html"><span class="codenumber">24</span><span class="title">Advanced Numbering</span></a></h2>
+<h2 class="link"><a href="section-24.html"><span class="codenumber">25</span><span class="title">Customizations</span></a></h2>
+<h2 class="link"><a href="backmatter.html"><span class="title">Reference</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="not-implemented.html">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="interesting-corollary"><header title="Section 4 An Interesting Corollary"><h1 class="heading hide-type" alt="Section 4 An Interesting Corollary">
+<span class="type">Section</span><span class="codenumber">4</span><span class="title">An Interesting Corollary</span><a href="interesting-corollary.html" class="permalink">¶ permalink</a>
+</h1></header><article class="objectives" id="objectives-structures"><h5 class="heading">
+<span class="type">Objectives</span><span class="title">Fundamental Structures</span>
+</h5>
+<article class="introduction" id="introduction-1"><p id="p-28">This is an <tt class="code-inline tex2jax_ignore">&lt;objectives&gt;</tt> element you are reading, and this is its introduction.  This early section has really grown and tries to accomplish many things.  Not all of them are listed here.</p></article><ol id="ol-1" style="list-style-type: decimal;">
+<li id="objective-structure">Display various “blocks”, fundamental units of the flow.</li>
+<li id="li-2">More</li>
+<li id="li-3">Evermore</li>
+</ol>
+<article class="conclusion" id="conclusion-1"><p id="p-29">This concludes the (incomplete) objectives for this section, so now we can carry-on as before.</p></article></article><section class="introduction" id="introduction-2"><p id="p-30">The Fundamental Theorem comes in two flavors, where usually one is a corollary of the other.</p></section><section class="subsection" id="subsection-1"><header title="Subsection 4.1 Second Version of FTC"><h1 class="heading hide-type" alt="Subsection 4.1 Second Version of FTC">
+<span class="type">Subsection</span><span class="codenumber">4.1</span><span class="title">Second Version of <abbr class="acronym"><!--Style me-->FTC</abbr></span>
+</h1></header><article class="theorem-like" id="corollary-FTC-derivative"><h5 class="heading">
+<span class="type">Corollary</span><span class="codenumber">4.1</span>
+</h5>
+<p id="p-31">Suppose \(f(x)\) is a continuous function.  Then \begin{equation}\frac{d}{dx}\definiteintegral{a}{x}{f(t)}{t}=f(x)\text{.}\label{equation-alternate-FTC}\tag{4.1}\end{equation}</p></article><div class="posterior">
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-FTC-corollary" id="proof-FTC-corollary"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-FTC-corollary" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-32">We simply take the indicated derivative, applying Theorem <a knowl="./knowl/theorem-FTC.html" knowl-id="xref-theorem-FTC" alt="Theorem 2.1 The Fundamental Theorem of Calculus" title="Theorem 2.1 The Fundamental Theorem of Calculus">2.1</a> at <a knowl="./knowl/mdn-1.html" knowl-id="xref-equation-use-FTC" alt="Equation 4.2 " title="Equation 4.2 ">(4.2)</a>.\begin{align}
+\frac{d}{dx}\definiteintegral{a}{x}{f(t)}{t}&amp;=\frac{d}{dx}\left(F(x)-F(a)\right)\label{equation-use-FTC}\tag{4.2}\\
+&amp;=\frac{d}{dx}F(x)-\frac{d}{dx}F(a)\notag\\
+&amp;=f(x)-0 = f(x)\label{mrow-3}\tag{4.3}
+\end{align}</p></article></div>
+</div>
+<p id="p-33">The alternative version of the Fundamental Theorem (<abbr class="acronym"><!--Style me-->FTC</abbr>) in <a knowl="./knowl/equation-alternate-FTC.html" knowl-id="xref-equation-alternate-FTC" alt="Equation 4.1 " title="Equation 4.1 ">(4.1)</a> is a compact way to express the result.</p>
+<p id="p-34">For testing purposes, there is a simple bare Sage Cell here.</p>
+<div class="sagecell-sage" id="sage-12"><script type="text/x-sage">2+2
+</script></div>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-example-mysterious" id="example-mysterious"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">4.2</span><span class="title">A Mysterious Derivative</span>
+</h5></article></a></div>
+<div id="hk-example-mysterious" style="display: none;" class="tex2jax_ignore"><article class="example-like"><p id="p-35">So if we define a function with its variable employed as a limit of integration, like so \begin{equation*}K(z)=\definiteintegral{345}{z}{x^4\sin(x^2)}{x}\end{equation*} then we get the derivative of that function so easily it seems like a mystery, \begin{equation*}\frac{d}{dz}K(z)=z^4\sin(z^2)\text{.}\end{equation*}That's it.</p>
+<p id="p-36">For testing purposes, there is a simple Sage Cell here, buried inside an example that should be a knowl (embedded in the page).</p>
+<div class="sagecell-sage" id="sage-13"><script type="text/x-sage">2+2
+</script></div></article></div>
+<p id="p-37">We cross-reference the example just prior, <a knowl="./knowl/example-mysterious.html" knowl-id="xref-example-mysterious" alt="Example 4.2 A Mysterious Derivative" title="Example 4.2 A Mysterious Derivative">Example 4.2</a>, to test the simple Sage cell that will now be part of a cross-reference knowl (an external file).</p>
+<article class="theorem-like" id="claim-with-cases"><h5 class="heading">
+<span class="type">Claim</span><span class="codenumber">4.3</span><span class="title">An Equivalent Claim</span>
+</h5>
+<p id="p-38">This claim is an equivalence: it is true if and only if it is correct.</p></article><div class="posterior">
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-3" id="proof-3"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-3" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-39">Our purpose here is to show how you can structure a proof with cases, such as an equivalence structured with the arrows typically used to demonstrate the two “directions” involved in the proof, by using the <tt class="code-inline tex2jax_ignore">direction</tt> attribute on a <tt class="code-inline tex2jax_ignore">case</tt> element.</p>
+<article class="case" id="case-1"><h6 class="heading">
+<!--Style arrows in CSS?-->(⇒)  </h6>
+<p id="p-40">Nulla non lectus suscipit, bibendum leo quis, dignissim justo. In urna turpis, tincidunt id elementum id, faucibus ac tellus.</p></article><article class="case" id="case-2"><h6 class="heading">
+<!--Style arrows in CSS?-->(⇐)  </h6>
+<p id="p-41">Quisque auctor ligula turpis, ut aliquam urna consectetur hendrerit. Aenean porta dolor et justo facilisis feugiat in sed sapien. Nullam porta ex et commodo semper.</p></article><article class="case" id="inductive-step"><h6 class="heading">Case 3b: The inductive step.</h6>
+<p id="p-42">A case may also have a <tt class="code-inline tex2jax_ignore">title</tt>, whose formatting and structure is entirely up to the author.  This then becomes the text of a cross-reference, as well.</p></article><article class="case" id="forward"><h6 class="heading">
+<!--Style arrows in CSS?-->(⇒)  Necessity.</h6>
+<p id="p-43">If you like, you can have both indications.</p></article></article></div>
+</div></section><section class="subsection" id="subsection-2"><header title="Subsection 4.2 A Pedagogical Note"><h1 class="heading hide-type" alt="Subsection 4.2 A Pedagogical Note">
+<span class="type">Subsection</span><span class="codenumber">4.2</span><span class="title">A Pedagogical Note</span>
+</h1></header><section class="subsubsection" id="subsubsection-different-integrals"><header title="Subsubsection 4.2.1 Symbolic and Numerical Integrals"><h1 class="heading hide-type" alt="Subsubsection 4.2.1 Symbolic and Numerical Integrals">
+<span class="type">Subsubsection</span><span class="codenumber">4.2.1</span><span class="title">Symbolic and Numerical Integrals</span><a href="interesting-corollary.html#subsubsection-different-integrals" class="permalink">¶ permalink</a>
+</h1></header><p id="p-44">The Fundamental Theorem explains why we use the same notation for a definite integral, which is a numerical calculation,<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-2" id="fn-2"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-2" style="display: none;" class="tex2jax_ignore"><span class="footnote">Which I think sometimes students lose sight of.</span></span> and an antiderivative, which is a symbolic expression.</p>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-exercise-essay" id="exercise-essay"><article class="exercise-like"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">4.4</span><span class="title">Essay Question: Compare and Contrast</span>
+</h5></article></a></div>
+<div id="hk-exercise-essay" style="display: none;" class="tex2jax_ignore"><article class="exercise-like"><p id="p-45">Write a short paragraph which compares, and contrasts, the definite and indefinite integral. This is an exercise which sits in the midst of the narrative, so is formatted more like an example or a remark.  It can have a hint and a solution, but this one does not.  It can have a title, which this one does.</p>
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-hint-1" id="hint-1"><span class="heading"><span class="type">Hint</span></span></a></span><span id="hk-hint-1" style="display: none;" class="tex2jax_ignore"><span class="solution"><p id="p-46">Start writing!</p></span></span> </article></div></section><section class="subsubsection" id="subsubsection-2"><header title="Subsubsection 4.2.2 "><h1 class="heading hide-type" alt="Subsubsection 4.2.2 ">
+<span class="type">Subsubsection</span><span class="codenumber">4.2.2</span><span class="title"></span>
+</h1></header><p id="p-47">This subsubsection has a title in the source, but it is empty.  That's OK, but not advisable since titles get used lots of places (such as page headers and the table of contents).</p></section><section class="subsubsection" id="subsubsection-3"><header title="Subsubsection 4.2.3 Advice"><h1 class="heading hide-type" alt="Subsubsection 4.2.3 Advice">
+<span class="type">Subsubsection</span><span class="codenumber">4.2.3</span><span class="title">Advice</span>
+</h1></header><p id="p-48">Using an “integral sign” for an antiderivative (aka indefinite integral) would seem to make the Fundamental Theorem a <i class="foreign">fait accompli</i>.  So I would suggest not conflating the notation for two very different things until the Fundamental Theorem exposes them as being highly related.</p>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-example-structured" id="example-structured"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">4.5</span><span class="title">An Example of Structure</span>
+</h5></article></a></div>
+<div id="hk-example-structured" style="display: none;" class="tex2jax_ignore">
+<article class="example-like"><p id="p-49">This is an example of an example with a bit more structure.  Specifically, the example has a <tt class="code-inline tex2jax_ignore">title</tt>, as usual, but then has a <tt class="code-inline tex2jax_ignore">statement</tt>, which is separate from the <tt class="code-inline tex2jax_ignore">solution</tt>.  Why did we implement an example in two ways?</p></article><div class="posterior"><div>
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-solution-1" id="solution-1"><span class="heading"><span class="type">Solution</span></span></a></span><span id="hk-solution-1" style="display: none;" class="tex2jax_ignore"><span class="solution"><p id="p-50">Authors asked for it and it seemed a very natural thing to do, even if we only had an unstructured version for a long time.</p></span></span>
+</div></div>
+</div>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-sample-question" id="sample-question"><article class="example-like"><h5 class="heading">
+<span class="type">Question</span><span class="codenumber">4.6</span><span class="title">An Example of a Question</span>
+</h5></article></a></div>
+<div id="hk-sample-question" style="display: none;" class="tex2jax_ignore">
+<article class="example-like"><p id="p-51">Any kind of question can be marked as such with <tt class="code-inline tex2jax_ignore">&lt;question&gt;</tt>.  Or similarly, as a <tt class="code-inline tex2jax_ignore">&lt;problem&gt;</tt>.  They behave identically to <tt class="code-inline tex2jax_ignore">example</tt>s, such as the one preceding and are numbered along with theorems, examples. etc.</p></article><div class="posterior"><div>
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-solution-2" id="solution-2"><span class="heading"><span class="type">Solution</span> <span class="codenumber">1</span></span></a></span><span id="hk-solution-2" style="display: none;" class="tex2jax_ignore"><span class="solution"><p id="p-52">You can have a solution. Or several, even if you don't ask a question.</p></span></span><span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-solution-3" id="solution-3"><span class="heading"><span class="type">Solution</span> <span class="codenumber">2</span></span></a></span><span id="hk-solution-3" style="display: none;" class="tex2jax_ignore"><span class="solution"><p id="p-53">See?</p></span></span>
+</div></div>
+</div>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-exercise-2" id="exercise-2"><article class="exercise-like"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">4.7</span><span class="title">An Inline Exercise</span>
+</h5></article></a></div>
+<div id="hk-exercise-2" style="display: none;" class="tex2jax_ignore"><article class="exercise-like"><p id="p-54">There are lots of exercises in this sample article, but mostly they are in special exercise sections.  Sometimes you just want to sprinkle some exercises through the narrative.  We call these <em class="terminology">inline exercises</em>, in contrast to <em class="terminology">sectional exercises</em>.  The inline exercises look a bit more like a theorem or definition, with titles and fully-qualified numbers.</p>
+<p id="p-55">These may also have hints, answers and solutions.</p>
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-hint-2" id="hint-2"><span class="heading"><span class="type">Hint</span></span></a></span><span id="hk-hint-2" style="display: none;" class="tex2jax_ignore"><span class="solution"><p id="p-56">A good hint.</p></span></span> <span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-answer-1" id="answer-1"><span class="heading"><span class="type">Answer</span></span></a></span><span id="hk-answer-1" style="display: none;" class="tex2jax_ignore"><span class="solution"><p id="p-57">42.</p></span></span> <span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-solution-4" id="solution-4"><span class="heading"><span class="type">Solution</span></span></a></span><span id="hk-solution-4" style="display: none;" class="tex2jax_ignore"><span class="solution"><p id="p-58">What was the question?</p></span></span> </article></div>
+<p id="p-59">There are many different blocks you can employ, and they mostly behave the same way.  A <tt class="code-inline tex2jax_ignore">&lt;project&gt;</tt> is very similar to a <tt class="code-inline tex2jax_ignore">&lt;question&gt;</tt> or <tt class="code-inline tex2jax_ignore">&lt;problem&gt;</tt></p>
+<article class="example-like" id="project-1"><h5 class="heading">
+<span class="type">Project</span><span class="codenumber">4.1</span><span class="title">Start Exploring MathBook XML</span>
+</h5>
+<p id="p-60">You could grab the <tt class="code-inline tex2jax_ignore">minimal.xml</tt> file from the <tt class="code-inline tex2jax_ignore">examples/minimal</tt> directory and experiment with that.</p>
+<p id="p-61">Projects get their own independent numbering scheme, since they may be central to your textbook, workbook, or lab manual.  If you process this sample article with <tt class="code-inline tex2jax_ignore">--stringparam numbering.projects.level 0</tt> then you will get consecutive numbers from the beginning of your book, starting with 1.</p></article><article class="example-like" id="exploration-1"><h5 class="heading">
+<span class="type">Exploration</span><span class="codenumber">4.2</span><span class="title">Exploring Explorations</span>
+</h5>
+<p id="p-62">This is an <tt class="code-inline tex2jax_ignore">&lt;exploration&gt;</tt>.  Two similar possibilities are <tt class="code-inline tex2jax_ignore">&lt;activity&gt;</tt> and <tt class="code-inline tex2jax_ignore">&lt;task&gt;</tt>.</p>
+<p id="p-63">Note that projects, activities, explorations, and tasks <!--Style me with CSS--><em>share</em> the independent numbering scheme, so it is really only intended you use one of these.  If you want a variant of the name (e.g. “Directed Activity”) you can use the <tt class="code-inline tex2jax_ignore">&lt;rename&gt;</tt> facility (<a href="section-24.html#rename-facility" alt="Subsection 25.1 Renaming Document Parts" title="Subsection 25.1 Renaming Document Parts">Subsection 25.1</a>).</p></article><div class="posterior"><div>
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-solution-5" id="solution-5"><span class="heading"><span class="type">Solution</span></span></a></span><span id="hk-solution-5" style="display: none;" class="tex2jax_ignore"><span class="solution"><p id="p-64">This is a “solution” to the exploration.  In practice, you might choose to not make this visible for students, but instead include it as part of some guidance you might provide to instructors (e.g. an <span class="booktitle">Instructor's Manual</span>).</p></span></span>
+</div></div>
+<article class="remark-like" id="note-remark"><h5 class="heading">
+<span class="type">Note</span><span class="codenumber">4.8</span><span class="title">A Note on Remarks</span>
+</h5>
+<p id="p-65"><tt class="code-inline tex2jax_ignore">&lt;remark&gt;</tt>, <tt class="code-inline tex2jax_ignore">&lt;convention&gt;</tt>, <tt class="code-inline tex2jax_ignore">&lt;note&gt;</tt>, <tt class="code-inline tex2jax_ignore">&lt;observation&gt;</tt> and <tt class="code-inline tex2jax_ignore">&lt;warning&gt;</tt> are designed to hold very simple contents, with no additional structure (no proofs, no solutions, etc.).</p>
+<p id="p-66">But they do carry a title and a number, can be the target of a cross-reference, and may be optionally knowlized in HTML with the <tt class="code-inline tex2jax_ignore">html.knowl.remark</tt> processing switch.</p></article><article class="aside-like" id="an-aside"><h5 class="heading">An Aside</h5>
+<p id="p-67">An <tt class="code-inline tex2jax_ignore">&lt;aside&gt;</tt> is similar to a remark, but is not as critical to the narrative.  It is not numbered, and so requires a title.  It can be the target of a cross-reference.  They are meant to be short, and so are not knowlized at their first appearance.  If the content is appropriate, these can be marked as <tt class="code-inline tex2jax_ignore">&lt;historical&gt;</tt> or <tt class="code-inline tex2jax_ignore">&lt;biographical&gt;</tt>, though longer items should use subdivisions (e.g. sections, subsections) instead.</p></article></section><section class="exercises" id="exercises-1"><header title="Exercises 4.2.4 Exercises"><h1 class="heading hide-type" alt="Exercises 4.2.4 Exercises">
+<span class="type">Subsubsection</span><span class="codenumber">4.2.4</span><span class="title">Exercises</span>
+</h1></header><article class="exercise-like" id="exercise-test-number"><h5 class="heading"><span class="codenumber">1</span></h5>
+<p id="p-68">This is an exercise in an “Exercises” subdivision at the level of a subsubsection.  There is no question other than if the numbering is appropriate.  Here is a self-referential link: Exercise <a knowl="./knowl/exercise-test-number.html" knowl-id="xref-exercise-test-number" alt="Exercise 4.2.4.1 " title="Exercise 4.2.4.1 ">4.2.4.1</a>.</p>
+<p id="p-69">The subsubsection has no title in the source, so one is provided automatically, and will adjust according to the language of the document.</p></article></section></section><section class="subsection" id="subsection-3"><header title="Subsection 4.3 Theorem-Like Environments"><h1 class="heading hide-type" alt="Subsection 4.3 Theorem-Like Environments">
+<span class="type">Subsection</span><span class="codenumber">4.3</span><span class="title">Theorem-Like Environments</span>
+</h1></header><p id="p-70">There are a variety of pre-defined environments in MathBook XML.  All take a title, and must have a statement.  Some have proofs (theorems, corollaries, etc.), while some do not have proofs (conjectures, axioms, principles).</p>
+<article class="theorem-like" id="principle-principle"><h5 class="heading">
+<span class="type">Principle</span><span class="codenumber">4.9</span><span class="title">The Title Principle</span>
+</h5>
+<p id="p-71">It is a fundamental principle that many elements can have a title.  Try it and see. If you get better formatting, then it is being recognized.  If it looks very plain, check the documentation and perhaps make a feature request.</p></article><p id="p-72">More precisely, <tt class="code-inline tex2jax_ignore">&lt;theorem&gt;</tt>, <tt class="code-inline tex2jax_ignore">&lt;corollary&gt;</tt>, <tt class="code-inline tex2jax_ignore">&lt;lemma&gt;</tt>, <tt class="code-inline tex2jax_ignore">&lt;algorithm&gt;</tt>, <tt class="code-inline tex2jax_ignore">&lt;proposition&gt;</tt>, <tt class="code-inline tex2jax_ignore">&lt;claim&gt;</tt>, <tt class="code-inline tex2jax_ignore">&lt;fact&gt;</tt>, and <tt class="code-inline tex2jax_ignore">&lt;identity&gt;</tt>, all behave exactly the same, requiring a statement (as a sequence of paragraphs) followed by an optional proof, and may have an optional title.  The elements <tt class="code-inline tex2jax_ignore">&lt;axiom&gt;</tt>, <tt class="code-inline tex2jax_ignore">&lt;conjecture&gt;</tt>, <tt class="code-inline tex2jax_ignore">&lt;principle&gt;</tt>, <tt class="code-inline tex2jax_ignore">&lt;heuristic&gt;</tt>, <tt class="code-inline tex2jax_ignore">&lt;hypothesis&gt;</tt>, and <tt class="code-inline tex2jax_ignore">&lt;assumption&gt;</tt> are functionally the same, barring a proof (since they would never have one!).  Definitions are an exception, as it is natural to place <tt class="code-inline tex2jax_ignore">&lt;notation&gt;</tt> within—see the source for Definition <a knowl="./knowl/definition-indefinite-integral.html" knowl-id="xref-definition-indefinite-integral" alt="Definition 2.2 " title="Definition 2.2 ">2.2</a> for an example.</p></section><section class="subsection" id="subsection-4"><header title="Subsection 4.4 Linking Sage Cells"><h1 class="heading hide-type" alt="Subsection 4.4 Linking Sage Cells">
+<span class="type">Subsection</span><span class="codenumber">4.4</span><span class="title">Linking Sage Cells</span>
+</h1></header><p id="p-73">Sage cells share their results on a per-webpage basis, so if you move to a new chapter, section, or subsection that happens to be on another webpage, your Sage computations are gone and you start fresh.  But maybe you need some results from elsewhere.  As an author, you can make an exact copy of a cell in another location.  As a reader you are suggested to “replay” the cell.  You have seen the next cell before.  More typically such a cell might define a function or set some values of a variable.</p>
+<div class="sagecell-sage" id="sage-numerical-integral"><script type="text/x-sage">numerical_integral(sin(x)^2, (0, 2))
+</script></div></section><section class="subsection" id="subsection-5"><header title="Subsection 4.5 Hierarchy"><h1 class="heading hide-type" alt="Subsection 4.5 Hierarchy">
+<span class="type">Subsection</span><span class="codenumber">4.5</span><span class="title">Hierarchy</span>
+</h1></header><article class="paragraphs" id="hierarchy-structure"><h5 class="heading"><span class="title">Structure</span></h5>
+<p id="p-74">This section of this article has subsections and subsubsections.  In a book you can have chapters enclosing multiple sections.  There is one finer subdivision, it is achieved with the <tt class="code-inline tex2jax_ignore">paragraphs</tt> element.</p>
+<p id="p-75">It is basically a sequence of paragraphs, where the first one gets an inline title.  You are reading the second, and final, paragraph of one right now. It is useful for organizing very short documents, where numbered subdivisions might be overkill.</p></article><article class="paragraphs" id="paragraphs-2"><p id="p-76">You do not have to provide a title for the <tt class="code-inline tex2jax_ignore">paragraphs</tt> element, as it is optional.  Then this element functions only as a grouping without much more structure than that.</p>
+<p id="p-77">This is the second paragraph of a title-less <tt class="code-inline tex2jax_ignore">paragraphs</tt> grouping, so it should seem related to the previous paragraph, and these two paragraphs should look distinct from the two paragraphs in the grouping with the title “Structure” immediately prior.</p></article><article class="assemblage-like" id="assemblage-basics"><h5 class="heading">Assemblages: Collections and Summaries</h5>
+<p id="p-78">An <tt class="code-inline tex2jax_ignore">&lt;assemblage&gt;</tt> is a collection, or summary, that does not have much structure to it.  So you are limited to paragraphs (<tt class="code-inline tex2jax_ignore">p</tt>), tables, figures and side-by-sides.  The intent is that these do not have captions, so are not numbered, so cannot be cross-referenced and so do not become knowls (inside of the knowled assemblage).  Note that <tt class="code-inline tex2jax_ignore">p</tt> may by extension contain lists (<tt class="code-inline tex2jax_ignore">ol</tt>, <tt class="code-inline tex2jax_ignore">ul</tt>, <tt class="code-inline tex2jax_ignore">dl</tt>).  Despite limited structure, the presentation should draw attention to it, because the contents should be seen as more important in some way.  It should be “highlighted” in some manner.  If you need to connect with material elsewhere, you can do that with the usual <tt class="code-inline tex2jax_ignore">xref/xml:id</tt> mechanism.</p>
+<p id="p-79">What have we seen so far in this (disorganized) sample?</p>
+<ul id="ul-1" style="list-style-type: disc;">
+<li id="li-4"><p id="p-80">Theorems, definitions and corollaries. (<a href="section-fundamental-theorem.html" alt="Section 2 The Fundamental Theorem" title="Section 2 The Fundamental Theorem">Section 2</a>)</p></li>
+<li id="li-5"><p id="p-81">Sage cells, including with R. (<a href="section-sage-cells.html" alt="Section 3 Computing Integrals with Sage (\(\int\))" title="Section 3 Computing Integrals with Sage (\(\int\))">Section 3</a>)</p></li>
+<li id="li-6"><p id="p-82">Lots of document structure, like introductions and conclusions (next). (<a href="interesting-corollary.html" alt="Section 4 An Interesting Corollary" title="Section 4 An Interesting Corollary">Section 4</a>)</p></li>
+</ul>
+<p id="p-83">A sample table, with no caption, follows.</p>
+<figure class="figure-like" id="table-1"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">A</td>
+<td class="l m b0 r0 l0 t0 lines">B</td>
+<td class="l m b0 r0 l0 t0 lines">C</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Uno</td>
+<td class="l m b0 r0 l0 t0 lines">Dos</td>
+<td class="l m b0 r0 l0 t0 lines">Tres</td>
+</tr>
+</table></figure></article><article class="assemblage-like" id="assemblage-2"><h5 class="heading"></h5>
+<p id="p-84">This is a small <tt class="code-inline tex2jax_ignore">assemblage</tt> with no title, simply to make sure the surrounding box behaves properly, especially for <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> output.</p></article></section><section class="subsection" id="subsection-intro-conclude"><header title="Subsection 4.6 Introductions and Conclusions"><h1 class="heading hide-type" alt="Subsection 4.6 Introductions and Conclusions">
+<span class="type">Subsection</span><span class="codenumber">4.6</span><span class="title">Introductions and Conclusions</span><a href="interesting-corollary.html#subsection-intro-conclude" class="permalink">¶ permalink</a>
+</h1></header><section class="introduction" id="introduction-3"><h5 class="heading">An Introductory Introduction<span></span>
+</h5>
+<p id="p-85">Any subdivision may have a sequence of paragraphs within an <tt class="code-inline tex2jax_ignore">&lt;introduction&gt;</tt> that precedes subsequent further subdivisions.  You are reading one now.  They are always leaves of the document structure, so are rendered on some pages that reference the following subdivisions.</p>
+<p id="p-86">An introduction or conclusion is an extremely restrictive container with simple presentation.  A title is optional (and probably not advisable).  Content is meant to be short and unstructured, in particular, nothing that can be numbered is allowed.  If this feels <!--Style me with CSS--><em>too</em> restrictive, then place your content in an initial numbered subdivision and perhaps title it “Introduction”.  Or make your entire subdivion unstructured and place whatever you want into it.</p>
+<p id="p-87">This ends this introduction to introductions.</p></section><section class="subsubsection" id="subsubsection-4"><header title="Subsubsection 4.6.1 Test One"><h1 class="heading hide-type" alt="Subsubsection 4.6.1 Test One">
+<span class="type">Subsubsection</span><span class="codenumber">4.6.1</span><span class="title">Test One</span>
+</h1></header><p id="p-88">An intervening subsubsection just after an introduction.</p></section><section class="subsubsection" id="subsubsection-5"><header title="Subsubsection 4.6.2 Test Two"><h1 class="heading hide-type" alt="Subsubsection 4.6.2 Test Two">
+<span class="type">Subsubsection</span><span class="codenumber">4.6.2</span><span class="title">Test Two</span>
+</h1></header><p id="p-89">An intervening subsubsection just before a conclusion.</p></section><section class="conclusion" id="conclusion-2"><p id="p-90">Entirely analogous to introductions are conclusions.  Any subdivision may have a sequence of paragraphs within a <tt class="code-inline tex2jax_ignore">&lt;conclusion&gt;</tt> that follows previous further subdivisions.  You are reading one now.  They are always leaves of the document structure, so are rendered on some pages that reference the preceding subdivisions.</p>
+<p id="p-91">This concludes this conclusion (and this subsection and this section).</p></section></section><section class="subsection" id="subsection-paragraph-markup"><header title="Subsection 4.7 Some Paragraph-Level Markup"><h1 class="heading hide-type" alt="Subsection 4.7 Some Paragraph-Level Markup">
+<span class="type">Subsection</span><span class="codenumber">4.7</span><span class="title">Some Paragraph-Level Markup</span><a href="interesting-corollary.html#subsection-paragraph-markup" class="permalink">¶ permalink</a>
+</h1></header><p id="p-92">Text within a paragraph may be <!--Style me with CSS--><em>emphasized</em> with <tt class="code-inline tex2jax_ignore">&lt;em&gt;</tt> or if you want to take it to the next level you can identify the text as an <b><i>alert</i></b> with <tt class="code-inline tex2jax_ignore">&lt;alert&gt;</tt>.</p>
+<p id="p-93">Similarly, within a paragraph, you can identify edits between versions as <ins class="insert">inserted text that has been added</ins> with <tt class="code-inline tex2jax_ignore">&lt;insert&gt;</tt> or as <del class="delete">deleted text that has been removed</del> with <tt class="code-inline tex2jax_ignore">&lt;delete&gt;</tt>.  Note that these identified edits are slightly different than <s class="stale">stale text that you want to retain, but which is no longer relevant</s>, which is accomplished with <tt class="code-inline tex2jax_ignore">&lt;stale&gt;</tt>.  The original request for stale text came from an instructor with an online list of student topics for presentations, and as students claimed topics they were marked as no longer available for other students.</p>
+<p id="p-94">If you need a “fill-in blank”, like this<span class="fillin" style="width: 4.545454545454546em;"></span>, it can be obtained with an empty <tt class="code-inline tex2jax_ignore">&lt;fillin&gt;</tt> element that defaults to roughly a 10-character width.  You can use the <tt class="code-inline tex2jax_ignore">&lt;characters&gt;</tt> attribute to make the rule longer or shorter, such as a 40-character blank: <span class="fillin" style="width: 18.1818181818182em;"></span>.  The character count is approximate, based on typical character widths within a proportional font carrying English language text.  Adjust to suit, or request a language-specific adjustment if it is critical.</p></section></section></div></main>
+</div>
+</body>
+</html>
